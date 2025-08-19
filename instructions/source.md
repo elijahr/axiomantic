@@ -74,48 +74,19 @@ applyTo: "none"
 - Use dependency injection where appropriate
 - Document component interactions
 
-#### Planning and Implementation
+#### Planning & Implementation
 
-- Break down complex problems into smaller parts
-- Consider non-functional requirements
-- Plan for testing and validation
-- Document architectural decisions
+- Break down complex problems, consider non-functional requirements
+- Plan for testing and validation, document architectural decisions
 
-#### Deliberate Planning Process
+**CRITICAL Planning Process - When creating plans, roadmaps, or implementation strategies:**
 
-**CRITICAL: When creating plans, roadmaps, or implementation strategies, you MUST:**
+1. **Step Back & Survey**: Read relevant project files, understand current architecture, identify affected components, note constraints
+2. **Internal Dialogue**: "What's the real problem?" "Different approaches?" "Risks/trade-offs?" "System interactions?" "What could go wrong?"
+3. **Context-Informed Planning**: Reflect current codebase patterns, existing infrastructure, team practices, realistic scope, **all four validation pillars**
+4. **Plan Validation**: Review against actual codebase, check assumptions, ensure actionable/specific, consider alternatives, verify validation checkpoints
 
-1. **Step Back and Survey**: Before writing any plan, pause and conduct a thorough examination:
-
-   - Read through relevant project files and code
-   - Understand the current architecture and patterns
-   - Identify existing components that might be affected
-   - Note any constraints or dependencies
-
-2. **Internal Dialogue**: Have an explicit conversation with yourself about:
-
-   - "What is the real problem we're solving?"
-   - "What are the different approaches we could take?"
-   - "What are the risks and trade-offs of each approach?"
-   - "What parts of the existing system will this interact with?"
-   - "What could go wrong and how would we handle it?"
-
-3. **Context-Informed Planning**: Your plan should reflect:
-
-   - Current codebase patterns and conventions
-   - Existing infrastructure and tooling
-   - Team practices and project constraints
-   - Realistic scope and timeline considerations
-   - **All four validation pillars** (Standards, Documentation, Patterns, Testing)
-
-4. **Plan Validation**: Before presenting the plan:
-   - Review it against the actual codebase one more time
-   - Check if you're making unrealistic assumptions
-   - Ensure the plan is actionable and specific
-   - Consider alternative approaches you might have missed
-   - **Verify validation checkpoints are included throughout**
-
-**Remember**: A 5-minute planning conversation with yourself can save hours of wrong-direction implementation.
+_5-minute planning conversation saves hours of wrong-direction implementation._
 
 #### Best Practices
 
@@ -261,81 +232,37 @@ Ask yourself and verify:
 
 ##### Plan Content Requirements
 
-**Every plan document MUST include:**
+**Plan Template**:
 
 ```markdown
 # [Feature/Task] Implementation Plan
 
 ## Overview
 
-[Brief description of what we're building/changing and why]
+[Brief description of what/why]
 
-## Validation Standards Integration
+## Validation Integration
 
-- [ ] Coding Standards: [specific standards to follow]
-- [ ] Documentation: [what documentation needs to be created/updated]
-- [ ] Project Patterns: [existing patterns to follow or new patterns being established]
-- [ ] Testing: [testing strategy and coverage requirements]
+- [ ] Standards: [specific standards] - [ ] Docs: [what needs creation/update]
+- [ ] Patterns: [existing/new patterns] - [ ] Testing: [strategy/coverage]
 
-## Implementation Phases
+## Phases
 
-- [ ] Phase 1: Planning and Setup
-  - [ ] Validate: Standards, Documentation, Patterns, Testing plan
-- [ ] Phase 2: Core Implementation
-  - [ ] Validate: Standards, Documentation, Patterns, Testing implementation
-- [ ] Phase 3: Integration and Testing
-  - [ ] Validate: All four pillars before completion
-- [ ] Phase 4: Documentation and Cleanup
-  - [ ] Final validation across all pillars
+- [ ] Phase 1: Planning/Setup (Validate all pillars in plan)
+- [ ] Phase 2: Core Implementation (Validate all pillars in impl)
+- [ ] Phase 3: Integration/Testing (Final validation before completion)
 
-## Success Criteria
+## Success Criteria & Risks
 
-- [ ] Functionality works as specified
-- [ ] Passes all four validation pillars
-- [ ] Integration tests pass
-- [ ] Documentation is complete and accurate
-
-## Risks and Mitigation
-
-[Identify potential issues and how to handle them]
+[Functionality works, passes four pillars, tests pass, docs complete | Risk mitigation]
 ```
 
-##### Planning Process Requirements
+**Planning Process**:
 
-**Before starting any significant work:**
-
-1. **Assess Complexity**:
-
-   - Simple task (< 1 hour): Proceed with inline validation
-   - Medium task (1-4 hours): Create .tmp plan file
-   - Complex task (> 4 hours): Use ROADMAP.md or README.md
-
-2. **Consider All Four Validation Pillars** in the planning phase:
-
-   - What coding standards will apply?
-   - What documentation will be needed?
-   - What existing patterns should be followed?
-   - What testing strategy is required?
-
-3. **Break Down Work** into validatable chunks:
-
-   - Each phase should be small enough to validate thoroughly
-   - Each milestone should include validation checkpoints
-   - Plan for validation time (don't underestimate)
-
-4. **Document Validation Strategy** upfront:
-   - Specify which standards apply
-   - Identify relevant project patterns
-   - Define testing requirements
-   - Plan documentation updates
-
-#### Plan Maintenance
-
-- **Update plans** as work progresses and requirements change
-- **Mark completed phases** with checkboxes and timestamps
-- **Note validation results** for each completed phase
-- **Archive or cleanup** temporary plans when work is complete
-- **Learn from plans** - what validation strategies worked best?
+- **Complexity**: Simple (<1hr) = inline validation; Medium (1-4hr) = .tmp plan; Complex (>4hr) = ROADMAP.md/README.md
+- **Consider four pillars**: Standards, docs, patterns, testing strategy upfront
+- **Break into validatable chunks**: Small phases, validation checkpoints, plan for validation time
+- **Maintain**: Update as work progresses, mark completed phases, note validation results, cleanup when complete
 
 ### Plan-Aware Operation
 
@@ -478,28 +405,7 @@ Progress: 40% complete (2/5 phases)
 For substantial tasks with multiple phases, prompt user:
 "This looks like a substantial task with multiple phases. Would you like me to create a project plan/roadmap first to track our progress? This helps ensure we don't miss steps and makes it easier to resume work later."
 
-**Plan Creation Template:**
-
-```markdown
-# [Project/Feature] Implementation Plan
-
-## Overview
-
-[Brief description of the overall goal]
-
-## Phases
-
-- [ ] Phase 1: [Planning/Setup]
-- [ ] Phase 2: [Core Implementation]
-- [ ] Phase 3: [Testing/Validation]
-- [ ] Phase 4: [Documentation]
-- [ ] Phase 5: [Deployment/Integration]
-
-## Current Status
-
-Status: ACTIVE
-Progress: 0% complete (0/5 phases)
-```
+Use the plan template format defined above in Planning Standards.
 
 ### Milestone & Commit Management
 
