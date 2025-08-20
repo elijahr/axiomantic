@@ -18,8 +18,6 @@ Axiomantic provides expert-curated development practices that transform AI codin
 
 To integrate Axiomantic with your AI coding assistant, paste this prompt into your chat:
 
-**Note**: If you want to integrate existing copilot-instructions: use a premium AI model with excellent reasoning skills for the installation process to ensure best result.
-
 ````
 Please integrate Axiomantic instructions into my project using this exact process:
 
@@ -56,7 +54,7 @@ applyTo: 'src/**/*,lib/**/*,test/**/*,tests/**/*,**/*.test.*,**/*.spec.*'
 
 # test.instructions.md
 applyTo: 'test/**/*,tests/**/*,**/*.test.*,**/*.spec.*,*_test.*'
-````
+```
 
 STEP 4: Handle existing copilot instructions (if present):
 
@@ -110,8 +108,7 @@ The new multi-file structure provides:
 - **Axiomantic Agent chat mode** for professional development dialogue
 
 Follow all Axiomantic principles and standards in our subsequent interactions.
-
-```
+````
 
 ## Purpose
 
@@ -129,19 +126,23 @@ Axiomantic elevates AI-assisted development by:
 After installation, Axiomantic provides multiple levels of AI assistance:
 
 ### Instruction Files (Automatic)
+
 - **Selective application**: Different instruction files automatically apply to different file types
 - **Layered system**: Test files get both source.instructions.md AND test.instructions.md rules
 - **Override hierarchy**: Personal > Project > Base instruction priority
 - **Optional customization files**: project.instructions.md and user.instructions.md are created only when you add rules
 
 ### Axiomantic Agent Chat Mode (Recommended)
+
 Switch to "Axiomantic" in the VS Code chat mode dropdown for:
+
 - **Professional dialogue** that challenges assumptions and asks probing questions
 - **Four-pillar validation** automatically applied to all implementations
 - **Critical thinking** over blind compliance
 - **Enhanced instruction integration** with context-aware rule application
 
 ### Customization Options
+
 - **Add project rules**: Say "add project rule" to create/update team standards (committed to repo)
 - **Add user rules**: Say "add user rule" to create/update personal preferences (gitignored, local only)
 - **AxiTxt compression**: Use `/axitxt` prompt for token-efficient documentation
@@ -149,4 +150,3 @@ Switch to "Axiomantic" in the VS Code chat mode dropdown for:
 ---
 
 _Axiomantic provides a solid foundation of professional coding standards for AI assistants, with an easy way to add your project-specific requirements on top._
-```
