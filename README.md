@@ -28,10 +28,6 @@ STEP 1: Download and extract Axiomantic instruction files:
 - Copy compressed distribution files: `cp -r axiomantic-devel/dist/instructions/* .github/instructions/`
 - Copy compressed distribution files: `cp -r axiomantic-devel/dist/chatmodes/* .github/chatmodes/`
 - Copy compressed distribution files: `cp -r axiomantic-devel/dist/prompts/* .github/prompts/`
-- Rename files with proper extensions:
-  - `mv ".github/chatmodes/Axiomantic Agent.md" ".github/chatmodes/Axiomantic Agent.chatmode.md"`
-  - In `.github/instructions/`: rename `*.md` to `*.instructions.md` (e.g., `base.md` → `base.instructions.md`)
-  - In `.github/prompts/`: rename `*.md` to `*.prompt.md` (e.g., `axitxt.md` → `axitxt.prompt.md`)
 - Clean up: `rm -rf axiomantic.zip axiomantic-devel/`
 
 STEP 2: Analyze project structure and update applyTo patterns:
@@ -87,7 +83,13 @@ STEP 6: Configure gitignore and cleanup:
 - Ensure `.github/instructions/project.instructions.md` is NOT in gitignore (should be committed for team)
 - Remove old monolithic file: `rm -f .github/copilot-instructions.md`
 
-STEP 7: Confirm completion and instruct me to start a new chat window for changes to take effect, as AI assistants need to reload context to recognize the new instruction files. Output a message along the lines of the below, with any irrelevant sections removed:
+STEP 7: Rename files with proper extensions (FINAL STEP):
+
+- Rename chatmode file: `mv ".github/chatmodes/Axiomantic Agent.md" ".github/chatmodes/Axiomantic Agent.chatmode.md"`
+- Rename instruction files: In `.github/instructions/`, rename `*.md` to `*.instructions.md` (e.g., `base.md` → `base.instructions.md`)
+- Rename prompt files: In `.github/prompts/`, rename `*.md` to `*.prompt.md` (e.g., `axitxt.md` → `axitxt.prompt.md`)
+
+STEP 8: Confirm completion and instruct me to start a new chat window for changes to take effect, as AI assistants need to reload context to recognize the new instruction files. Output a message along the lines of the below, with any irrelevant sections removed:
 
 INSTALLATION COMPLETE!
 
