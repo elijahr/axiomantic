@@ -78,16 +78,6 @@ Compression Results:
 Distribution ready at: ./dist/
 ```
 
-### Step 5: Rename Files
-
-The files in dist must have the instruction type added to the filename, for example:
-
-- `dist/chatmodes/Axiomantic Agent.md` becomes `dist/chatmodes/Axiomantic Agent.chatmode.md`
-- `dist/instructions/base.md` becomes `dist/instructions/base.instructions.md`
-- `dist/prompts/axitxt.md` becomes `dist/prompt/axitxt.prompt.md`
-
-Rename all files in dist accordingly.
-
 ## Quality Assurance Requirements
 
 For every compressed file, ensure:

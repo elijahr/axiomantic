@@ -28,6 +28,10 @@ STEP 1: Download and extract Axiomantic instruction files:
 - Copy compressed distribution files: `cp -r axiomantic-devel/dist/instructions/* .github/instructions/`
 - Copy compressed distribution files: `cp -r axiomantic-devel/dist/chatmodes/* .github/chatmodes/`
 - Copy compressed distribution files: `cp -r axiomantic-devel/dist/prompts/* .github/prompts/`
+- Rename files with proper extensions:
+  - `mv ".github/chatmodes/Axiomantic Agent.md" ".github/chatmodes/Axiomantic Agent.chatmode.md"`
+  - In `.github/instructions/`: rename `*.md` to `*.instructions.md` (e.g., `base.md` → `base.instructions.md`)
+  - In `.github/prompts/`: rename `*.md` to `*.prompt.md` (e.g., `axitxt.md` → `axitxt.prompt.md`)
 - Clean up: `rm -rf axiomantic.zip axiomantic-devel/`
 
 STEP 2: Analyze project structure and update applyTo patterns:
