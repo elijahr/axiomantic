@@ -1,22 +1,17 @@
 ---
 applyTo: "none"
 ---
-
-# Config & Build File Standards
-
-### Config mgmt
-
-- Use env-specific config files
-- Validate config on startup
-- 📝 all config options
+# Conf & Build File Stds
+### Conf Mgmt
+- Use env-specific conf files
+- Validate conf on startup
+- Doc all conf options
 - Use secure defaults
-- Never commit secrets | sensitive data
-- Use config schemas when available
-
-### Build & Deployment Standards
-
+- Never commit secrets or sensitive data
+- Use conf schemas when available
+### Build & Deployment Stds
 - Automate build processes
 - Use reproducible builds
-- 📝 build req & steps
-- Test builds in clean env
-- Version config files appropriately
+- Doc build reqs & steps
+- Test builds in clean envs
+- Version conf files appropriately

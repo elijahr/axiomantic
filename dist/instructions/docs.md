@@ -1,38 +1,28 @@
 ---
 applyTo: "none"
 ---
-
-# 📝 Standards
-
-### 📝 Standards
-
-#### 📝 Principles
-
-- Write for audience
-- Keep 📝 close to code
+# Doc Stds
+### Doc Stds
+#### Doc Principles
+- Write for your audience
+- Keep doc close to code
 - Update docs when code changes
 - Use examples to clarify concepts
-
-#### API 📝
-
-- 📝 all public interfaces
-- Include param descriptions & types
+#### API Doc
+- Doc all public interfaces
+- Include param descs & types
 - Provide usage examples
-- 📝 error conditions
-
+- Doc error conditions
 #### Code Explanations
-
 - Comment complex logic & algorithms
-- Explain "why" behind decisions
+- Explain the "why" behind decisions
 - Use clear, concise lang
-- Avoid obvious comments
-- Don't write comments about changes I ask you to make. Comment about code as it exists, not history of our session.
-- Don't write comments unless they'll be useful to dev reading code for first time.
+- Avoid obvi comments
+- Don't write comments about changes I ask you to make. Comment about the code as it exists, not the history of our session.
+- Don't write comments unless they will be useful to a dev reading the code for the first time.
 - Don't write "changelog" style comments (e.g., "added", "updated", "removed")
-
 #### Communication & Clarity
-
 - Use consistent terminology
 - Structure info logically
 - Provide context for decisions
-- Make 📝 searchable
+- Make doc searchable

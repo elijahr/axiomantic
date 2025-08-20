@@ -1,18 +1,29 @@
 # Axiomantic
 
-A comprehensive set of coding standards, methodologies, and behavioral guidelines for AI coding assistants (GitHub Copilot, Cursor, etc.).
+Coding standards and behavioral guidelines for AI assistants that encourage critical dialogue and systematic validation.
 
-## What is Axiomantic?
+## Table of Contents
 
-Axiomantic provides expert-curated development practices that transform AI coding assistants from simple code generators into professional development partners. Instead of getting "yes-man" responses, you get critical, thoughtful dialogue that challenges assumptions and produces higher-quality code.
+- [What it does](#what-it-does)
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Axiomantic Agent Chat Mode](#axiomantic-agent-chat-mode)
+  - [Customization](#customization)
+- [What you get](#what-you-get)
 
-## Key Features
+## What it does
 
-- **Professional Dialogue Standards**: Encourages AI to be critical, ask probing questions, and push back constructively
-- **Comprehensive Development Standards**: Covers code quality, architecture, testing, documentation, and project management
-- **Four-Pillar Validation System**: Every implementation is validated against coding standards, documentation, project patterns, and testing
-- **Self-Validation Methodology**: Built-in quality assurance for all code changes
-- **Layered Override System**: Three-tier customization with User > Project > Base priority hierarchy
+- Applies different instruction sets based on file type (source, test, docs, config)
+- Enforces four-pillar validation: coding standards, documentation, project patterns, testing
+- Provides professional dialogue mode that challenges assumptions instead of blind compliance
+- Includes token-efficient compression for instruction files
+
+## Screenshot
+
+![Axiomantic Agent in action](screenshot.png)
+
+*Axiomantic Agent providing professional development dialogue with critical thinking and four-pillar validation*
 
 ## Installation
 
@@ -89,8 +100,8 @@ STEP 7: Rename files with proper extensions (FINAL STEP):
 
 - cd to project root
 - Rename chatmode file: `mv ".github/chatmodes/Axiomantic Agent.md" ".github/chatmodes/Axiomantic Agent.chatmode.md"`
-- Rename instruction files: In `.github/instructions/`, rename `*.md` to `*.instructions.md` (e.g., `base.md` → `base.instructions.md`)
-- Rename prompt files: In `.github/prompts/`, rename `*.md` to `*.prompt.md` (e.g., `axitxt.md` → `axitxt.prompt.md`)
+- Rename instruction files: `cd .github/instructions && for file in *.md; do mv "$file" "${file%.md}.instructions.md"; done`
+- Rename prompt files: `cd ../../.github/prompts && for file in *.md; do mv "$file" "${file%.md}.prompt.md"; done`
 
 STEP 8: Confirm completion and instruct me to start a new chat window for changes to take effect, as AI assistants need to reload context to recognize the new instruction files. Output a message along the lines of the below, with any irrelevant sections removed:
 
@@ -119,42 +130,86 @@ The new multi-file structure provides:
 Follow all Axiomantic principles and standards in our subsequent interactions.
 ````
 
-## Purpose
+## Usage
 
-Axiomantic elevates AI-assisted development by:
+### Axiomantic Agent Chat Mode
 
-- Promoting critical thinking over blind compliance
-- Establishing consistent quality standards across projects
-- Providing structured validation processes
-- Encouraging professional development dialogue
-- Creating maintainable, well-documented codebases
-- Supporting team collaboration with layered customization (User > Project > Base)
+Switch to "Axiomantic Agent" in VS Code's chat mode dropdown for professional development dialogue with built-in validation.
+
+### Customization
+
+- Say "add project rule" to create team standards (committed to repo)
+- Say "add user rule" to set personal preferences (local only)
+- Use the included AxiTxt prompt to compress instruction files
+
+## What you get
+
+- File-type-aware instruction loading
+- Critical dialogue instead of blind compliance
+- Systematic four-pillar validation for all code changes
+- Project and user customization layers
+- Token-efficient compressed instructions
+
+
+## Why Axiomantic?
+
+Axiomantic represents the evolution of AI-assisted development:
+
+### 🧠 **From Simple to Sophisticated**
+- **Beyond basic code generation**: Professional development partnership with critical thinking
+- **Intelligent context awareness**: Right instructions automatically apply to the right files
+- **Token-efficient operation**: Advanced compression maintains full capability while reducing costs
+
+### 🏆 **Quality-First Development**
+- **Four-pillar validation**: Every change systematically validated against comprehensive criteria
+- **Professional dialogue**: AI that pushes back, asks hard questions, and challenges assumptions
+- **Built-in quality gates**: Prevents low-quality code through systematic validation processes
+
+### 🎯 **Smart Resource Management**
+- **Dynamic loading**: Only relevant instructions load for each file type
+- **Compressed distribution**: 35-50% token reduction without losing semantic meaning
+- **Layered customization**: Team standards and personal preferences work seamlessly together
+
+### 🚀 **Team-Friendly Architecture**
+- **Project-aware customization**: Team standards committed to repo, personal preferences stay local
+- **Consistent quality across contributors**: Same high standards apply regardless of who's coding
+- **Gradual adoption**: Works with existing projects, no restructuring required
 
 ## Using Axiomantic
 
-After installation, Axiomantic provides multiple levels of AI assistance:
+### 🎯 **Axiomantic Agent Chat Mode** (Primary Interface)
 
-### Instruction Files (Automatic)
-
-- **Selective application**: Different instruction files automatically apply to different file types
-- **Layered system**: Test files get both source.instructions.md AND test.instructions.md rules
-- **Override hierarchy**: Personal > Project > Base instruction priority
-- **Optional customization files**: project.instructions.md and user.instructions.md are created only when you add rules
-
-### Axiomantic Agent Chat Mode (Recommended)
-
-Switch to "Axiomantic" in the VS Code chat mode dropdown for:
+**Switch to "Axiomantic Agent" in the VS Code chat mode dropdown for the complete experience:**
 
 - **Professional dialogue** that challenges assumptions and asks probing questions
 - **Four-pillar validation** automatically applied to all implementations
 - **Critical thinking** over blind compliance
-- **Enhanced instruction integration** with context-aware rule application
+- **Context-aware instruction integration** with intelligent rule application
+- **Built-in quality assurance** with systematic validation processes
 
-### Customization Options
+*This is the recommended way to interact with Axiomantic - designed for professional development dialogue.*
 
-- **Add project rules**: Say "add project rule" to create/update team standards (committed to repo)
-- **Add user rules**: Say "add user rule" to create/update personal preferences (gitignored, local only)
-- **AxiTxt compression**: Use `/axitxt` prompt for token-efficient documentation
+### 📁 **Dynamic Instruction Loading** (Automatic)
+
+The instruction system works automatically in the background:
+
+- **File-type targeting**: Source files get coding standards, test files get testing standards + coding standards, docs get documentation standards
+- **Smart layering**: Complex files (like test files) automatically inherit multiple instruction sets
+- **Override hierarchy**: User preferences > Project standards > Base Axiomantic principles
+- **Optional customization**: Add project.instructions.md and user.instructions.md only when you need custom rules
+
+### 🛠️ **AxiTxt Compression Tools**
+
+- **Compress your own instructions**: Use the included AxiTxt prompt (`/axitxt`) to achieve 35-50% token reduction in instruction files
+- **Maintain semantic integrity**: Full meaning preserved while dramatically reducing token consumption
+- **LLM-optimized format**: Compressed specifically for AI assistant consumption
+
+### ⚡ **Advanced Features**
+
+- **Add project rules**: Say "add project rule" to create team-wide standards (committed to repo)
+- **Add user rules**: Say "add user rule" to set personal preferences (local only, gitignored)
+- **Validation checkpoints**: Built-in quality gates prevent low-quality code from progressing
+- **Self-validation methodology**: AI assistants validate their own work against all four pillars
 
 ---
 

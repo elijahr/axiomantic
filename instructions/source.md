@@ -51,6 +51,29 @@ applyTo: "none"
 
 5. **Execute Cleanup**: Start deleting the bad comments in batches
 
+#### Code Comment Standards
+
+**NEVER write comments that reference time, sessions, or development phases:**
+
+❌ **Forbidden comment patterns:**
+- "Phase 1 implementation"
+- "Added in this session"
+- "Changed to fix issue"
+- "Updated per requirements"
+- "TODO: Phase 2"
+- "Modified during refactor"
+- References to "steps", "phases", "sessions", "changes", "updates"
+
+✅ **Write comments about the code as it exists:**
+- Explain complex algorithms and business logic
+- Document why decisions were made (not when)
+- Clarify non-obvious behavior
+- Explain the purpose of functions and classes
+- Avoid obvious comments
+- Don't write comments unless they will be useful to a developer reading the code for the first time
+
+**Comment about the code's current state and purpose, never its development history.**
+
 #### Language-Specific Patterns
 
 - Use idiomatic constructs for your language
@@ -62,10 +85,9 @@ applyTo: "none"
 
 #### System Design Principles
 
-- Design for maintainability and extensibility
+- Design for maintainability, extensibility, and scalability
 - Use appropriate design patterns
-- Consider scalability requirements
-- Plan for failure scenarios
+- Plan for failure scenarios and security from the start
 
 #### Component Relationships
 
@@ -77,15 +99,14 @@ applyTo: "none"
 #### Planning & Implementation
 
 - Break down complex problems, consider non-functional requirements
-- Plan for testing and validation, document architectural decisions
 - Follow [Planning Standards](#planning-standards) below for detailed planning process
 
 #### Best Practices
 
 - Follow established architectural patterns
 - Consider performance implications
-- Plan for monitoring and observability
-- Design for security from the start
+- Plan for monitoring, observability, security, and failure scenarios
+- Document architectural decisions
 
 ### Debugging Methodology
 
@@ -130,11 +151,10 @@ After completing any significant code change, implementation, or milestone, appl
 #### Self-Validation Process
 
 **For each validation pillar:**
-
-1. **Review the code** against the specific criteria
-2. **Identify gaps or issues** - be brutally honest
-3. **Fix immediately** - don't postpone validation fixes
-4. **Document validation** - briefly note what you checked and confirmed
+1. **Review** - Check code against specific criteria
+2. **Identify gaps** - Be brutally honest about shortcomings
+3. **Fix immediately** - Don't postpone validation fixes
+4. **Document validation** - Note what was checked and confirmed
 
 **Example Self-Validation Comment:**
 
@@ -148,11 +168,9 @@ After completing any significant code change, implementation, or milestone, appl
 
 #### When to Validate
 
-- After implementing a new feature or component
-- After refactoring existing code
-- After fixing a bug (ensure fix doesn't break standards)
+- After implementing features, refactoring, or bug fixes
 - Before committing significant changes
-- At the completion of plan milestones
+- At completion of plan milestones
 
 ### Planning Standards
 
@@ -160,10 +178,10 @@ All non-trivial work must be planned and documented BEFORE implementation begins
 
 #### Planning Process
 
-1. **Step Back & Survey**: Read relevant project files, understand current architecture, identify affected components, note constraints
-2. **Internal Dialogue**: "What's the real problem?" "Different approaches?" "Risks/trade-offs?" "System interactions?" "What could go wrong?"
-3. **Context-Informed Planning**: Reflect current codebase patterns, existing infrastructure, team practices, realistic scope, apply Four-Pillar Validation
-4. **Plan Validation**: Review against actual codebase, check assumptions, ensure actionable/specific, consider alternatives
+1. **Step Back & Survey**: Read relevant files, understand architecture, identify components, note constraints
+2. **Internal Dialogue**: Question the problem, approaches, risks/trade-offs, system interactions
+3. **Context-Informed Planning**: Reflect codebase patterns, infrastructure, team practices, realistic scope, apply Four-Pillar Validation
+4. **Plan Validation**: Review against codebase, check assumptions, ensure actionable/specific, consider alternatives
 
 #### Planning Hierarchy
 
@@ -209,11 +227,10 @@ For substantial tasks with multiple phases, prompt user: "This looks like a subs
 **After completing significant milestones or plan phases:**
 
 - **Self-validate first**: Complete all four validation pillars before considering milestone complete
-- **Prompt user to commit changes:** "This completes [milestone/phase]. All validation pillars checked. Would you like to commit these changes before continuing?"
-- **Suggest meaningful commit messages** based on what was accomplished
-- **Break large changes into logical commits** when working through multi-step plans
-- **Use conventional commit format:** `feat:`, `fix:`, `docs:`, `refactor:`, etc.
+- **Prompt user to commit**: "This completes [milestone/phase]. All validation pillars checked. Would you like to commit these changes before continuing?"
+- **Use conventional commit format**: `feat:`, `fix:`, `docs:`, `refactor:`, etc.
 - **Include validation confirmation**: "Validated: standards ✅, docs ✅, patterns ✅, testing ✅"
+- **Break large changes into logical commits** when working through multi-step plans
 
 #### Commit Message Templates
 

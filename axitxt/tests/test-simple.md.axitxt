@@ -1,0 +1,13 @@
+### Code Review Guidel
+
+Follow essential practices when reviewing code:
+
+- Read entire pull request - Don't just look @ individual files, understand full context of changes
+- 🔒 Check 4 sec vulnerabilities - Look 4 potential issues like SQL injection, XSS, or insecure data handling
+- ✅ Verify test coverage - Ensure new features have appropr8 unit & integration tests
+- 📚 Review docs - Make sure any public APIs or complex logic are properly documented  
+- ⚡ Consider perf implications - Think about how changes might affect system perf
+- ⚠️ Valid8 error handling - Check that errors are handled gracefully w/ meaningful msgs
+- Ensure consistency - Verify code follows establshd patterns & naming conventions
+
+Remember: Good code reviews catch bugs early & help maintain code quality over time
