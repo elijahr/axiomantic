@@ -52,11 +52,11 @@ STEP 2: Analyze project structure and update applyTo patterns:
 STEP 3: Update applyTo patterns in each instruction file:
 Replace the `applyTo: 'none'` line in each file with project-appropriate patterns:
 
-- `.github/instructions/base.instructions.md`: Always use `applyTo: '**/*'`
-- `.github/instructions/source.instructions.md`: Use found source AND test patterns (tests need coding standards)
-- `.github/instructions/test.instructions.md`: Use found test patterns only
-- `.github/instructions/docs.instructions.md`: Use found documentation patterns
-- `.github/instructions/config.instructions.md`: Use found configuration patterns
+- `.github/instructions/base.md`: Always use `applyTo: '**/*'`
+- `.github/instructions/source.md`: Use found source AND test patterns (tests need coding standards)
+- `.github/instructions/test.md`: Use found test patterns only
+- `.github/instructions/docs.md`: Use found documentation patterns
+- `.github/instructions/config.md`: Use found configuration patterns
 
 Example patterns based on findings:
 ```yaml
