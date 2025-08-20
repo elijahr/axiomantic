@@ -22,6 +22,7 @@ To integrate Axiomantic with your AI coding assistant, paste this prompt into yo
 Please integrate Axiomantic instructions into my project using this exact process:
 
 STEP 1: Download and extract Axiomantic instruction files:
+- cd to project root
 - Execute: `curl -L https://github.com/elijahr/axiomantic/archive/devel.zip -o axiomantic.zip`
 - Execute: `unzip -q axiomantic.zip`
 - Execute: `mkdir -p .github/instructions .github/chatmodes .github/prompts`
@@ -79,12 +80,14 @@ STEP 5: Integrate existing instructions based on user choice:
 
 STEP 6: Configure gitignore and cleanup:
 
+- cd to project root
 - Add `.github/instructions/user.instructions.md` to .gitignore if it exists (personal preferences shouldn't be committed)
 - Ensure `.github/instructions/project.instructions.md` is NOT in gitignore (should be committed for team)
 - Remove old monolithic file: `rm -f .github/copilot-instructions.md`
 
 STEP 7: Rename files with proper extensions (FINAL STEP):
 
+- cd to project root
 - Rename chatmode file: `mv ".github/chatmodes/Axiomantic Agent.md" ".github/chatmodes/Axiomantic Agent.chatmode.md"`
 - Rename instruction files: In `.github/instructions/`, rename `*.md` to `*.instructions.md` (e.g., `base.md` → `base.instructions.md`)
 - Rename prompt files: In `.github/prompts/`, rename `*.md` to `*.prompt.md` (e.g., `axitxt.md` → `axitxt.prompt.md`)
