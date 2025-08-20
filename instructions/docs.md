@@ -26,9 +26,9 @@ applyTo: "none"
 - Explain the "why" behind decisions
 - Use clear, concise language
 - Avoid obvious comments
-- _NEVER_ write comments about changes I ask you to make. Comment about the code as it exists, not the history of our session.
-- _NEVER_ write comments unless they will be useful to a developer reading the code for the first time.
-- _NEVER_ write "changelog" style comments (e.g., "added", "updated", "removed")
+- Don't write comments about changes I ask you to make. Comment about the code as it exists, not the history of our session.
+- Don't write comments unless they will be useful to a developer reading the code for the first time.
+- Don't write "changelog" style comments (e.g., "added", "updated", "removed")
 
 #### Communication and Clarity
 

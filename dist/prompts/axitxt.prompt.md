@@ -72,9 +72,8 @@ Replace common words/concepts with single emoji characters:
 - 🎯 for "goal", "target", "objective", "aim"
 - 📊 for "data", "analytics", "metrics", "statistics"
 - 🚀 for "deployment", "launch", "implementation", "release"
-- Other obvious emoji substitutions
 
-**🚫 CRITICAL EMOJI RULE**: Emoji must NEVER be decorative. Emoji are only valid as direct replacements for common words/concepts. Any decorative emoji that don't serve as word substitutions must be removed during compression.
+**🚫 CRITICAL EMOJI RULE**: Emoji must NEVER be decorative. Emoji are only valid as direct replacements for common words/concepts listed above. Any decorative emoji that don't serve as word substitutions must be removed during compression.
 
 ### 2. Common Abbreviations
 
@@ -90,7 +89,7 @@ Use standard abbreviations for frequent terms:
 - "API" instead of "Application Programming Interface"
 - "UI/UX" instead of "User Interface/User Experience"
 - "DB" for "database"
-- "conf" for "configuration"
+- "config" for "configuration"
 - "repo" for "repository"
 - "impl" for "implementation"
 - "spec" for "specification"
@@ -110,8 +109,6 @@ Use standard abbreviations for frequent terms:
 - "lib" for "library"
 - "dir" for "directory"
 - "proj" for "project"
-- "obvi" for "obvious"
-- "estab" for "established"
 
 ### 3. Sentence Structure Minimization
 
@@ -170,14 +167,9 @@ Use standard abbreviations for frequent terms:
 - "env" for "environment"
 - "dev" for "development"
 - "prod" for "production"
-- "tmp" for "temporary"
+- "temp" for "temporary"
 - "async" for "asynchronous"
 - "sync" for "synchronous"
-- "perf" for "performance" or "perfect"
-- "vuln" for "vulnerabilities"
-- "sec" for "security"
-- "sys" for "system"
-- and anything else obvious
 
 ### 10. Conditional and Logical Operators
 

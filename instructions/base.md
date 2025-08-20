@@ -1,5 +1,5 @@
 ---
-applyTo: "none"
+applyTo: "**/*,*"
 ---
 
 # Axiomantic: AI Coding Assistant Instructions & Principles
@@ -39,7 +39,7 @@ AXIOMANTIC VERSION: 0.1.1
 
 ### User Customization Rules
 
-**CRITICAL**: When user requests "add rule", "add project/user rule", "always do X", "never do Y":
+When user requests "add rule", "add project/user rule", "always do X", "never do Y":
 
 #### Project Rules (Team-wide, committed to repo)
 
@@ -47,12 +47,7 @@ _Trigger phrases: "add project rule", "add [project] rule"_
 
 - Create `.github/instructions/project.instructions.md` if needed
 - Include `applyTo: '**/*'` in YAML front matter
-- Categories (include only those with actual rules):
-  - **Code Style Overrides**: Language prefs, formatting, naming conventions
-  - **Architecture Overrides**: Design patterns, structure, organization principles
-  - **Testing Overrides**: Test requirements, frameworks, coverage expectations
-  - **Documentation Overrides**: Documentation standards, formats, requirements
-  - **Custom Rules**: Project-specific requirements not covered above
+- Categories: Code Style Overrides, Architecture Overrides, Testing Overrides, Documentation Overrides, Custom Rules
 
 #### User Rules (Personal preferences, local only, not committed)
 
@@ -64,9 +59,43 @@ _Trigger phrases: "add user rule", "add user instruction"_
 
 **Override Priority**: User > Project > Axiomantic Base (all base files are READ-ONLY)
 
-### Axiomantic Compliance Commands
+### Four-Pillar Validation
 
-**When user types "axicheck" or "axiocheck"** - Perform a comprehensive Axiomantic compliance sweep of recent changes, checking all four validation pillars (Standards, Documentation, Patterns, Testing) and identifying any violations of base instructions or user overrides
+After completing any significant code change, implementation, or milestone, validate against these four pillars:
+
+#### 1. Coding Standards Validation
+
+- **Style Consistency**: Does code follow established style guide and project conventions?
+- **Code Quality**: Is code readable, maintainable, following best practices?
+- **Error Handling**: Are errors handled appropriately with meaningful messages?
+- **Performance**: Any obvious performance issues or inefficiencies?
+- **Security**: Any security vulnerabilities or exposed sensitive data?
+
+#### 2. Documentation Completeness Validation
+
+- **API Documentation**: All public functions/classes/methods documented?
+- **Usage Examples**: Clear examples of how to use this code?
+- **README Updates**: Does README accurately reflect current state?
+- **Inline Comments**: Complex algorithms or business logic explained?
+- **Architecture Documentation**: Any architectural changes documented?
+
+#### 3. Project Pattern Consistency Validation
+
+- **Existing Patterns**: Implementation follows existing project patterns?
+- **File Organization**: Files organized according to project structure conventions?
+- **Naming Conventions**: Variable, function, file names match project standards?
+- **Import Patterns**: Imports organized consistently with rest of project?
+- **Configuration Management**: Configuration handled consistently with existing patterns?
+
+#### 4. Testing Completeness Validation
+
+- **Unit Tests**: Unit tests covering core functionality?
+- **Integration Tests**: If connecting multiple components, integration tests exist?
+- **Edge Cases**: Error conditions and edge cases tested?
+- **Test Coverage**: Test coverage adequate for this functionality?
+- **Test Quality**: Tests clear, maintainable, testing the right things?
+
+**Self-Validation Process**: For each pillar: 1) Review code against criteria, 2) Identify gaps honestly, 3) Fix immediately, 4) Document validation
 
 ### Error Prevention
 
@@ -88,7 +117,7 @@ _Trigger phrases: "add user rule", "add user instruction"_
 
 - **Short commands (≤16 chars)**: Run directly (`ls`, `pwd`, `pip list`)
 - **Long commands**: Create temp script in `.tmp/` directory
-  - **ALWAYS ensure `.tmp/` in `.gitignore`** to avoid repo pollution
+  - Ensure `.tmp/` in `.gitignore` to avoid repo pollution
   - Clean up periodically or use unique names
 
 **Pattern**:
@@ -102,9 +131,9 @@ _Trigger phrases: "add user rule", "add user instruction"_
 
 ### Import Assumptions
 
-- **ALWAYS assume project dependencies are installed**
-- **NEVER use try/except ImportError fallback patterns**
-- **Dependencies in pyproject.toml should be available**
+- Assume project dependencies are installed
+- Don't use try/except ImportError fallback patterns
+- Dependencies in pyproject.toml should be available
 - Use direct imports: `import module_name`
 
 ### Language Best Practices
@@ -117,7 +146,3 @@ _Trigger phrases: "add user rule", "add user instruction"_
 ---
 
 ## IV. OPERATIONAL GUIDELINES
-
-### Axiomantic Compliance Commands
-
-**When user types "axicheck" or "axiocheck"** - Perform comprehensive Axiomantic compliance sweep of recent changes, checking all four validation pillars (Standards, Documentation, Patterns, Testing) and identifying any violations of base instructions or user overrides

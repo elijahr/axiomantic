@@ -4,13 +4,6 @@ applyTo: "none"
 
 # Configuration & Build File Standards
 
-### Error Prevention
-
-- Fail fast with clear error messages
-- Validate inputs at boundaries
-- Use type hints and runtime validation
-- Prefer explicit over implicit behavior
-
 ### Configuration Management
 
 - Use environment-specific configuration files
