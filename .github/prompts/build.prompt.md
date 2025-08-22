@@ -22,7 +22,7 @@ mkdir -p dist/chatmodes dist/instructions dist/prompts
 
 ### Step 2: File Discovery and Analysis
 
-Before compression, systematically catalog source files:
+Before processing, systematically catalog source files:
 
 ```bash
 # List all files to be processed
@@ -32,12 +32,20 @@ find chatmodes instructions prompts -name "*.md" -type f
 Record file inventory for validation:
 
 - Total files found: [count]
-- Expected output files: [count]
+- Files to compress: [count] (excluding prompts/*.md)
+- Files to copy as-is: [count] (prompts/*.md)
 - File size baseline established
 
-### Step 3: Apply AxiTxt Compression to Distribution Files
+### Step 3: Process Distribution Files
 
-**CRITICAL**: Follow systematic compression process for each file:
+**File Processing Rules**:
+
+1. **Compression Target Files**: All markdown files in chatmodes/ and instructions/ directories
+2. **Copy-As-Is Files**: prompts/*.md (these are meta-tools that should remain uncompressed)
+
+**CRITICAL**: Follow systematic processing for each file:
+
+#### For Compression Target Files (chatmodes/*, instructions/*, other prompts/*):
 
 1. **Read Complete Source File** - Load entire file content
 2. **Parse File Structure**:
@@ -48,30 +56,39 @@ Record file inventory for validation:
 5. **Create Clean File**: Write as plain markdown (no code block wrapping)
 6. **Immediate Validation**: Verify structure before continuing
 
+#### For Copy-As-Is Files (prompts/*.md):
+
+1. **Read Complete Source File** - Load entire file content
+2. **Copy Directly**: Copy file exactly as-is to dist/prompts/ with no modifications
+3. **Immediate Validation**: Verify file copied correctly
+
 **⚠️ Quality Gates - STOP if any fail**:
 
 - File structure is clean markdown (not wrapped in code blocks)
 - No content duplication within file
-- YAML front matter exactly preserved
-- Compression applied consistently throughout body
+- YAML front matter exactly preserved (for compressed files)
+- Compression applied consistently throughout body (for compressed files)
+- Copy-as-is files are exact replicas of source
 - Output validates as proper markdown
 
-For each markdown file in the chatmodes/, instructions/, and prompts/ directories, apply this process - creating a new compressed file of the same name in dist/chatmodes/, dist/instructions/, or dist/prompts/ - leaving the original file untouched. The AxiTxt compression protocol is detailed in [`axitxt.md`](../../prompts/axitxt.md).
+For markdown files in the chatmodes/ and instructions/ directories, apply the compression process - creating a new compressed file of the same name in dist/chatmodes/ or dist/instructions/. For prompts/*.md, copy them exactly as-is to dist/prompts/. Leave all original non-dist files untouched. The AxiTxt compression protocol is detailed in [`axitxt.md`](../../prompts/axitxt.md).
 
 ### Step 4: Validation and Reporting
 
-After compression, provide build report:
+After processing, provide build report:
 
 ```
 === AXIOMANTIC BUILD COMPLETE ===
 
 Files Processed:
-• chatmodes/: [count] files
-• instructions/: [count] files
-• prompts/: [count] files
+• chatmodes/: [count] files (compressed)
+• instructions/: [count] files (compressed)
+• prompts/: [count] files ([x] compressed, [y] copied as-is)
 
-Compression Results:
-• Average compression: [percentage]%
+Processing Results:
+• Files compressed: [count]
+• Files copied as-is: 2 (prompts/*.md)
+• Average compression: [percentage]% (compressed files only)
 • Total files processed: [count]
 • Build status: ✅ SUCCESS
 
@@ -80,7 +97,7 @@ Distribution ready at: ./dist/
 
 ## Quality Assurance Requirements
 
-For every compressed file, ensure:
+For compressed files, ensure:
 
 - ✅ **YAML front matter unchanged** - Exact preservation of metadata
 - ✅ **Plain markdown format** - No code block wrapping (````instructions`, etc.)
@@ -92,15 +109,23 @@ For every compressed file, ensure:
 - ✅ **File structure preserved** - Same paths, filenames, and directory organization
 - ✅ **Systematic compression** - Rules applied consistently throughout entire document
 
+For copy-as-is files (prompts/*.md), ensure:
+
+- ✅ **Exact replica** - Byte-for-byte identical to source file
+- ✅ **No modifications** - No compression, editing, or alterations applied
+- ✅ **Correct location** - Placed in dist/prompts/ directory
+- ✅ **File integrity** - Original functionality fully preserved
+
 ## Error Prevention Protocol
 
-**Before starting compression, commit to**:
+**Before starting processing, commit to**:
 
 1. **No rushing** - Process each file completely before moving to next
-2. **Systematic compression** - Apply all compression rules thoroughly, re-reading file after each major change
-3. **Immediate validation** - Check each output file before continuing
-4. **Format discipline** - Never wrap in code blocks, maintain markdown structure
-5. **Self-criticism** - Question and validate each step
+2. **Systematic compression** - Apply all compression rules thoroughly for compression targets, re-reading file after each major change
+3. **Exact copying** - For copy-as-is files, ensure perfect replication
+4. **Immediate validation** - Check each output file before continuing
+5. **Format discipline** - Never wrap in code blocks, maintain markdown structure
+6. **Self-criticism** - Question and validate each step
 
 **If ANY file shows signs of**:
 
@@ -119,14 +144,14 @@ For every compressed file, ensure:
 
 ## Error Handling
 
-If compression fails for any file:
+If processing fails for any file:
 
 1. **Report the specific file** and error details
-2. **Identify root cause**: duplication, format corruption, rushing, etc.
+2. **Identify root cause**: duplication, format corruption, rushing, copy failure, etc.
 3. **Clean up corrupted output** - Remove broken files immediately
-4. **Re-approach systematically** - Follow single-pass protocol
+4. **Re-approach systematically** - Follow appropriate protocol (compression vs copy-as-is)
 5. **Continue processing other files** only after fix validated
-6. **Provide summary** of successful vs failed compressions
+6. **Provide summary** of successful vs failed processing
 7. **Suggest manual review** for any persistent issues
 
 **Common Failure Patterns to Watch For**:
@@ -142,10 +167,11 @@ If compression fails for any file:
 The `dist/` directory should contain:
 
 - **Same structure** as source directories (chatmodes/, instructions/, prompts/)
-- **All files compressed** using AxiTxt techniques
+- **Compressed files** using AxiTxt techniques (chatmodes/, instructions/, other prompts files)
+- **Unmodified files** copied as-is (prompts/*.md)
 - **Clean markdown format** - Plain .md files, not code blocks
 - **YAML front matter preserved** in all .md files
-- **Thoroughly compressed content** - No duplicated or mixed content
+- **Thoroughly compressed content** - No duplicated or mixed content (for compressed files)
 - **Validated structure** - Each file checked before considering complete
 - **Token-efficient distribution** ready for deployment
 
@@ -153,11 +179,17 @@ The `dist/` directory should contain:
 
 After completing build, verify each output file:
 
+### For Compressed Files:
 1. **Structure Check**: Plain markdown with preserved YAML front matter
 2. **Content Check**: Single, clean compressed version (no duplicates)
 3. **Format Check**: No code block wrapping or corruption
 4. **Semantic Check**: All meaning preserved and enhanced
 5. **Size Check**: 35-50% token reduction achieved
+
+### For Copy-As-Is Files (prompts/*.md):
+1. **Integrity Check**: File is byte-for-byte identical to source
+2. **Location Check**: File is in correct dist/prompts/ location
+3. **Functionality Check**: File maintains original purpose and structure
 
 **Only report SUCCESS after all files pass validation.**
 

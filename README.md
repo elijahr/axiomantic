@@ -102,6 +102,7 @@ STEP 7: Rename files with proper extensions (FINAL STEP):
 - Rename chatmode file: `mv ".github/chatmodes/Axiomantic Agent.md" ".github/chatmodes/Axiomantic Agent.chatmode.md"`
 - Rename instruction files: `cd .github/instructions && for file in *.md; do mv "$file" "${file%.md}.instructions.md"; done`
 - Rename prompt files: `cd ../../.github/prompts && for file in *.md; do mv "$file" "${file%.md}.prompt.md"; done`
+- Ensure unrenamed files such as `.github/chatmodes/Axiomantic Agent.md`, `.github/instructions/base.md`, etc are deleted if they were copied instead of moved.
 
 STEP 8: Confirm completion and instruct me to start a new chat window for changes to take effect, as AI assistants need to reload context to recognize the new instruction files. Output a message along the lines of the below, with any irrelevant sections removed:
 

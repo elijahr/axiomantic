@@ -45,7 +45,8 @@ When user requests "add rule", "add project/user rule", "always do X", "never do
 
 _Trigger phrases: "add project rule", "add [project] rule"_
 
-- Create `.github/instructions/project.instructions.md` if needed
+- In [`.github/instructions/project.instructions.md`](project.instructions.md)
+- Create file if needed
 - Include `applyTo: '**/*'` in YAML front matter
 - Categories: Code Style Overrides, Architecture Overrides, Testing Overrides, Documentation Overrides, Custom Rules
 
@@ -53,7 +54,8 @@ _Trigger phrases: "add project rule", "add [project] rule"_
 
 _Trigger phrases: "add user rule", "add user instruction"_
 
-- Create `.github/instructions/user.instructions.md` if needed
+- In [`.github/instructions/user.instructions.md`](user.instructions.md)
+- Create file if needed
 - Include `applyTo: '**/*'` in YAML front matter
 - Same categories as above, but personal preferences only
 
@@ -103,6 +105,17 @@ After completing any significant code change, implementation, or milestone, vali
 - Validate inputs at boundaries
 - Use type hints and runtime validation
 - Prefer explicit over implicit behavior
+
+### Development Methodology Overrides - CRITICAL ENFORCEMENT
+
+- **NO "THROW AT THE WALL AND SEE WHAT STICKS" approach**: Be careful, critical, and systematic. Do not create tons of garbage test scripts and implementation attempts. Clean up as you go. Keep the codebase very tidy as you move from attempt to attempt.
+- **HOLISTIC PROJECT AWARENESS**: Don't hyper-focus on fixing individual issues. Keep the entire project structure, architecture, and cleanliness in mind at each step.
+- **SYSTEMATIC PROBLEM SOLVING**: Always diagnose problems completely before attempting fixes. Understand root causes, not just symptoms.
+
+### Failure Handling Overrides - ZERO TOLERANCE
+
+- **NO FALLBACKS FOR ANYTHING**: Operations either succeed perfectly or fail explicitly - no middle ground, no "best effort", no degraded operation modes. This applies to ALL operations: imports, initialization, file loading, network operations, configuration, etc.
+- **EXPLICIT FAILURE**: When operations cannot be completed, fail immediately with clear error messages. No silent degradation or partial success states.
 
 ### Code Organization
 

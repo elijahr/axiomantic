@@ -94,7 +94,7 @@ After the high-level compression is complete, apply these rules to substitute wo
     - 🚀 for "deployment", "launch", "release"
 **9. Common Abbreviations**: Use standard abbreviations for frequent terms (e.g., "w/" for "with", "req" for "requirement"). See full list below.
 **10. Conditional and Logical Operators**: Use symbols for logical operators (e.g., `|` for "or", `&` for "and", `>` for "better than").
-**11. Punctuation and Formatting Reduction**: Use line breaks for transitions, minimize quotes, and use dashes for clauses.
+**11. Punctuation and Formatting Reduction**: Use line breaks for transitions, minimize quotes, and use dashes for clauses. Remove period if followed by a newline.
 **12. Time and Sequence Compression**: Use prefixes and short date formats (e.g., "pre-", "post-", "Q1").
 **13. Code and Command Optimization**: Use backticks, minimize comments, and use standard command shortcuts (e.g., `ls`, `cd`, `cp`).
 **14. Measurement and Quantity Shortcuts**: Use symbols and standard unit abbreviations (e.g., "%", "K", "M", "KB").

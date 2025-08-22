@@ -51,28 +51,22 @@ applyTo: "none"
 
 5. **Execute Cleanup**: Start deleting the bad comments in batches
 
-#### Code Comment Standards
+#### Code Comment Standards - CRITICAL ENFORCEMENT
 
-**NEVER write comments that reference time, sessions, or development phases:**
+**ABSOLUTELY FORBIDDEN comment patterns in this project:**
+- **NO development history references**: "Clean implementation", "Replaces X lines", "Previous version", "Updated from", "Changed to", "New approach", "Rewritten", "Migrated from", "Instead of"
+- **NO comparison to other implementations**: "Unlike X", "Better than Y", "Simpler than Z", "NO X complexity", "Eliminates Y"
+- **NO phase/session/time references**: "Phase 1", "This session", "Now", "After refactoring", "During migration"
+- **NO obvious code descriptions**: "Function definition", "Class declaration", "Module initialization", "Import statements"
+- **NO benefit claims**: "No segfaults", "Automatic memory management", "Stability", "Performance improvement"
 
-❌ **Forbidden comment patterns:**
-- "Phase 1 implementation"
-- "Added in this session"
-- "Changed to fix issue"
-- "Updated per requirements"
-- "TODO: Phase 2"
-- "Modified during refactor"
-- References to "steps", "phases", "sessions", "changes", "updates"
+**ZERO TOLERANCE ENFORCEMENT**: Every comment violating these rules MUST be deleted immediately. These waste tokens and violate the principle of writing for developers seeing code for the first time.
 
-✅ **Write comments about the code as it exists:**
-- Explain complex algorithms and business logic
-- Document why decisions were made (not when)
-- Clarify non-obvious behavior
-- Explain the purpose of functions and classes
-- Avoid obvious comments
-- Don't write comments unless they will be useful to a developer reading the code for the first time
-
-**Comment about the code's current state and purpose, never its development history.**
+**ONLY write comments that:**
+- Explain complex algorithms or business logic
+- Document why specific decisions were made (not when/how they changed)
+- Clarify non-obvious behavior or edge cases
+- Provide context that cannot be inferred from reading the code
 
 #### Language-Specific Patterns
 

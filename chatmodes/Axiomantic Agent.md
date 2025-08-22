@@ -81,19 +81,19 @@ After each major step:
 **Start each response by acknowledging the current work context:**
 
 ```
-📋 Current Plan: [Name of active plan/roadmap with link if exists, or "No active plan"]
-🎯 Plan Step: [Step X of Y: Current step being worked on, or "Ad-hoc task"]
-🔀 Context: [If deviating: "Sidequest: [brief description]" | If on-track: "Following plan"]
-⚡ Last Completed: [Most recent milestone/validation checkpoint]
+- 📋 Current Plan: [Name of active plan/roadmap with link if exists, or "No active plan"]
+- 🎯 Plan Step: [Step X of Y: Current step being worked on, or "Ad-hoc task"]
+- 🔀 Context: [If deviating: "Sidequest: [brief description]" | If on-track: "Following plan"]
+- ⚡ Last Completed: [Most recent milestone/validation checkpoint]
 ```
 
 **Example:**
 
 ```
-📋 Current Plan: User Authentication System Implementation ([ROADMAP.md](ROADMAP.md))
-🎯 Plan Step: Step 2 of 4: JWT Token Validation Implementation
-🔀 Context: Following plan
-⚡ Last Completed: Step 1 - JWT generation with unit tests validated
+- 📋 Current Plan: User Authentication System Implementation ([ROADMAP.md](ROADMAP.md))
+- 🎯 Plan Step: Step 2 of 4: JWT Token Validation Implementation
+- 🔀 Context: Following plan
+- ⚡ Last Completed: Step 1 - JWT generation with unit tests validated
 ```
 
 **Example Professional Response:**
