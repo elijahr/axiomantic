@@ -5,7 +5,7 @@
 set -euo pipefail
 
 # Detect if script is being piped from curl (check if script itself doesn't exist locally)
-if [[ ! -f "${BASH_SOURCE[0]}" ]] || [[ "${BASH_SOURCE[0]}" == "/dev/fd/"* ]]; then
+if [[ -z "${BASH_SOURCE:-}" ]] || [[ ! -f "${BASH_SOURCE[0]:-/dev/stdin}" ]] || [[ "${BASH_SOURCE[0]:-/dev/stdin}" == "/dev/fd/"* ]]; then
     # Script is being piped, need to download files first
     TEMP_DIR=$(mktemp -d)
     cd "$TEMP_DIR"
@@ -20,7 +20,7 @@ if [[ ! -f "${BASH_SOURCE[0]}" ]] || [[ "${BASH_SOURCE[0]}" == "/dev/fd/"* ]]; t
     IS_PIPED=true
 else
     # Script is being run directly
-    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
     # Check if we're running from repo root or dist directory
     if [[ -d "$SCRIPT_DIR/dist" ]]; then
         # Running from repo root
