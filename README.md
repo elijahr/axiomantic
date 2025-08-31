@@ -6,17 +6,27 @@ Axiomantic is a comprehensive development framework that enforces professional c
 
 ## 🚀 Quick Installation
 
-### One-Line Install (Recommended)
+### Linux/macOS (One-Line Install)
 ```bash
 curl -fsSL https://raw.githubusercontent.com/elijahr/axiomantic/devel/dist/install.sh | bash
 ```
 
+### Windows (PowerShell)
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elijahr/axiomantic/devel/dist/install.ps1" -UseBasicParsing | Invoke-Expression
+```
+
 ### Manual Installation
 ```bash
-# Clone and install from source
+# Linux/macOS
 git clone https://github.com/elijahr/axiomantic.git
 cd axiomantic
 ./install.sh /path/to/your/project
+
+# Windows
+git clone https://github.com/elijahr/axiomantic.git
+cd axiomantic
+.\install.ps1 C:\path\to\your\project
 ```
 
 ### What Gets Installed

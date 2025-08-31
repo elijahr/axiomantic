@@ -33,6 +33,7 @@ Please execute the following:
 
    # Copy install script
    cp install.sh dist/
+   cp install.ps1 dist/
 
    # Copy README
    cp README.md dist/
@@ -45,7 +46,7 @@ Please execute the following:
 4. **Verify the build:**
    ```bash
    # Verify main files and structure
-   ls -la dist/axiomantic/AGENT.md dist/install.sh
+   ls -la dist/axiomantic/AGENT.md dist/install.sh dist/install.ps1
    ls -la dist/axiomantic/shared/
    ls -la dist/axiomantic/commands/
    ```

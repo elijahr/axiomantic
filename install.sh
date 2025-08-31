@@ -11,10 +11,7 @@ if [[ -z "${BASH_SOURCE:-}" ]] || [[ ! -f "${BASH_SOURCE[0]:-/dev/stdin}" ]] || 
     cd "$TEMP_DIR"
 
     echo "Downloading Axiomantic..."
-    curl -fsSL "https://codeload.github.com/elijahr/axiomantic/zip/refs/heads/devel" -o axiomantic.zip
-    unzip -q axiomantic.zip "axiomantic-*/*" -d
-    mv "axiomantic-*/dist" .
-    rm -rf "axiomantic-*/" axiomantic.zip
+    curl -fsSL "https://codeload.github.com/elijahr/axiomantic/tar.gz/refs/heads/devel" | tar -xzf - --strip-components=1 axiomantic-devel/dist
 
     DIST_DIR="$TEMP_DIR/dist"
     IS_PIPED=true
@@ -42,25 +39,18 @@ if [[ ! -d "$DIST_DIR" ]]; then
 fi
 
 # Determine target directory
-if [[ -n "$1" ]]; then
+if [[ -n "${1:-}" ]]; then
     # Directory provided as argument
     TARGET_DIR="$1"
 elif [[ "$IS_PIPED" == "true" ]]; then
-    # Piped installation - prompt for directory
+    # Piped installation - default to current directory since stdin not available
     echo ""
     echo "Axiomantic Installation"
     echo "======================="
     echo ""
-    read -p "Install to current directory? [Y/n] " -r
-    if [[ $REPLY =~ ^[Nn]$ ]]; then
-        read -p "Enter installation directory: " TARGET_DIR
-        if [[ -z "$TARGET_DIR" ]]; then
-            echo "Error: No directory specified"
-            exit 1
-        fi
-    else
-        TARGET_DIR="."
-    fi
+    echo "Installing to current directory ($(pwd))"
+    echo "To install elsewhere, download the script and run: ./install.sh /path/to/directory"
+    TARGET_DIR="."
 else
     # Direct execution without argument - prompt for directory
     echo ""
