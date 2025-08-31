@@ -1,0 +1,1 @@
+../../axiomantic/commands/axicheck.md
