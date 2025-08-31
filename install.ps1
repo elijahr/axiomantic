@@ -34,6 +34,7 @@ Examples:
 $IsPiped = $false
 if ($MyInvocation.MyCommand.Path -eq $null) {
     $IsPiped = $true
+    $OriginalDir = Get-Location
     Write-Host "Downloading Axiomantic..." -ForegroundColor Green
     
     # Create temp directory
@@ -97,21 +98,14 @@ if (!(Test-Path $DistDir)) {
 if ($TargetDirectory) {
     $TargetDir = $TargetDirectory
 } elseif ($IsPiped) {
-    # Piped installation - prompt for directory
+    # Piped installation - default to original directory since stdin not available
     Write-Host ""
     Write-Host "Axiomantic Installation" -ForegroundColor Cyan
     Write-Host "======================="
     Write-Host ""
-    $Response = Read-Host "Install to current directory? [Y/n]"
-    if ($Response -match '^[Nn]$') {
-        $TargetDir = Read-Host "Enter installation directory"
-        if ([string]::IsNullOrWhiteSpace($TargetDir)) {
-            Write-Error "No directory specified"
-            exit 1
-        }
-    } else {
-        $TargetDir = Get-Location
-    }
+    Write-Host "Installing to directory where command was run ($OriginalDir)" -ForegroundColor Gray
+    Write-Host "To install elsewhere, download the script and run: .\install.ps1 C:\path\to\directory" -ForegroundColor Gray
+    $TargetDir = $OriginalDir
 } else {
     # Direct execution without argument - prompt for directory
     Write-Host ""

@@ -7,6 +7,7 @@ set -euo pipefail
 # Detect if script is being piped from curl (check if script itself doesn't exist locally)
 if [[ -z "${BASH_SOURCE:-}" ]] || [[ ! -f "${BASH_SOURCE[0]:-/dev/stdin}" ]] || [[ "${BASH_SOURCE[0]:-/dev/stdin}" == "/dev/fd/"* ]]; then
     # Script is being piped, need to download files first
+    ORIGINAL_DIR="$(pwd)"
     TEMP_DIR=$(mktemp -d)
     cd "$TEMP_DIR"
 
@@ -43,14 +44,14 @@ if [[ -n "${1:-}" ]]; then
     # Directory provided as argument
     TARGET_DIR="$1"
 elif [[ "$IS_PIPED" == "true" ]]; then
-    # Piped installation - default to current directory since stdin not available
+    # Piped installation - default to original directory since stdin not available
     echo ""
     echo "Axiomantic Installation"
     echo "======================="
     echo ""
-    echo "Installing to current directory ($(pwd))"
+    echo "Installing to directory where command was run ($ORIGINAL_DIR)"
     echo "To install elsewhere, download the script and run: ./install.sh /path/to/directory"
-    TARGET_DIR="."
+    TARGET_DIR="$ORIGINAL_DIR"
 else
     # Direct execution without argument - prompt for directory
     echo ""
