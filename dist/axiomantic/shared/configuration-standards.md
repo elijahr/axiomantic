@@ -1,21 +1,21 @@
 
-This document uses axitxt compression: standard abbreviations, txtspeak shortcuts, emoji symbols for concepts, and omitted articles/pronouns where context is clear.
+# ⚙️ Config & Build File Standards
 
-# ⚙️ & Build 📁 Stds
+This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 
 ### Config Mgmt
 
-- Use env-specific config 📁
+- Use env-specific config files
 - Valid8 config on startup
 - Doc all config options
-- Use 🔒 defaults
+- Use secure defaults
 - Never commit secrets or sensitive data
 - Use config schemas when available
 
-### Build & Deployment Stds
+### 🚀 Build & Deployment Standards
 
-- Automate build 🔄
+- Automate build processes
 - Use reproducible builds
 - Doc build req & steps
-- 🧪 builds in clean env
-- Ver config 📁 appropriately
+- Test builds in clean env
+- Version config files appropr8ly

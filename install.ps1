@@ -15,7 +15,7 @@ Axiomantic Installation Script for Windows
 
 Usage:
     .\install.ps1 [TargetDirectory]
-    
+
     OR pipe from web:
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elijahr/axiomantic/devel/dist/install.ps1" -UseBasicParsing | Invoke-Expression
 
@@ -36,23 +36,23 @@ if ($MyInvocation.MyCommand.Path -eq $null) {
     $IsPiped = $true
     $OriginalDir = Get-Location
     Write-Host "Downloading Axiomantic..." -ForegroundColor Green
-    
+
     # Create temp directory
     $TempDir = [System.IO.Path]::GetTempPath() + [System.Guid]::NewGuid().ToString()
     New-Item -ItemType Directory -Path $TempDir -Force | Out-Null
     Set-Location $TempDir
-    
+
     try {
         # Download and extract archive
         $ArchiveUrl = "https://codeload.github.com/elijahr/axiomantic/zip/refs/heads/devel"
         $ZipPath = Join-Path $TempDir "axiomantic.zip"
-        
+
         # Use Invoke-WebRequest for download
         Invoke-WebRequest -Uri $ArchiveUrl -OutFile $ZipPath -UseBasicParsing
-        
+
         # Extract using built-in Expand-Archive (available in PS 5.0+)
         Expand-Archive -Path $ZipPath -DestinationPath $TempDir -Force
-        
+
         # Move dist directory to expected location
         $ExtractedDir = Get-ChildItem -Path $TempDir -Directory | Where-Object { $_.Name.StartsWith("axiomantic-") } | Select-Object -First 1
         if ($ExtractedDir) {
@@ -63,10 +63,10 @@ if ($MyInvocation.MyCommand.Path -eq $null) {
         } else {
             throw "Could not find extracted axiomantic directory"
         }
-        
+
         Remove-Item -Path $ZipPath -Force
         $DistDir = $DistPath
-        
+
     } catch {
         Write-Error "Failed to download Axiomantic: $($_.Exception.Message)"
         exit 1
@@ -74,7 +74,7 @@ if ($MyInvocation.MyCommand.Path -eq $null) {
 } else {
     # Script is being run directly
     $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-    
+
     # Check if we're running from repo root or dist directory
     if (Test-Path (Join-Path $ScriptDir "dist")) {
         # Running from repo root
@@ -225,7 +225,7 @@ Get-ChildItem -Path $CommandsTargetPath -File | ForEach-Object {
     $CommandName = $_.Name
     $TargetPath = Join-Path $ClaudeCommandsDir $CommandName
     $RelativePath = "..\..\axiomantic\commands\$CommandName"
-    
+
     if (Test-Path $TargetPath) {
         if ((Get-Item $TargetPath).Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
             Remove-Item $TargetPath -Force
@@ -235,7 +235,7 @@ Get-ChildItem -Path $CommandsTargetPath -File | ForEach-Object {
             Write-Host "⚠️  Existing .claude/commands/$CommandName found, renamed to $CommandName.bak" -ForegroundColor Yellow
         }
     }
-    
+
     try {
         cmd /c mklink "$TargetPath" "$RelativePath" 2>$null
         Write-Host "✓ Created claude symlink for $CommandName" -ForegroundColor Green
@@ -253,7 +253,7 @@ Get-ChildItem -Path $CommandsTargetPath -File | ForEach-Object {
     $CommandName = $_.Name
     $TargetPath = Join-Path $OpenCodeCommandsDir $CommandName
     $RelativePath = "..\..\axiomantic\commands\$CommandName"
-    
+
     if (Test-Path $TargetPath) {
         if ((Get-Item $TargetPath).Attributes -band [System.IO.FileAttributes]::ReparsePoint) {
             Remove-Item $TargetPath -Force
@@ -263,7 +263,7 @@ Get-ChildItem -Path $CommandsTargetPath -File | ForEach-Object {
             Write-Host "⚠️  Existing .opencode/command/$CommandName found, renamed to $CommandName.bak" -ForegroundColor Yellow
         }
     }
-    
+
     try {
         cmd /c mklink "$TargetPath" "$RelativePath" 2>$null
         Write-Host "✓ Created opencode symlink for $CommandName" -ForegroundColor Green
@@ -286,7 +286,7 @@ Write-Host "Files installed:" -ForegroundColor White
 Write-Host "  • AGENT.md - Base instruction file" -ForegroundColor Gray
 Write-Host "  • CLAUDE.md -> AGENT.md (symlink for Claude Code)" -ForegroundColor Gray
 Write-Host "  • AGENTS.md -> AGENT.md (symlink for OpenCode)" -ForegroundColor Gray
-Write-Host "  • .axiomantic/commands/ - slash commands (/axicheck, /optimize, /create-feature, /axitxt)" -ForegroundColor Gray
+Write-Host "  • .axiomantic/commands/ - slash commands (/axi-validate, /axi-plan, /axi-feature, /axi-test, /axi-compress, /axi-rules, /axi-implement)" -ForegroundColor Gray
 Write-Host "  • .axiomantic/shared/ - Modular instruction library with conditional loading" -ForegroundColor Gray
 Write-Host "  • .claude/commands/ - Claude Code slash commands (symlinks to .axiomantic/commands/*)" -ForegroundColor Gray
 Write-Host "  • .opencode/command/ - opencode slash commands (symlinks to .axiomantic/commands/*)" -ForegroundColor Gray

@@ -1,6 +1,7 @@
-# AxiTxt Compression Ruleset v0.1
+This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
+# /axi-compress - Token-Efficient Text Compression
 
-Reduce tokens using the below "axitxt" compression guidelines: **$ARGUMENTS**
+Apply advanced axitxt compression for maximum token efficiency while preserving semantic meaning to: **$ARGUMENTS**
 
 ## Core Philosophy
 
@@ -8,11 +9,11 @@ Compress English text for LLM consumption while maintaining semantic clarity. Ta
 
 🚨 **COMPRESSION ONLY - NO ADDITIONS**: Only remove or replace text. Never add new words, emojis, or content not present in the original.
 
-Modify the file in-place and ensure the compression algorithm is fully adhered to.
+Modify the file in-place & ensure the compression algorithm is fully adhered to.
 
 ## Preface for LLM Documents
 
-"This document uses axitxt compression: standard abbreviations, txtspeak shortcuts, emoji symbols for concepts, and omitted articles/pronouns where context is clear."
+"This document uses axitxt compression: standard abbreviations, txtspeak shortcuts, emoji symbols for concepts, & omitted articles/pronouns where context is clear."
 
 ## Compression Rules (Apply in Order)
 
@@ -25,7 +26,7 @@ Modify the file in-place and ensure the compression algorithm is fully adhered t
 
 **Examples:**
 
-- "the implementation of the feature" → "implementation feature"
+- "the impl of the feature" → "impl feature"
 - "this code is readable" → "code readable"
 - "When you complete it, check the results" → "When complete, check results"
 - "The function returns its value" → "Function returns value"
@@ -78,29 +79,29 @@ Modify the file in-place and ensure the compression algorithm is fully adhered t
 
 **Technical Terms:**
 
-- implementation → impl
-- documentation → docs
-- configuration → config
-- validation → valid8n
-- performance → perf
+- impl → impl
+- docs → docs
+- config → config
+- valid8n → valid8n
+- perf → perf
 - security → sec
 - project → proj
 - technical → tech
 - instructions → instr
 - guidelines → guidel
-- requirements → req
-- architecture → arch
-- development → dev
+- req → req
+- arch → arch
+- dev → dev
 - function → func
 - variable → var
 - message → msg
 - information → info
 - significant → signif
 - appropriate → appropr8
-- environment → env
+- env → env
 - language → lang
 - programming → prog
-- application → app
+- app → app
 - system → sys
 - service → svc
 - database → db
@@ -161,10 +162,10 @@ Modify the file in-place and ensure the compression algorithm is fully adhered t
 
 **Common Words:**
 
-- with → w/
+- w/ → w/
 - without → w/o
 - within → w/in
-- and → &
+- & → &
 - you → u (sparingly)
 - your → ur (sparingly)
 - because → bc
@@ -190,7 +191,7 @@ Only when context makes meaning clear:
 - establish → establsh
 - potential → potenti
 - definitely → definit
-- management → mgmt
+- mgmt → mgmt
 - consistent → consistnt
 - between → btwn
 
@@ -198,7 +199,7 @@ Only when context makes meaning clear:
 
 - to/too → 2 (context dependent)
 - for → 4 (context dependent)
-- ate/eight → 8 (validation → valid8n)
+- ate/eight → 8 (valid8n → valid8n)
 
 ### 6. Punctuation Simplification
 
@@ -257,7 +258,7 @@ Only when context makes meaning clear:
 
 - Universal tech terms: OK to compress aggressively (dev, impl, config)
 - Domain-specific terms: Moderate compression (valid8n, perf)
-- Ambiguous terms: Light compression only (mgmt → management)
+- Ambiguous terms: Light compression only (mgmt → mgmt)
 
 ### 10. Emoji Efficiency Rules
 
@@ -290,39 +291,39 @@ Only when context makes meaning clear:
 
 **Never apply multiple compression rules to same word:**
 
-- "implementation" → "impl" (stop here, don't vowel-reduce)
-- "validation" → "valid8n" (stop here, don't abbreviate further)
+- "impl" → "impl" (stop here, don't vowel-reduce)
+- "valid8n" → "valid8n" (stop here, don't abbreviate further)
 - Choose the MOST effective single compression per word
 
-### 12. Sentence Structure Preservation
+### 13. Sentence Structure Preservation
 
 - Maintain at least one grammatical anchor per sentence (subject or main verb)
 - Keep verb tenses clear through context or minimal words
 - Preserve logical connectors (but, however, therefore → but, however, therefore)
 - Don't compress sentence boundaries (periods in lists, etc.)
 
-### 13. Domain-Specific Vocabulary Rules
+### 14. Domain-Specific Vocabulary Rules
 
 - Create domain glossaries for specialized fields
 - Use industry-standard abbreviations when they exist
 - When in doubt, use the abbreviation the target audience would recognize
 - For mixed audiences, favor clarity over compression
 
-### 14. Long Document Scalability
+### 15. Long Document Scalability
 
 **For documents >500 words:**
 
-- Establish abbreviation consistency - make abbreviation choices early and stick to them
+- Establish abbreviation consistency - make abbreviation choices early & stick to them
 - Consider a mini-glossary at the top for unusual abbreviations
 - Use section headers as context anchors
 - Repeat full terms occasionally to maintain context
 
-### 15. Error Recovery Mechanisms
+### 16. Error Recovery Mechanisms
 
 - Provide redundant context cues where critical
 - Use parallel structure to reinforce meaning
 - Include full terms alongside abbreviations in critical sections
-- Test comprehension with sample passages
+- Test comprehension w/ sample passages
 
 ## Advanced Quality Assurance
 
@@ -338,7 +339,7 @@ Only when context makes meaning clear:
 1. **Read aloud test** - does it sound natural when spoken?
 2. **Cold read test** - can someone unfamiliar understand it?
 3. **Context isolation test** - do abbreviated sections make sense alone?
-4. **LLM interpretation test** - feed to different AI and check understanding
+4. **LLM interpretation test** - feed to different AI & check understanding
 
 ### Compression Strategy Selection
 
@@ -355,6 +356,33 @@ Only when context makes meaning clear:
 - Numbers & dates
 - Critical distinctions (e.g., "never" vs "always")
 
+## Context-Aware Compression
+
+### Semantic Preservation
+
+The compression process must maintain:
+- **Logical relationships** between concepts
+- **Causal chains** (if A then B relationships)
+- **Technical precision** for domain-specific terms
+- **Instructional clarity** for procedural content
+
+### Audience Adaptation
+
+**For Technical Audiences:**
+- Use aggressive technical abbreviation
+- Assume domain knowledge for context
+- Prioritize precision over accessibility
+
+**For Mixed Audiences:**
+- Balance compression w/ clarity
+- Include occasional full terms for context
+- Use universal abbreviations primarily
+
+**For Documentation:**
+- Maintain structural clarity
+- Preserve instructional sequences
+- Keep examples & code unmodified
+
 ## Quality Checks
 
 After compression, verify:
@@ -367,7 +395,15 @@ After compression, verify:
 
 ## Testing Protocol
 
-1. Compress section
-2. Estimate token savings
-3. Review for clarity
-4. Test with different complexity levels
+1. Compress section by section
+2. Estimate token savings for each section
+3. Review for clarity & comprehension
+4. Test w/ different complexity levels
+5. Validate semantic preservation
+
+**Success Criteria:**
+- ✅ 35-50% token reduction achieved
+- ✅ Semantic meaning fully preserved
+- ✅ Context remains clear for intended audience
+- ✅ No critical information lost
+- ✅ Technical precision maintained

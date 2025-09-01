@@ -1,42 +1,33 @@
 
-This document uses axitxt compression: standard abbreviations, txtspeak shortcuts, emoji symbols for concepts, and omitted articles/pronouns where context is clear.
+# 🧪 Testing Standards
 
-# 🧪 Stds
+This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 
 #### Testing Approach
-
-- ✍️ 🧪 that verify behavior, not impl
-- Use appropr8 testing fwk
+- Write tests that verify behavior, not impl
+- Use appropr8 testing fwks
 - Follow testing pyramid (unit, integration, e2e)
-- Maintain good 🧪 coverage
+- Maintain good test coverage
 
-#### Test Quality
-
-- ✍️ clear, readable 🧪
-- Use descriptive 🧪 names
-- 🧪 edge cases & err conditions
-- Keep 🧪 independent & isolated
+#### 🔍 Test Quality
+- Write clear, readable tests
+- Use descriptive test names
+- Test edge cases & err conditions
+- Keep tests independent & isolated
 
 #### Test-Driven Dev
+- Write tests b4 implementing features
+- Use tests 2 guide design decisions
+- Refactor w/ confidence when tests in place
+- Update tests when req change
 
-- ✍️ 🧪 b4 implementing features
-- Use 🧪 2 guide design decisions
-- Refactor w/ confidence when 🧪 r in place
-- Update 🧪 when req change
-
-#### Valid8n & Verification
-
+#### ✅ Valid8n & Verification
 - Valid8 inputs & outputs
-- 🧪 err handling paths
-- Verify ⚡ req
-- Check 🔒 & accessibility
+- Test err handling paths
+- Verify perf req
+- Check 🔒 sec & accessibility
 
-### 🚨 Test Quality Stds
-
-#### Never Skip 🧪 - Always 🔧 Root Cause
-
-🔧 env/dependencies/code - don't use pytest.skip(), @pytest.mark.skip/xfail().
-
-**Systematic Approach**: 1) Discovery/Assessment, 2) Infrastructure/Env, 3) Core Impl, 4) Integration, 5) 📁 Organization, 6) Fwk Issues, 7) Quality/Completeness, 8) Final Valid8n
-
-**Success Criteria**: pytest -v showing 100% pass rate, 0 skips/xfails/errs. 🧪 pass individually, meaningful assertions, edge case coverage.
+#### 🚨 Zero Tolerance Policy
+- Fix env/dependencies/code - never use pytest.skip(), @pytest.mark.skip/xfail()
+- Always fix root cause, not symptoms
+- 🎯 Target: 100% pass rate w/ meaningful assertions

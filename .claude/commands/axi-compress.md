@@ -1,0 +1,1 @@
+../../axiomantic/commands/axi-compress.md

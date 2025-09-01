@@ -33,19 +33,21 @@ Please execute the following:
 
    # Copy install script
    cp install.sh dist/
+   cp install.ps1 dist/
 
    # Copy README
    cp README.md dist/
    cp LICENSE dist/
+   cp CHANGELOG dist/
    ```
 
-3. **Recursively run axitxt compression on markdown files in dist/ EXCEPT for dist/commands/axitxt.md, LICENSE, and README.md:**
+3. **Recursively run axitxt compression on markdown files in dist/ EXCEPT for dist/commands/axitxt.md, LICENSE, and, CHANGELOG.md & README.md:**
    See axiomantic/commands/axitxt.md for axitxt compression instructions.
 
 4. **Verify the build:**
    ```bash
    # Verify main files and structure
-   ls -la dist/axiomantic/AGENT.md dist/install.sh
+   ls -la dist/axiomantic/AGENT.md dist/install.sh dist/install.ps1
    ls -la dist/axiomantic/shared/
    ls -la dist/axiomantic/commands/
    ```
@@ -57,24 +59,22 @@ Please execute the following:
    ./install.sh <path/to/tmp/dir>
    # Verify installed files
    cd <path/to/tmp/dir>
-   test -f .axiomantic/shared/configuration-standards.md
-   test -f .axiomantic/shared/documentation-standards.md
-   test -f .axiomantic/shared/source-standards.md
-   test -f .axiomantic/shared/test-guidelines.md
-   test -f .axiomantic/commands/axicheck.md
-   test -f .axiomantic/commands/axitxt.md
-   test -f .axiomantic/commands/create-feature.md
-   test -f .axiomantic/commands/optimize.md
-   test -L .claude/commands/axicheck.md
-   test -L .claude/commands/axitxt.md
-   test -L .claude/commands/create-feature.md
-   test -L .claude/commands/optimize.md
-   test -L .opencode/command/axicheck.md
-   test -L .opencode/command/axitxt.md
-   test -L .opencode/command/create-feature.md
-   test -L .opencode/command/optimize.md
+   test -f .axiomantic/shared/<expected-file1>.md
+   test -f .axiomantic/shared/<expected-file2>.md
+   test -f .axiomantic/commands/<expected-file3>.md
+   test -f .axiomantic/commands/<expected-file4>.md
+
+   test -f .opencode/command/<expected-file5>.md
+   test -f .opencode/command/<expected-file6>.md
+   test -f .claude/commands/<expected-file7>.md
+   test -f .claude/commands/<expected-file8>.md
+
+   test -L AGENT.md
    test -L AGENTS.md
    test -L CLAUDE.md
+   test -L README.md
+   test -L CHANGELOG.md
+   test -L LICENSE
    ```
 
 The resulting `dist/` directory should contain everything needed to distribute Axiomantic, with compressed instruction and command files to minimize size while preserving all functionality.

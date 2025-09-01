@@ -1,6 +1,6 @@
-# AxiTxt Compression Ruleset v0.1
+# /axi-compress - Token-Efficient Text Compression
 
-Reduce tokens using the below "axitxt" compression guidelines: **$ARGUMENTS**
+Apply advanced axitxt compression for maximum token efficiency while preserving semantic meaning to: **$ARGUMENTS**
 
 ## Core Philosophy
 
@@ -294,21 +294,21 @@ Only when context makes meaning clear:
 - "validation" → "valid8n" (stop here, don't abbreviate further)
 - Choose the MOST effective single compression per word
 
-### 12. Sentence Structure Preservation
+### 13. Sentence Structure Preservation
 
 - Maintain at least one grammatical anchor per sentence (subject or main verb)
 - Keep verb tenses clear through context or minimal words
 - Preserve logical connectors (but, however, therefore → but, however, therefore)
 - Don't compress sentence boundaries (periods in lists, etc.)
 
-### 13. Domain-Specific Vocabulary Rules
+### 14. Domain-Specific Vocabulary Rules
 
 - Create domain glossaries for specialized fields
 - Use industry-standard abbreviations when they exist
 - When in doubt, use the abbreviation the target audience would recognize
 - For mixed audiences, favor clarity over compression
 
-### 14. Long Document Scalability
+### 15. Long Document Scalability
 
 **For documents >500 words:**
 
@@ -317,7 +317,7 @@ Only when context makes meaning clear:
 - Use section headers as context anchors
 - Repeat full terms occasionally to maintain context
 
-### 15. Error Recovery Mechanisms
+### 16. Error Recovery Mechanisms
 
 - Provide redundant context cues where critical
 - Use parallel structure to reinforce meaning
@@ -355,6 +355,33 @@ Only when context makes meaning clear:
 - Numbers & dates
 - Critical distinctions (e.g., "never" vs "always")
 
+## Context-Aware Compression
+
+### Semantic Preservation
+
+The compression process must maintain:
+- **Logical relationships** between concepts
+- **Causal chains** (if A then B relationships)
+- **Technical precision** for domain-specific terms
+- **Instructional clarity** for procedural content
+
+### Audience Adaptation
+
+**For Technical Audiences:**
+- Use aggressive technical abbreviation
+- Assume domain knowledge for context
+- Prioritize precision over accessibility
+
+**For Mixed Audiences:**
+- Balance compression with clarity
+- Include occasional full terms for context
+- Use universal abbreviations primarily
+
+**For Documentation:**
+- Maintain structural clarity
+- Preserve instructional sequences
+- Keep examples and code unmodified
+
 ## Quality Checks
 
 After compression, verify:
@@ -367,7 +394,15 @@ After compression, verify:
 
 ## Testing Protocol
 
-1. Compress section
-2. Estimate token savings
-3. Review for clarity
+1. Compress section by section
+2. Estimate token savings for each section
+3. Review for clarity and comprehension
 4. Test with different complexity levels
+5. Validate semantic preservation
+
+**Success Criteria:**
+- ✅ 35-50% token reduction achieved
+- ✅ Semantic meaning fully preserved
+- ✅ Context remains clear for intended audience
+- ✅ No critical information lost
+- ✅ Technical precision maintained
