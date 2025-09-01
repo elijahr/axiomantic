@@ -212,11 +212,6 @@ $CommandsTargetPath = Join-Path $AxiomanticTargetDir "commands"
 Copy-Item $CommandsSourcePath $CommandsTargetPath -Recurse -Force
 Write-Host "✓ Installed Axiomantic commands to .axiomantic/commands/" -ForegroundColor Green
 
-$SharedSourcePath = Join-Path $DistDir "axiomantic\shared"
-$SharedTargetPath = Join-Path $AxiomanticTargetDir "shared"
-Copy-Item $SharedSourcePath $SharedTargetPath -Recurse -Force
-Write-Host "✓ Installed Axiomantic shared modules to .axiomantic/shared/" -ForegroundColor Green
-
 # Create .claude/commands directory and symlinks
 $ClaudeCommandsDir = Join-Path $TargetDir ".claude\commands"
 New-Item -ItemType Directory -Path $ClaudeCommandsDir -Force | Out-Null
@@ -287,7 +282,6 @@ Write-Host "  • AGENT.md - Base instruction file" -ForegroundColor Gray
 Write-Host "  • CLAUDE.md -> AGENT.md (symlink for Claude Code)" -ForegroundColor Gray
 Write-Host "  • AGENTS.md -> AGENT.md (symlink for OpenCode)" -ForegroundColor Gray
 Write-Host "  • .axiomantic/commands/ - slash commands (/axi-validate, /axi-plan, /axi-feature, /axi-test, /axi-compress, /axi-rules, /axi-implement)" -ForegroundColor Gray
-Write-Host "  • .axiomantic/shared/ - Modular instruction library with conditional loading" -ForegroundColor Gray
 Write-Host "  • .claude/commands/ - Claude Code slash commands (symlinks to .axiomantic/commands/*)" -ForegroundColor Gray
 Write-Host "  • .opencode/command/ - opencode slash commands (symlinks to .axiomantic/commands/*)" -ForegroundColor Gray
 Write-Host ""

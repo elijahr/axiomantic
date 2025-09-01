@@ -2,86 +2,65 @@
 
 Manage flexible customization system with user rules, project rules, and rule precedence for: **$ARGUMENTS**
 
-## Dynamic Rule Management System
+> **💡 Best Results**: Use rule hierarchy (User > Project > Base) to customize Axiomantic behavior while maintaining team consistency.
 
-### Rule Hierarchy & Precedence
+## 🚨 CRITICAL RULE PRINCIPLES
 
-**Rule Precedence Order (highest to lowest):**
-1. **User Rules** - Personal preferences stored locally (not committed)
-2. **Project Rules** - Team-wide rules committed to repository
-3. **Base Rules** - Default Axiomantic framework rules
+**Rule Precedence**: User Rules override Project Rules override Base Rules - higher precedence always wins.
 
-**Conflict Resolution:**
-- Higher precedence rules override lower precedence rules
-- Within same precedence level, most specific rule wins
-- Explicit rules override implicit defaults
-- Later rules in same file override earlier rules
+**Conflict Resolution**: Most specific rule wins within same precedence level; explicit rules override implicit defaults.
 
-### Rule Types & Categories
+**Team Consistency**: Project rules ensure team alignment while user rules support individual productivity preferences.
 
-#### 1. User Rules (.axiomantic/user-rules.md)
+## Rule Hierarchy & Types
+
+### Rule Precedence Order (Highest → Lowest)
+1. **User Rules** (`.axiomantic/user-rules.md`) - Personal preferences, never committed
+2. **Project Rules** (`.axiomantic/project-rules.md`) - Team standards, committed to repo
+3. **Base Rules** - Default Axiomantic framework standards
+
+### User Rules (.axiomantic/user-rules.md)
 **Personal preferences stored locally, never committed:**
-
-```markdown
-# User Rules (Local Only - Not Committed)
-
-## Personal Preferences
-- Code style overrides for personal workflow
+- Code style overrides for individual workflow
 - IDE-specific configurations
-- Local development environment settings
-- Personal shortcuts and aliases
+- Personal shortcuts and test runners
 - Individual productivity customizations
 
-## Override Examples
+**Example:**
+```markdown
+# User Rules (Local Only)
 - comment-style: minimal  # Override project verbose comments
 - test-runner: pytest-xvs  # Personal test execution preference
-- git-commit: conventional  # Personal commit message format
+- git-commit: conventional  # Personal commit format
 ```
 
-#### 2. Project Rules (.axiomantic/project-rules.md)
-**Team-wide rules committed to repository:**
-
-```markdown
-# Project Rules (Team-Wide - Committed)
-
-## Project Standards
+### Project Rules (.axiomantic/project-rules.md)
+**Team-wide standards committed to repository:**
 - Language-specific style guides
 - Framework-specific patterns
-- Performance requirements
-- Security standards
-- Documentation requirements
+- Performance and security requirements
+- Team conventions and architecture constraints
 
-## Team Conventions
-- Naming conventions specific to this project
-- Architecture patterns and constraints
-- Testing strategies and coverage requirements
-- Deployment and CI/CD standards
+**Example:**
+```markdown
+# Project Rules (Team-Wide)
+- naming-convention: snake_case  # All functions use snake_case
+- test-coverage: 95%  # Minimum coverage requirement
+- api-doc-required: true  # All public APIs need docs
 ```
 
-#### 3. Base Rules (Built-in Framework)
-**Default Axiomantic standards from shared/*.md files:**
-- Four-Pillar Validation standards
-- Core coding standards
-- Documentation principles
-- Testing guidelines
+## Rule Management Commands
 
-### Rule Management Commands
-
-#### View Current Rules
+### View Active Rules
 ```
 /axi-rules view [category]
 ```
 
-**Categories:**
-- `all` - Show all active rules with precedence indicators
-- `user` - Show only user-specific rules
-- `project` - Show only project-specific rules
-- `base` - Show only base Axiomantic rules
-- `conflicts` - Show rules that are overridden by higher precedence
+**Categories**: `all`, `user`, `project`, `base`, `conflicts`
 
-**Output Format:**
+**Output Example:**
 ```
-📋 Active Rules for [category]:
+📋 Active Rules:
 
 🔴 USER OVERRIDE: comment-style = minimal
    (overrides PROJECT: comment-style = detailed)
@@ -93,46 +72,33 @@ Manage flexible customization system with user rules, project rules, and rule pr
    (active - no overrides)
 ```
 
-#### Add New Rule
+### Add New Rule
 ```
 /axi-rules add [scope] [rule-name] [rule-value] [description]
 ```
 
 **Examples:**
 ```
-/axi-rules add user comment-style minimal "Prefer minimal comments for personal workflow"
-/axi-rules add project test-timeout 30s "All tests must complete within 30 seconds"
-/axi-rules add project naming-convention snake_case "Use snake_case for all function names"
+/axi-rules add user comment-style minimal "Prefer minimal comments"
+/axi-rules add project test-timeout 30s "All tests must complete in 30s"
 ```
 
-#### Modify Existing Rule
+### Modify Existing Rule
 ```
 /axi-rules modify [scope] [rule-name] [new-value] [reason]
 ```
 
-**Examples:**
-```
-/axi-rules modify user test-runner pytest-verbose "Need more detailed test output"
-/axi-rules modify project test-coverage 98% "Increasing quality standards"
-```
-
-#### Remove Rule
+### Remove Rule
 ```
 /axi-rules remove [scope] [rule-name] [reason]
 ```
 
-**Examples:**
-```
-/axi-rules remove user comment-style "Reverting to project standards"
-/axi-rules remove project custom-linter "Linter no longer maintained"
-```
-
-#### Rule Conflict Analysis
+### Analyze Conflicts
 ```
 /axi-rules conflicts
 ```
 
-Shows all rule conflicts and their resolution:
+Shows all rule conflicts and resolution:
 ```
 🔍 Rule Conflict Analysis:
 
@@ -140,98 +106,40 @@ CONFLICT: comment-style
 ├── USER: minimal (ACTIVE - highest precedence)
 ├── PROJECT: detailed (OVERRIDDEN)
 └── BASE: contextual (OVERRIDDEN)
-
-CONFLICT: test-coverage
-├── PROJECT: 95% (ACTIVE - overrides base)
-└── BASE: 90% (OVERRIDDEN)
-
-NO CONFLICTS: 47 rules
 ```
 
-### Rule Definition Standards
+## Rule Categories & Standards
 
-#### Rule Structure
-```markdown
-## Rule Category
-
-### [rule-name]
-**Value**: [rule-value]
-**Scope**: [user|project|base]
-**Priority**: [high|medium|low]
-**Description**: [clear description of rule purpose]
-**Rationale**: [why this rule exists]
-**Examples**: [concrete examples of rule application]
-**Exceptions**: [when this rule might not apply]
-```
-
-#### Rule Categories
-
-**Code Quality Rules:**
+### Code Quality Rules
 - `code-style`: Formatting and style preferences
 - `naming-convention`: Variable, function, class naming
 - `comment-style`: Comment verbosity and style
 - `error-handling`: Error handling patterns
 - `performance-standards`: Performance requirements
 
-**Testing Rules:**
+### Testing Rules
 - `test-coverage`: Minimum code coverage percentage
 - `test-runner`: Preferred test execution tool
 - `test-timeout`: Maximum test execution time
 - `test-patterns`: Test file naming and organization
-- `mock-strategy`: Mocking and stubbing preferences
 
-**Documentation Rules:**
+### Documentation Rules
 - `doc-style`: Documentation format and verbosity
 - `api-doc-required`: API documentation requirements
 - `readme-format`: README structure standards
 - `comment-requirements`: When comments are required
 
-**Process Rules:**
+### Process Rules
 - `commit-format`: Git commit message format
 - `branch-naming`: Git branch naming conventions
 - `review-requirements`: Code review standards
-- `deployment-process`: Deployment and release process
 
-**Architecture Rules:**
-- `design-patterns`: Preferred architectural patterns
-- `dependency-management`: Dependency guidelines
-- `file-organization`: Project structure standards
-- `interface-design`: API and interface guidelines
+## Integration with Other Commands
 
-### Rule Validation & Enforcement
-
-#### Rule Consistency Checking
-```
-/axi-rules validate
-```
-
-**Validates:**
-- Rule syntax and format correctness
-- No circular rule dependencies
-- Rule values match expected types/formats
-- Required rules are not overridden inappropriately
-
-#### Rule Application Testing
-```
-/axi-rules test [rule-name] [test-case]
-```
-
-**Test rule application:**
-```
-/axi-rules test comment-style "function add(a, b) { return a + b; }"
-# Output: "Rule 'comment-style=minimal' suggests: No comment needed - function is self-explanatory"
-
-/axi-rules test naming-convention "function addTwoNumbers"
-# Output: "Rule 'naming-convention=snake_case' violation: Use 'add_two_numbers'"
-```
-
-### Integration with Other Commands
-
-#### Rule-Aware Command Execution
-
+### Rule-Aware Command Execution
 All Axiomantic commands automatically apply active rules:
 
-**`/axi-validate`** integration:
+**`/axi-validate` integration:**
 ```markdown
 Applying active rules for validation:
 - USER: comment-style = minimal
@@ -239,32 +147,21 @@ Applying active rules for validation:
 - PROJECT: naming-convention = snake_case
 
 Validation Results:
-✅ Comment style: Following minimal comment preference
+✅ Comment style: Following minimal preference
 ❌ Test coverage: 87% (below project requirement of 95%)
-✅ Naming: All functions use snake_case convention
+✅ Naming: All functions use snake_case
 ```
 
-**`/axi-feature`** integration:
-```markdown
-Feature planning with active project rules:
-- Architecture pattern: microservices (PROJECT RULE)
-- Testing strategy: TDD with 95% coverage (PROJECT RULE)
-- Documentation: API docs required (PROJECT RULE)
-- Performance: <100ms response time (PROJECT RULE)
-```
-
-#### Rule Override Syntax
-
+### Rule Override Syntax
 Temporarily override rules for specific commands:
 ```
 /axi-validate --override comment-style=detailed --override test-coverage=85%
 /axi-feature --ignore-rule performance-standards
-/axi-compress --override compression-level=aggressive
 ```
 
-### Rule Discovery & Suggestions
+## Rule Discovery & Suggestions
 
-#### Smart Rule Suggestions
+### Smart Rule Suggestions
 ```
 /axi-rules suggest
 ```
@@ -279,78 +176,59 @@ DETECTED PATTERN:
 
 DETECTED INCONSISTENCY:
 - Test files use both pytest and unittest
-- SUGGEST: Add project rule 'test-framework = pytest' for consistency
-
-PERFORMANCE OPPORTUNITY:
-- Database queries average 2.3s response time
-- SUGGEST: Add project rule 'db-query-timeout = 1s'
+- SUGGEST: Add project rule 'test-framework = pytest'
 ```
 
-#### Rule Templates
+### Rule Templates
 ```
 /axi-rules template [project-type]
 ```
 
-**Generate rule templates for common project types:**
+Generate rule templates for common project types:
+- `web-api` - API-specific rules
+- `data-science` - DS-specific rules
+- `mobile-app` - Mobile development rules
+
+## Rule Validation & Quality
+
+### Rule Consistency Checking
 ```
-/axi-rules template web-api
-# Generates template with API-specific rules
-
-/axi-rules template data-science
-# Generates template with DS-specific rules
-
-/axi-rules template mobile-app
-# Generates template with mobile development rules
+/axi-rules validate
 ```
 
-### Rule Documentation & Sharing
+**Validates:**
+- Rule syntax and format correctness
+- No circular rule dependencies
+- Rule values match expected types
+- Required rules not overridden inappropriately
 
-#### Rule Export/Import
+### Rule Application Testing
+```
+/axi-rules test [rule-name] [test-case]
+```
+
+**Example:**
+```
+/axi-rules test naming-convention "function addTwoNumbers"
+# Output: "Rule 'naming-convention=snake_case' violation: Use 'add_two_numbers'"
+```
+
+## Advanced Features
+
+### Rule Documentation Generation
+```
+/axi-rules docs
+```
+
+Generates comprehensive documentation of all active project rules for team reference.
+
+### Rule Export/Import
 ```
 /axi-rules export project-rules.yaml
 /axi-rules import team-standards.yaml
 ```
 
-#### Rule Documentation Generation
-```
-/axi-rules docs
-```
-
-Generates comprehensive rule documentation:
-```markdown
-# Project Rules Documentation
-
-## Code Quality Standards
-Based on active project rules, this project enforces:
-- Snake_case naming for all functions and variables
-- Minimal comments (only for complex business logic)
-- 95% test coverage minimum
-- All tests must complete within 30 seconds
-
-## Validation Process
-The following rules are automatically checked by /axi-validate:
-[Generated from active rules...]
-```
-
-### Advanced Rule Features
-
-#### Conditional Rules
-```markdown
-### performance-testing
-**Condition**: file-size > 1MB OR complexity > 100
-**Value**: required
-**Description**: Performance testing required for large or complex files
-```
-
-#### Rule Dependencies
-```markdown
-### api-documentation
-**Value**: required
-**Depends-on**: public-interface = true
-**Description**: API documentation required only for public interfaces
-```
-
-#### Rule Metrics & Analytics
+### Rule Metrics & Analytics
 ```
 /axi-rules metrics
 ```
@@ -362,28 +240,45 @@ Shows rule effectiveness and usage:
 MOST TRIGGERED RULES:
 1. naming-convention: 47 violations fixed
 2. test-coverage: 23 violations fixed
-3. comment-style: 18 applications
 
 RULE EFFECTIVENESS:
 - comment-style=minimal: 23% fewer comment-related reviews
-- test-coverage=95%: 0 production bugs related to untested code
-- naming-convention: 15% faster code reviews
+- test-coverage=95%: 0 production bugs from untested code
+```
 
-SUGGESTED OPTIMIZATIONS:
-- Consider raising test-coverage to 98% (current success rate: 100%)
-- Consider adding performance-benchmark rule (3 recent perf issues)
+## Rule Definition Structure
+
+```markdown
+### [rule-name]
+**Value**: [rule-value]
+**Scope**: [user|project|base]
+**Priority**: [high|medium|low]
+**Description**: [clear purpose description]
+**Examples**: [concrete usage examples]
+**Exceptions**: [when rule might not apply]
 ```
 
 ## Success Criteria
-
-Effective rule management should achieve:
-- ✅ **Clear Rule Hierarchy** - User > Project > Base precedence
+- ✅ **Clear Rule Hierarchy** - User > Project > Base precedence working
 - ✅ **Conflict Resolution** - Automatic handling of rule conflicts
-- ✅ **Integration** - Rules automatically applied by all commands
-- ✅ **Flexibility** - Easy to add, modify, remove rules
-- ✅ **Team Alignment** - Project rules ensure consistent team standards
+- ✅ **Command Integration** - Rules automatically applied by all commands
+- ✅ **Easy Management** - Simple add, modify, remove operations
+- ✅ **Team Alignment** - Project rules ensure consistent standards
 - ✅ **Personal Productivity** - User rules support individual preferences
-- ✅ **Documentation** - Clear rule documentation and rationale
-- ✅ **Validation** - Rule consistency and effectiveness tracking
+- ✅ **Clear Documentation** - Rule purpose and rationale documented
+- ✅ **Effectiveness Tracking** - Rule metrics show value and usage
 
-Remember: Rules should enhance productivity and quality, not create bureaucratic overhead. Focus on rules that solve real problems and eliminate inconsistencies in the development process.
+## Usage
+```
+/axi-rules [action] [parameters]
+```
+
+**Examples:**
+```
+/axi-rules view all                    # Show all active rules
+/axi-rules add project test-coverage 95%  # Add new project rule
+/axi-rules conflicts                   # Show rule conflicts
+/axi-rules suggest                     # Get rule suggestions
+```
+
+Remember: Rules should enhance productivity and quality, not create bureaucratic overhead. Focus on rules that solve real problems and eliminate development inconsistencies.

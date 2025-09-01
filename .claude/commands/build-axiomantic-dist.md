@@ -20,6 +20,11 @@ The build process should:
 
 Please execute the following:
 
+0. **Change to the axiomantic base repo directory:**
+   ```bash
+   cd <path to axiomantic project root>
+   ```
+
 1. **Delete existing dist directory:**
    ```bash
    rm -rf dist # Clean any existing files
@@ -48,7 +53,6 @@ Please execute the following:
    ```bash
    # Verify main files and structure
    ls -la dist/axiomantic/AGENT.md dist/install.sh dist/install.ps1
-   ls -la dist/axiomantic/shared/
    ls -la dist/axiomantic/commands/
    ```
 
@@ -59,8 +63,6 @@ Please execute the following:
    ./install.sh <path/to/tmp/dir>
    # Verify installed files
    cd <path/to/tmp/dir>
-   test -f .axiomantic/shared/<expected-file1>.md
-   test -f .axiomantic/shared/<expected-file2>.md
    test -f .axiomantic/commands/<expected-file3>.md
    test -f .axiomantic/commands/<expected-file4>.md
 
@@ -69,12 +71,12 @@ Please execute the following:
    test -f .claude/commands/<expected-file7>.md
    test -f .claude/commands/<expected-file8>.md
 
-   test -L AGENT.md
+   test -f AGENT.md
    test -L AGENTS.md
    test -L CLAUDE.md
-   test -L README.md
-   test -L CHANGELOG.md
-   test -L LICENSE
+   test -f README.md
+   test -f CHANGELOG.md
+   test -f LICENSE
    ```
 
 The resulting `dist/` directory should contain everything needed to distribute Axiomantic, with compressed instruction and command files to minimize size while preserving all functionality.

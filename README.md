@@ -47,7 +47,6 @@ The installer creates:
 - **CLAUDE.md** → AGENT.md (symlink for Claude Code)
 - **AGENTS.md** → AGENT.md (symlink for OpenCode)
 - **.axiomantic/commands/** - Command library
-- **.axiomantic/shared/** - Standards and guidelines
 - **.claude/commands/** - Claude Code command symlinks
 - **.opencode/command/** - OpenCode command symlinks
 
@@ -158,8 +157,7 @@ Instructions automatically adapt based on current task:
 
 Axiomantic supports project-specific customization:
 - Add `project.instructions.md` for project-specific rules
-- Modify `.axiomantic/shared/` files for custom standards
-- Create additional commands in `.axiomantic/commands/`
+- Add `user.instructions.md` for user-specific rules (non git-committed)
 
 ## Development Impact
 

@@ -122,8 +122,6 @@ fi
 mkdir -p "$TARGET_DIR/.axiomantic"
 cp -r "$DIST_DIR/axiomantic/commands" "$TARGET_DIR/.axiomantic/"
 echo "✓ Installed Axiomantic commands to .axiomantic/commands/"
-cp -r "$DIST_DIR/axiomantic/shared" "$TARGET_DIR/.axiomantic/"
-echo "✓ Installed Axiomantic shared modules to .axiomantic/shared/"
 
 mkdir -p "$TARGET_DIR/.claude/commands"
 for cmd in ${TARGET_DIR}/.axiomantic/commands/*; do
@@ -165,7 +163,6 @@ echo "  • AGENT.md - Base instruction file"
 echo "  • CLAUDE.md -> AGENT.md (symlink for Claude Code)"
 echo "  • AGENTS.md -> AGENT.md (symlink for OpenCode)"
 echo "  • .axiomantic/commands/ - slash commands (/axi-validate, /axi-plan, /axi-feature, /axi-test, /axi-compress, /axi-rules, /axi-implement)"
-echo "  • .axiomantic/shared/ - Modular instruction library with conditional loading"
 echo "  • .claude/commands/ - Claude Code slash commands (symlinks to .axiomantic/commands/*)"
 echo "  • .opencode/command/ - opencode slash commands (symlinks to .axiomantic/commands/*)"
 echo ""

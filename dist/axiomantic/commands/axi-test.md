@@ -2,313 +2,207 @@
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
-Execute comprehensive testing w/ intelligent failure analysis & quality assurance for: **$ARGUMENTS**
+Execute comprehensive testing w/ intelligent failure analysis & quality assurance 4: **$ARGUMENTS**
 
-## Comprehensive Testing Framework
+> **💡 Best Results**: Focus on systematic root cause resolution rather than skipping tests. Every test should validate meaningful behavior.
 
-### Systematic Test Execution Process
+## 🚨 CRITICAL TESTING PRINCIPLES
 
-**Systematic Approach**:
-1. Discovery/Assessment
-2. Infrastructure/Environment
-3. Core Implementation
-4. Integration
-5. File Organization
-6. Framework Issues
-7. Quality/Completeness
-8. Final Validation
+**ZERO TOLERANCE 4 Test Skipping**: Fix env/dependencies/code - never use `pytest.skip()`, `@pytest.mark.skip`, or `@pytest.mark.xfail`.
 
-**Success Criteria**: pytest -v showing 100% pass rate, 0 skips/xfails/errors. Tests pass individually, meaningful assertions, edge case coverage.
+**Success Criteria**: `pytest -v` showing 100% pass rate, 0 skips/xfails/errors. Tests pass individually w/ meaningful assertions & edge case coverage.
 
-### Testing Standards Integration
+**Systematic Root Cause Resolution**: Use 8-phase systematic approach 2 fix all test issues comprehensively.
 
-#### Testing Approach
-- Write tests that verify behavior, not impl
-- Use appropriate testing frameworks
-- Follow the testing pyramid (unit, integration, e2e)
-- Maintain good test coverage
+## Systematic Test Execution Process
 
-#### Test Quality Standards
-- Write clear, readable tests
-- Use descriptive test names
-- Test edge cases & error conditions
-- Keep tests independent & isolated
-
-#### Test-Driven Development
-- Write tests before implementing features
-- Use tests to guide design decisions
-- Refactor w/ confidence when tests are in place
-- Update tests when req change
-
-#### Validation & Verification
-- Validate inputs & outputs
-- Test error handling paths
-- Verify perf req
-- Check security & accessibility
-
-### Mandatory Test Quality Standards
-
-#### Never Skip Tests - Always Fix Root Cause
-
-**ZERO TOLERANCE for test skipping**: Fix env/dependencies/code - don't use pytest.skip(), @pytest.mark.skip/xfail().
-
-**Root Cause Resolution Process:**
-
-1. **Discovery/Assessment Phase**
-   - Identify all failing, skipped, or error-prone tests
-   - Categorize failures by type (env, dependency, logic, framework)
-   - Assess test quality & meaningfulness
-   - Map test failures to underlying root causes
-
-2. **Infrastructure/Environment Phase**
-   - Fix Python env & dependency issues
-   - Resolve import path & module discovery problems
-   - Configure test env variables & settings
-   - Ensure test database & external service connectivity
-
-3. **Core Implementation Phase**
-   - Fix actual bugs in app code that cause test failures
-   - Implement missing functionality that tests expect
-   - Correct logic errors & edge case handling
-   - Ensure impls match test expectations
-
-4. **Integration Phase**
-   - Resolve integration between different components
-   - Fix mocking & stubbing issues
-   - Address timing & concurrency issues in tests
-   - Ensure proper test isolation & cleanup
-
-5. **File Organization Phase**
-   - Organize test files following project conventions
-   - Ensure test discovery works correctly
-   - Fix import statements & module structure
-   - Maintain clear test file hierarchy
-
-6. **Framework Issues Phase**
-   - Address pytest config & plugin issues
-   - Fix test framework compatibility problems
-   - Resolve parameterization & fixture issues
-   - Handle test collection & execution problems
-
-7. **Quality/Completeness Phase**
-   - Enhance test coverage for edge cases
-   - Improve test assertions to be more meaningful
-   - Add missing test scenarios
-   - Ensure tests actually validate intended behavior
-
-8. **Final Validation Phase**
-   - Run complete test suite & verify 100% pass rate
-   - Confirm no skipped or expected failure tests
-   - Validate test execution time & perf
-   - Document any remaining testing considerations
-
-## Systematic Test Execution
-
-### Phase 1: Test Discovery & Assessment
-
-**Initial Assessment:**
+### Phase 1: Discovery & Assessment
+**Initial Test Landscape Analysis:**
 ```bash
-# Discover all tests
-pytest --collect-only
-
-# Run tests w/ verbose output
-pytest -v
-
-# Check for skipped/failed tests
-pytest --tb=short -v
+pytest --collect-only  # Discover all tests
+pytest -v             # Run with verbose output
+pytest --tb=short -v  # Check for skipped/failed tests
 ```
 
-**Assessment Checklist:**
-- How many tests exist & where are they located?
-- What testing frameworks & patterns are being used?
-- Are there any skipped (@pytest.mark.skip) or expected failure (@pytest.mark.xfail) tests?
-- What types of test failures are occurring (import errors, assertion failures, env issues)?
-- Do tests follow project naming & organizational conventions?
+**Assessment Questions:**
+- How many tests exist and where are they located?
+- What testing frameworks and patterns are being used?
+- Are there skipped or expected failure tests that need fixing?
+- What types of failures are occurring (import, assertion, environment)?
 
-### Phase 2: Test Environment Setup
-
+### Phase 2: Infrastructure & Environment Setup
 **Environment Validation:**
-- Verify Python env & dependencies
-- Check test config files (pytest.ini, conftest.py, etc.)
-- Ensure test database connections & external dependencies
-- Validate test-specific env variables & settings
-- Confirm proper test isolation setup
+- Verify Python environment and dependencies
+- Check test configuration files (pytest.ini, conftest.py)
+- Ensure test database connections and external dependencies
+- Validate test-specific environment variables and settings
 
-**Common Environment Issues:**
-- Missing test dependencies in req files
-- Incorrect Python path or module discovery issues
-- Missing test config files or settings
-- Database connectivity or test data setup problems
-- Environment-specific variable config
+**Common Issues to Fix:**
+- Missing test dependencies in requirements
+- Incorrect Python path or module discovery
+- Missing test configuration or settings
+- Database connectivity problems
 
-### Phase 3: Test Framework Configuration
+### Phase 3: Core Implementation Fixes
+**Logic and Implementation Issues:**
+- Fix bugs in application code causing test failures
+- Implement missing functionality that tests expect
+- Correct edge case handling and error conditions
+- Update implementation to match test expectations
 
-**Framework Setup:**
-- Configure pytest settings & plugins appropriately
-- Set up test fixtures & parameterization correctly
-- Ensure proper test collection & discovery
-- Configure test reporting & output formats
-- Set up code coverage collection if required
+### Phase 4: Integration & Framework Resolution
+**Test Framework Issues:**
+- Fix pytest configuration and plugin problems
+- Resolve fixture and parameterization issues
+- Address test collection and discovery problems
+- Fix mocking and stubbing complications
 
-**Common Framework Issues:**
-- Pytest config conflicts or missing settings
-- Plugin compatibility or version issues
-- Fixture scope or dependency problems
-- Test parameterization or data-driven test issues
-- Test collection failures or discovery problems
+### Phase 5: File Organization & Structure
+**Test Organization:**
+- Organize test files following project conventions
+- Ensure test discovery works correctly
+- Fix import statements and module structure
+- Maintain clear test file hierarchy
 
-### Phase 4: Test Quality Analysis
+### Phase 6: Framework & Configuration Issues
+**Advanced Framework Problems:**
+- Address pytest plugin compatibility
+- Fix parameterization and fixture scope issues
+- Handle test framework version conflicts
+- Resolve test execution and collection edge cases
 
-**Quality Assessment:**
-- Do tests have meaningful assertions that validate actual behavior?
-- Are edge cases & error conditions properly tested?
-- Do tests follow the AAA pattern (Arrange, Act, Assert)?
-- Are tests independent & properly isolated?
-- Do test names clearly describe what is being tested?
+### Phase 7: Quality & Completeness Enhancement
+**Test Quality Improvements:**
+- Enhance test coverage for edge cases
+- Improve assertions to be more meaningful
+- Add missing test scenarios
+- Ensure tests validate actual behavior, not just execution
 
-**Quality Improvements:**
-- Replace trivial assertions w/ meaningful behavioral valid8n
-- Add comprehensive edge case testing
-- Improve test readability & maintainability
-- Ensure proper test data setup & cleanup
-- Add integration tests for component interactions
-
-### Phase 5: Coverage Analysis
-
-**Coverage Evaluation:**
+### Phase 8: Final Validation & Performance
+**Comprehensive Validation:**
 ```bash
-# Run tests w/ coverage reporting
-pytest --cov=src --cov-report=term-missing
-
-# Generate detailed coverage reports
-pytest --cov=src --cov-report=html
+pytest -v --tb=short                    # 100% pass rate verification
+pytest --cov=src --cov-report=term-missing --cov-fail-under=90  # Coverage check
+pytest --durations=10                   # Performance validation
 ```
 
-**Coverage Analysis:**
-- Identify untested code paths & functions
-- Assess quality of existing test coverage
-- Prioritize areas needing additional testing
-- Ensure critical business logic is well-tested
-- Validate error handling & edge case coverage
+## Test Quality Standards
 
-**Coverage Improvements:**
-- Add tests for uncovered code paths
-- Focus on critical business logic & edge cases
-- Ensure error handling paths are tested
-- Add integration tests for component interactions
-- Validate boundary conditions & input valid8n
+### Meaningful Test Requirements
+- **Behavior Validation**: Tests verify behavior, not implementation details
+- **Clear Test Names**: Descriptive names explaining what's being tested
+- **Independent Tests**: Each test runs independently without dependencies
+- **Edge Case Coverage**: Error conditions and boundary cases tested
+- **Meaningful Assertions**: Assertions validate actual expected outcomes
 
-### Phase 6: Test Failure Resolution
-
-**Failure Analysis Process:**
-
-1. **Import & Environment Failures**
-   - Fix missing dependencies & import paths
-   - Resolve module discovery issues
-   - Configure test env properly
-   - Fix database connections & external dependencies
-
-2. **Logic & Implementation Failures**
-   - Fix bugs in app code that cause test failures
-   - Implement missing functionality that tests expect
-   - Correct edge case handling & error conditions
-   - Update impl to match test expectations
-
-3. **Test Framework & Configuration Failures**
-   - Fix pytest config & plugin issues
-   - Resolve fixture & parameterization problems
-   - Address test collection & discovery issues
-   - Fix mocking & stubbing problems
-
-4. **Test Quality & Design Failures**
-   - Improve test assertions to be more specific & meaningful
-   - Fix test isolation & dependency issues
-   - Address timing & concurrency problems
-   - Improve test data setup & cleanup
-
-### Phase 7: Intelligent Failure Analysis
-
-**When tests fail, perform systematic analysis:**
-
-1. **Categorize Failure Type**
-   - Import/env error
-   - Assertion failure (logic error)
-   - Framework/config issue
-   - Test design problem
-
-2. **Root Cause Analysis**
-   - What is the test trying to validate?
-   - What behavior is actually occurring vs. expected?
-   - Is this a test problem or impl problem?
-   - Are there dependencies or enval factors?
-
-3. **Fix Strategy Selection**
-   - Fix the impl (if behavior is wrong)
-   - Fix the test (if expectations are wrong)
-   - Fix the env (if setup is wrong)
-   - Improve the test design (if test is poorly written)
-
-4. **Validation**
-   - Ensure fix addresses root cause, not just symptom
-   - Verify test now properly validates intended behavior
-   - Confirm fix doesn't break other tests
-   - Run full test suite to ensure no regressions
-
-### Phase 8: Final Validation & Quality Gates
-
-**Final Test Suite Validation:**
-
-```bash
-# Clean env test run
-pytest -v --tb=short
-
-# Coverage valid8n
-pytest --cov=src --cov-report=term-missing --cov-fail-under=90
-
-# Performance valid8n
-pytest --durations=10
-```
-
-**Quality Gates Checklist:**
-- ✅ All tests pass (100% pass rate)
-- ✅ No skipped or expected failure tests
-- ✅ Test coverage meets project standards (typically 90%+)
-- ✅ Tests execute in reasonable time
-- ✅ Test names & structure follow project conventions
-- ✅ Tests validate meaningful behavior, not just code execution
-- ✅ Edge cases & error conditions are properly tested
-- ✅ Integration tests verify component interactions
-
-## Test Organization & Framework Integration
-
-### Test Structure Standards
-- Follow project testing conventions & file organization
-- Use consistent test naming patterns
+### Test Organization Standards
+- Follow project testing conventions and file organization
+- Use consistent test naming patterns (test_*, *_test.py)
 - Organize tests by feature or module
-- Maintain clear separation between unit, integration, & end-to-end tests
+- Separate unit, integration, and end-to-end tests clearly
 
-### Framework-Specific Considerations
-- **pytest**: Leverage fixtures, parameterization, & plugins effectively
-- **unittest**: Use proper test case inheritance & setUp/tearDown
-- **Integration frameworks**: Ensure proper database & service mocking
-- **Performance testing**: Include appropriate benchmarking & profiling
+## Intelligent Failure Analysis
+
+### Failure Categorization Process
+When tests fail, systematically categorize:
+
+1. **Import/Environment Errors**
+   - Missing dependencies or import path issues
+   - Module discovery problems
+   - Environment configuration failures
+
+2. **Assertion Failures (Logic Errors)**
+   - Implementation bugs causing incorrect behavior
+   - Missing functionality that tests expect
+   - Logic errors in application code
+
+3. **Framework/Configuration Issues**
+   - pytest setup or plugin problems
+   - Fixture or parameterization failures
+   - Test collection or discovery issues
+
+4. **Test Design Problems**
+   - Poor test isolation or dependencies
+   - Timing or concurrency issues
+   - Inadequate mocking or stubbing
+
+### Root Cause Analysis Process
+For each failure:
+1. **What is the test trying to validate?**
+2. **What behavior is occurring vs. expected?**
+3. **Is this a test problem or implementation problem?**
+4. **Are there environmental or dependency factors?**
+
+### Fix Strategy Selection
+- **Fix Implementation**: When behavior is wrong
+- **Fix Test**: When expectations are incorrect
+- **Fix Environment**: When setup is wrong
+- **Improve Test Design**: When test is poorly written
+
+## Test Coverage & Quality Metrics
+
+### Coverage Analysis
+```bash
+pytest --cov=src --cov-report=html      # Generate detailed coverage
+pytest --cov=src --cov-report=term-missing  # Show missing lines
+```
+
+**Coverage Quality Assessment:**
+- Identify untested code paths and functions
+- Focus on critical business logic and edge cases
+- Ensure error handling paths are tested
+- Validate boundary conditions and input validation
+
+### Quality Gates Checklist
+- ✅ **100% Pass Rate**: All tests pass without skips or expected failures
+- ✅ **Meaningful Coverage**: Critical functionality well-tested (typically 90%+)
+- ✅ **Performance**: Tests execute in reasonable time
+- ✅ **Organization**: Clear structure following project conventions
+- ✅ **Behavior Validation**: Tests verify meaningful behavior
+- ✅ **Edge Cases**: Error conditions and boundaries tested
+- ✅ **Independence**: Tests run independently without side effects
+
+## Framework-Specific Best Practices
+
+### pytest Best Practices
+- Leverage fixtures for consistent test data setup
+- Use parameterization for testing multiple scenarios
+- Implement proper test isolation and cleanup
+- Use descriptive assertion messages
+- Organize tests with clear conftest.py structure
 
 ### Test Data Management
-- Use fixtures for consistent test data setup
-- Implement proper test isolation & cleanup
+- Use fixtures for consistent test data
 - Avoid hard-coded test data that makes tests brittle
-- Use factories or builders for complex test data creation
+- Implement proper test isolation and cleanup
+- Use factories or builders for complex test data
+
+### Mocking & Stubbing
+- Mock external dependencies appropriately
+- Use stubs for consistent test behavior
+- Ensure mocks match actual interfaces
+- Test both happy path and error conditions
 
 ## Success Criteria
-
-A comprehensive test execution should achieve:
-- ✅ **100% test pass rate** w/ no skipped or expected failure tests
-- ✅ **Meaningful test coverage** of critical functionality & edge cases
+- ✅ **100% test pass rate** with no skipped or expected failure tests
+- ✅ **Meaningful test coverage** of critical functionality and edge cases
 - ✅ **Clear, maintainable tests** that validate actual behavior
 - ✅ **Proper test organization** following project conventions
-- ✅ **Fast, reliable test execution** w/ proper isolation
-- ✅ **Integration test valid8n** of component interactions
-- ✅ **Performance benchmarking** where appropriate
+- ✅ **Fast, reliable execution** with proper test isolation
+- ✅ **Integration validation** of component interactions
 - ✅ **Root cause resolution** rather than test suppression
 
-Remember: Tests are not just about coverage percentages - they should provide confidence that the system behaves correctly under all expected conditions. Every test should validate meaningful behavior & contribute to overall system reliability.
+## Usage
+```
+/axi-test [test_pattern]
+```
+
+**Examples:**
+```
+/axi-test                    # Run all tests with comprehensive analysis
+/axi-test tests/unit/        # Test specific directory
+/axi-test -k "auth"          # Run tests matching pattern
+/axi-test --coverage         # Include coverage analysis
+```
+
+Remember: Tests provide confidence that the system behaves correctly under all expected conditions. Every test should validate meaningful behavior and contribute to system reliability. Focus on fixing root causes rather than suppressing test failures.
