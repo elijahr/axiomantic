@@ -1,10 +1,10 @@
 # /axi-plan - Advanced Multi-Assistant Orchestration
 
-*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
+*This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.*
 
-Converts a regular plan document into a parallelizable track-based plan w/ comprehensive coordination instructions for multiple AI assistants working simultaneously on: **$ARGUMENTS**
+Converts regular plan document into parallelizable track-based plan w/ comprehensive coordination instructions 4 multiple AI assistants working simultaneously on: **$ARGUMENTS**
 
-> **💡 Best Results**: This command works best w/ LLMs that have advanced reasoning capabilities. The analysis requires critical thinking about task dependencies & parallel execution opportunities.
+> **💡 Best Results**: This command works best w/ LLMs that have advanced reasoning capabilities. Analysis requires critical thinking abt task dependencies & parallel execution opportunities.
 
 ## Usage
 
@@ -13,8 +13,8 @@ Converts a regular plan document into a parallelizable track-based plan w/ compr
 ```
 
 **Parameters:**
-- `input_file`: Path to existing plan file (default: PLAN.md)
-- `output_file`: Path for parallelized output (default: PLAN_PARALLEL.md)
+- `input_file`: Path 2 existing plan file (default: PLAN.md)
+- `output_file`: Path 4 parallelized output (default: PLAN_PARALLEL.md)
 
 **Example:**
 ```
@@ -26,12 +26,12 @@ Converts a regular plan document into a parallelizable track-based plan w/ compr
 
 ### Planning Process
 
-All non-trivial work must be planned & documented BEFORE impl begins.
+All non-trivial work must be planned & documented B4 implementation begins.
 
-1. **Step Back & Survey**: Read relevant files, understand arch, identify components, note constraints
-2. **Internal Dialogue**: Question the problem, approaches, risks/trade-offs, system interactions
+1. **Step Back & Survey**: Read relevant files, understand architecture, identify components, note constraints
+2. **Internal Dialogue**: Question problem, approaches, risks/trade-offs, system interactions
 3. **Context-Informed Planning**: Reflect codebase patterns, infrastructure, team practices, realistic scope, apply Four-Pillar Validation
-4. **Plan Validation**: Review against codebase, check assumptions, ensure actionable/specific, consider alternatives
+4. **Plan Validation**: Review vs codebase, check assumptions, ensure actionable/specific, consider alternatives
 
 ### Planning Hierarchy
 
@@ -44,20 +44,20 @@ All non-trivial work must be planned & documented BEFORE impl begins.
 ```markdown
 # [Feature/Task] Implementation Plan
 
-## Overview: [Brief description of what/why]
+## Overview: [Brief desc of what/why]
 
 ## Validation Integration: Standards, Docs, Patterns, Testing strategy
 
 ## Phases: Planning/Setup → Core Implementation → Integration/Testing
 
-## Success Criteria & Risks: [Functionality works, passes valid8n | Risk mitigation]
+## Success Criteria & Risks: [Functionality works, passes validation | Risk mitigation]
 ```
 
 ### Plan Management
 
-**Complexity Guidelines**: Simple (<1hr) = inline valid8n; Medium (1-4hr) = .tmp plan; Complex (>4hr) = ROADMAP.md
+**Complexity Guidelines**: Simple (<1hr) = inline validation; Medium (1-4hr) = .tmp plan; Complex (>4hr) = ROADMAP.md
 
-**Plan Discovery**: Check for existing plans (ROADMAP.md > PROJECT_PLAN.md > README roadmap > TODO.md). Ask user which to follow if multiple found.
+**Plan Discovery**: Check 4 existing plans (ROADMAP.md > PROJECT_PLAN.md > README roadmap > TODO.md). Ask user which 2 follow if multiple found.
 
 **User Intent Signals**:
 - "No plan"/"ignore plans" → DISABLED
@@ -69,24 +69,24 @@ All non-trivial work must be planned & documented BEFORE impl begins.
 
 ### Plan Creation Guidance
 
-For substantial tasks w/ multiple phases, prompt user: "This looks like a substantial task w/ multiple phases. Would you like me to create a project plan/roadmap first to track our progress? This helps ensure we don't miss steps & makes it easier to resume work later."
+4 substantial tasks w/ multiple phases, prompt user: "This looks like substantial task w/ multiple phases. Would u like me 2 create project plan/roadmap first 2 track our progress? This helps ensure we don't miss steps & makes it easier 2 resume work later."
 
 ### Milestone & Commit Management
 
 **After completing significant milestones or plan phases:**
-- **Self-validate first**: Complete all four valid8n pillars before considering milestone complete
-- **Prompt user to commit**: "This completes [milestone/phase]. All valid8n pillars checked. Would you like to commit these changes before continuing?"
+- **Self-validate first**: Complete all 4 validation pillars B4 considering milestone complete
+- **Prompt user 2 commit**: "This completes [milestone/phase]. All validation pillars checked. Would u like 2 commit these changes B4 continuing?"
 - **Use conventional commit format**: `feat:`, `fix:`, `docs:`, `refactor:`, etc.
-- **Include valid8n confirmation**: "Validated: standards ✅, docs ✅, patterns ✅, testing ✅"
-- **Break large changes into logical commits** when working through multi-step plans
+- **Include validation confirmation**: "Validated: standards ✅, docs ✅, patterns ✅, testing ✅"
+- **Break large changes into logical commits** when working thru multi-step plans
 
 **Commit Message Templates**:
 
-**For validated milestones:**
+**4 validated milestones:**
 ```
-feat: implement user authentication system
+feat: implement user auth system
 
-- Add JWT token generation & valid8n
+- Add JWT token generation & validation
 - Create user login/logout endpoints
 - Add password hashing w/ bcrypt
 - Include comprehensive unit tests (95% coverage)
@@ -94,35 +94,35 @@ feat: implement user authentication system
 Validated: coding standards, docs, project patterns, testing
 ```
 
-**For valid8n fixes:**
+**4 validation fixes:**
 ```
 refactor: improve code standards compliance
 
 - Fix inconsistent naming conventions
 - Add missing error handling
-- Update docs for clarity
+- Update documentation for clarity
 - Ensure test coverage for edge cases
 
-Self-valid8n: all four pillars verified
+Self-validation: all four pillars verified
 ```
 
-## 🧠 Critical Thinking Instructions for LLM Execution
+## 🧠 Critical Thinking Instructions 4 LLM Execution
 
-When executing this command, the LLM should:
+When executing this command, LLM should:
 
-1. **Have an internal dialogue about each task**:
-   - "Does task B2 REALLY need B1 to complete first?"
+1. **Have internal dialogue abt each task**:
+   - "Does task B2 REALLY need B1 2 complete first?"
    - "What files does B1 modify? What files does B2 modify?"
    - "If they modify different files, they can be parallel"
-   - "Even if they're in the same track, are they actually independent?"
+   - "Even if they're in same track, are they actually independent?"
 
 2. **Question every stated dependency**:
-   - "Is this a true dependency or just organizational grouping?"
+   - "Is this true dependency or just organizational grouping?"
    - "Could these tasks run simultaneously if we had multiple developers?"
    - "What would break if we ran these in parallel?"
 
-3. **Think about work unit sizes**:
-   - "Is this a 2-hour task or an 8-hour task?"
+3. **Think abt work unit sizes**:
+   - "Is this 2-hour task or 8-hour task?"
    - "Should this be broken into smaller pieces?"
    - "Can parts of this task be done in parallel?"
 
@@ -134,15 +134,15 @@ When executing this command, the LLM should:
 ## What This Command Does
 
 1. **Performs File-Level Impact Analysis**: Maps each work item to specific files that will be created, modified, or deleted
-2. **Analyzes Dependencies**: Identifies task dependencies & creates dependency chains based on file conflicts
+2. **Analyzes Dependencies**: Identifies task dependencies and creates dependency chains based on file conflicts
 3. **Detects Refactoring Opportunities**: Identifies files that could be split to unlock better parallelization
-4. **Creates Parallel Tracks**: Groups independent tasks into parallel execution tracks w/ no file conflicts
+4. **Creates Parallel Tracks**: Groups independent tasks into parallel execution tracks with no file conflicts
 5. **Detects False Dependencies**: Identifies tasks marked sequential but actually independent (different files)
-6. **Creates Sub-Track Granularity**: Breaks large tracks into parallel sub-tasks w/ explicit file ownership
-7. **Adds Coordination System**: Inserts comprehensive multi-assistant coordination instructions w/ global plan locking
+6. **Creates Sub-Track Granularity**: Breaks large tracks into parallel sub-tasks with explicit file ownership
+7. **Adds Coordination System**: Inserts comprehensive multi-assistant coordination instructions with global plan locking
 8. **Defines Convergence Points**: Identifies where tracks must synchronize
-9. **Establishes Ownership Model**: Creates session-based track claiming system w/ file-level conflict prevention
-10. **Adds Progress Tracking**: Inserts detailed progress metrics, valid8n, & plan compaction instructions
+9. **Establishes Ownership Model**: Creates session-based track claiming system with file-level conflict prevention
+10. **Adds Progress Tracking**: Inserts detailed progress metrics, validation, and plan compaction instructions
 
 ## Generated Instructions Include
 
@@ -156,17 +156,17 @@ When executing this command, the LLM should:
 
 ### 🏷️ Track Ownership System
 - **Session ID Generation**: Format `name_randomword_number` (e.g., `claude_zebra_392`)
-- **Claiming Process**: Edit track headers w/ owner session ID under plan lock
+- **Claiming Process**: Edit track headers with owner session ID under plan lock
 - **File-Level Ownership**: Each work item explicitly lists files it will modify
 - **Conflict Prevention**: No two work items can claim overlapping files
 - **Stalled Work Handling**: Instructions for taking over abandoned claimed tracks
-- **Release Protocol**: When & how to release track ownership
+- **Release Protocol**: When and how to release track ownership
 - **Fresh Plan Reading**: Always re-read plan before claiming or working on items
 
 ### 📋 Track Management Protocol
 - **Fresh Plan Reading**: Always re-read entire plan before starting work or making updates
 - **Availability Checking**: How to determine if tracks are truly available vs blocked or claimed
-- **File Conflict Validation**: Verify no file overlaps w/ other active work items
+- **File Conflict Validation**: Verify no file overlaps with other active work items
 - **Dependency Validation**: Verify prerequisite tracks are actually complete
 - **Convergence Points**: Named synchronization points where tracks must wait
 - **Progress Validation**: How to verify track completion before releasing dependencies
@@ -174,24 +174,24 @@ When executing this command, the LLM should:
 - **Rollback Procedures**: What to do if track work needs to be undone
 
 ### 🔄 Coordination Instructions
-- **Status Updates**: When & how to update plan w/ progress
+- **Status Updates**: When and how to update plan with progress
 - **Communication Patterns**: How assistants coordinate without direct communication
 - **Work Handoffs**: Protocol for passing work between assistants
 - **Quality Gates**: Validation steps before marking work complete
-- **Documentation Requirements**: What docs must be maintained
+- **Documentation Requirements**: What documentation must be maintained
 
 ### 🎯 Track Execution Guidelines
-- **Work Scope Definition**: Clear boundaries for each track w/ explicit file lists
+- **Work Scope Definition**: Clear boundaries for each track with explicit file lists
 - **File Impact Analysis**: Each work item must list:
   - Files to be created (with full paths)
   - Files to be modified (with specific sections/functions)
   - Files to be deleted or moved
   - New directories to be created
 - **File Ownership**: Exclusive file ownership during work item execution
-- **Refactoring Opportunities**: Instructions for identifying & proposing file splits
+- **Refactoring Opportunities**: Instructions for identifying and proposing file splits
 - **Testing Requirements**: Test suites that must pass for track completion
 - **Code Review Process**: Validation steps for code changes
-- **Integration Points**: How track outputs integrate w/ other tracks
+- **Integration Points**: How track outputs integrate with other tracks
 
 ### ⚠️ Failure Handling
 - **Blocked Track Protocol**: What to do when dependencies aren't met
@@ -205,20 +205,20 @@ When executing this command, the LLM should:
 - **Status Indicators**: Visual progress indicators in plan
 - **Milestone Definitions**: Clear completion criteria for each task
 - **Validation Tests**: Automated tests confirming work completion
-- **Timeline Management**: How to update & maintain realistic timelines
+- **Timeline Management**: How to update and maintain realistic timelines
 
 ### 🔍 Quality Assurance
 - **Code Standards**: Adherence to project coding standards
 - **Test Coverage Requirements**: Minimum test coverage for track completion
 - **Performance Benchmarks**: Performance criteria that must be met
-- **Security Checks**: Security valid8n req
-- **Documentation Standards**: Required docs for each track
+- **Security Checks**: Security validation requirements
+- **Documentation Standards**: Required documentation for each track
 
 ### 🚨 Critical Path Management
-- **Blocker Identification**: How to identify & escalate blocking issues
+- **Blocker Identification**: How to identify and escalate blocking issues
 - **Priority Escalation**: When to prioritize one track over others
 - **Resource Allocation**: How to distribute effort across tracks
-- **Risk Management**: Identifying & mitigating project risks
+- **Risk Management**: Identifying and mitigating project risks
 - **Contingency Planning**: Backup plans for critical track failures
 
 ### 🎨 Customization Options
@@ -230,7 +230,7 @@ When executing this command, the LLM should:
 - **Parallelization Strategy**:
   - `conservative`: Maintain most dependencies
   - `aggressive`: Parallelize everything possible
-  - `balanced`: Smart parallelization w/ safety checks
+  - `balanced`: Smart parallelization with safety checks
 - **Session ID Format**: Flexible session identification system
 - **Status Emoji System**: Consistent visual status indicators
 - **Priority Classification**: High/Medium/Low priority system
@@ -241,27 +241,27 @@ When executing this command, the LLM should:
 The command performs these transformations:
 
 ### 1. File Impact Analysis & Refactoring Detection
-- **Analyzes each work item's file req**: Creates/modifies/deletes which files
+- **Analyzes each work item's file requirements**: Creates/modifies/deletes which files
 - **Maps file dependencies**: Identifies shared files that create bottlenecks
 - **Detects refactoring opportunities**: Files that could be split to enable parallelization
-  - Example: `utils.c` w/ multiple unrelated functions → split into `utils/math.c`, `utils/string.c`, etc.
+  - Example: `utils.c` with multiple unrelated functions → split into `utils/math.c`, `utils/string.c`, etc.
   - Identifies when refactoring would unlock 2x, 3x, or more parallel tracks
 - **Proposes refactoring as dependency**: Makes file splits the first work item if beneficial
-- **Validates refactoring impact**: Ensures splits will be well-organized by concept, don't go against industry best practices, & don't break existing dependencies
+- **Validates refactoring impact**: Ensures splits will be well-organized by concept, don't go against industry best practices, and don't break existing dependencies
 
 ### 2. Header Analysis & Track Creation
 - Parses existing plan structure
 - Identifies independent task groups based on file analysis
-- Creates parallel execution tracks (A, B, C, D, etc.) w/ zero file conflicts
+- Creates parallel execution tracks (A, B, C, D, etc.) with zero file conflicts
 - **Detects sub-tasks within tracks that can be parallelized**
 - **Creates sub-track notation (B1.1, B1.2, B1.3 for parallel sub-tasks)**
 - **Identifies "false dependencies" (tasks marked sequential but actually independent)**
-- Assigns descriptive track names & priorities
+- Assigns descriptive track names and priorities
 
 ### 3. File-Based Dependency Mapping
 - Analyzes task dependencies from original plan AND file impact analysis
 - **File Conflict Detection**: Identifies when multiple work items touch same files
-- **Distinguishes between "hard dependencies" (file conflicts) & "soft dependencies" (nice-to-have ordering)**
+- **Distinguishes between "hard dependencies" (file conflicts) and "soft dependencies" (nice-to-have ordering)**
 - **Creates micro-convergence points within tracks**
 - **Identifies parallel work opportunities within single tracks**
 - Creates dependency hierarchy diagram based on actual file conflicts
@@ -280,38 +280,40 @@ The command performs these transformations:
 ### 5. Global Plan Lock & Ownership System Integration
 - **Adds global plan lock mechanism for all plan document updates**
 - **Requires fresh plan reading before any work or claiming**
-- Adds track ownership headers w/ session ID fields & file lists
+- Adds track ownership headers with session ID fields and file lists
 - **Supports sub-track ownership (multiple owners per main track)**
 - **Creates "work unit" size estimates (2-4 hours vs 8+ hours)**
 - **Allows partial track claiming (e.g., claim B1 but not B2/B3)**
-- Creates track status summary section w/ file ownership matrix
+- Creates track status summary section with file ownership matrix
 - **Shows parallel work availability dashboard**
-- Inserts claiming/releasing instructions w/ lock protocol
+- Inserts claiming/releasing instructions with lock protocol
 - Adds stalled work recovery procedures
 
-### 6. Progress Tracking & Plan Compaction
-- Converts tasks to trackable items w/ clear completion criteria & file lists
-- Adds quantitative progress metrics
-- Inserts valid8n test references
-- Creates milestone definitions w/ success criteria
-- **Plan Compaction Instructions**: How to summarize completed work items to save tokens
-- **Completed Work Archive**: Moving finished items to summary sections
+### 6. Progress Tracking & Plan Structure Enhancement
+- **Preserves ALL original work item details for active and future work items**
+- Adds parallel execution metadata to work items (track assignments, file lists, dependencies)
+- Adds quantitative progress metrics alongside original content
+- Inserts validation test references without removing original requirements
+- Creates milestone definitions with success criteria while keeping all original planning details
+- **CRITICAL: Maintains 100% of original conceptual detail for all incomplete work**
+- **Plan Compaction for Completed Work Only**: Summarizes finished items to save tokens while preserving history
+- **Active Work Enhancement**: Adds orchestration structure without removing any original content for incomplete work
 
 ### 7. Coordination Infrastructure
-- Adds comprehensive multi-assistant coordination instructions w/ plan locking
-- Creates conflict resolution procedures for both work items & plan updates
+- Adds comprehensive multi-assistant coordination instructions with plan locking
+- Creates conflict resolution procedures for both work items and plan updates
 - Establishes communication protocols through plan updates (under lock)
-- Defines work handoff procedures w/ file ownership transfer
-- **Fresh Plan Reading Protocol**: When & how to re-read the plan document
+- Defines work handoff procedures with file ownership transfer
+- **Fresh Plan Reading Protocol**: When and how to re-read the plan document
 
 ### 8. Quality Assurance Framework
-- Inserts code quality req
+- Inserts code quality requirements
 - Adds test coverage mandates
-- Creates perf benchmark req
-- Establishes docs standards
+- Creates performance benchmark requirements
+- Establishes documentation standards
 - **File-Level Validation**: Ensures all claimed files are actually modified as planned
 
-The resulting parallelized plan enables multiple AI assistants to work simultaneously on different tracks while maintaining coordination, avoiding conflicts, & ensuring high-quality deliverables.
+The resulting parallelized plan enables multiple AI assistants to work simultaneously on different tracks while maintaining coordination, avoiding conflicts, and ensuring high-quality deliverables.
 
 ## 🔍 File-Level Analysis & Orchestration Algorithm
 
@@ -320,8 +322,8 @@ For every work item in the plan, the LLM must determine:
 
 **Files to Create:**
 - Full file paths for new files
-- Directory structure req
-- File types & purposes
+- Directory structure requirements
+- File types and purposes
 
 **Files to Modify:**
 - Exact file paths
@@ -353,7 +355,7 @@ The LLM should actively look for files that could be split to enable better para
 ```
 DETECTED BOTTLENECK: src/utils.c
 - Used by work items: B1, B2, C1, C2, D1 (5 items blocked)
-- Current: One 500-line file w/ math, string, & memory utilities
+- Current: One 500-line file with math, string, and memory utilities
 - PROPOSED REFACTORING: Split into:
   - src/utils/math.c (used by B1, C1)
   - src/utils/string.c (used by B2, D1)
@@ -363,9 +365,9 @@ DETECTED BOTTLENECK: src/utils.c
 - RECOMMENDATION: Make refactoring the first dependency for all affected items
 ```
 
-### Step 3: Initial Task Inventory w/ File Mapping
+### Step 3: Initial Task Inventory with File Mapping
 - List all tasks found in the plan
-- Map each task to its file req
+- Map each task to its file requirements
 - Note their stated dependencies
 - Record their estimated completion time
 - **Identify file conflicts between work items**
@@ -389,7 +391,7 @@ For each task pair (A, B), perform precise file conflict detection:
 
 **Build System Analysis:**
 - Do both tasks affect the same build targets?
-- Are there shared config files?
+- Are there shared configuration files?
 - Do changes affect the same test suites?
 
 **Semantic Analysis:**
@@ -465,7 +467,7 @@ Example reasoning:
 ### ❌ FALSE Dependencies (Can be parallelized):
 1. **B1→B2→B3 (Layer Norm → Linear Projection → KV Cache)**
    - Why it looks sequential: Listed in order in plan
-   - Why it's false: Modify completely different files & functions
+   - Why it's false: Modify completely different files and functions
    - Parallel potential: 3 developers can work simultaneously
 
 2. **All of Track C waiting for all of Track B**
@@ -523,7 +525,7 @@ The orchestrated plan includes these critical instructions for coding assistants
 1. Re-read the entire plan document to get current status
 2. Check global plan lock status
 3. Identify available work items (not claimed, dependencies met)
-4. Verify no file conflicts w/ active work items
+4. Verify no file conflicts with active work items
 5. If working on specific requested item: check if already claimed
 ```
 
@@ -542,9 +544,9 @@ The orchestrated plan includes these critical instructions for coding assistants
 **When asked to work on "next available item":**
 ```
 1. Fresh read entire plan document
-2. Identify items w/ no dependencies or completed dependencies
+2. Identify items with no dependencies or completed dependencies
 3. Verify item not already claimed by checking ownership headers
-4. Check file conflicts w/ other active work items
+4. Check file conflicts with other active work items
 5. Claim item by updating ownership under plan lock
 6. Begin work only after successful claiming
 ```
@@ -558,31 +560,38 @@ The orchestrated plan includes these critical instructions for coding assistants
 4. Wait for user decision before proceeding
 ```
 
-### 📊 Plan Compaction Protocol
-**After completing work items:**
+### 📊 Plan Management Protocol
+**When updating plan status:**
 ```
-1. Move completed detailed work items to "COMPLETED WORK" section
-2. Replace w/ summary: "✅ [Item]: [Files modified] - [Brief outcome]"
-3. Maintain dependency references but reduce token usage
-4. Archive detailed req but keep results visible
+1. Mark work items as complete w/ ✅ status indicator
+2. **4 COMPLETED work items**: Move 2 "COMPLETED WORK" section w/ summary format
+3. **4 ACTIVE/FUTURE work items**: PRESERVE all original details & conceptual info
+4. **Completed work summary format**: "✅ [Item]: [Files modified] - [Brief outcome summary]"
+5. **Never compress active or planned work items** - maintain all specifications & req
+6. Only apply compaction 2 work that is 100% finished & validated
 ```
+
+🚨 **CRITICAL DISTINCTION**:
+- **Completed work**: Can be summarized 4 token efficiency while preserving outcome history
+- **Active/Future work**: Must retain 100% of original detail, specifications, & conceptual info
+- This command enhances plans by adding parallel execution capabilities while preserving all planning detail 4 incomplete work
 
 ## Success Criteria
 
 A well-orchestrated plan should:
 - ✅ Enable 3+ assistants to work simultaneously without file conflicts
 - ✅ **Enable 5-10 assistants on granular sub-tracks without conflicts**
-- ✅ Provide clear ownership & claiming mechanisms w/ file lists
+- ✅ Provide clear ownership and claiming mechanisms with file lists
 - ✅ **Support partial track ownership (sub-track level)**
-- ✅ Include comprehensive coordination instructions w/ plan locking
-- ✅ **Identify & eliminate false dependencies based on file analysis**
-- ✅ Define measurable completion criteria for all tasks w/ file valid8n
+- ✅ Include comprehensive coordination instructions with plan locking
+- ✅ **Identify and eliminate false dependencies based on file analysis**
+- ✅ Define measurable completion criteria for all tasks with file validation
 - ✅ **Show parallel execution opportunities visually**
-- ✅ Establish clear dependency chains & convergence points
+- ✅ Establish clear dependency chains and convergence points
 - ✅ **Provide work unit size estimates for better planning**
-- ✅ Include quality gates & valid8n procedures
+- ✅ Include quality gates and validation procedures
 - ✅ **Include refactoring recommendations to unlock parallelization**
 - ✅ Provide escalation paths for blocking issues
-- ✅ **Calculate & display parallelization efficiency metrics**
+- ✅ **Calculate and display parallelization efficiency metrics**
 - ✅ **Enforce global plan lock for all document updates**
 - ✅ **Require fresh plan reading before any work or claiming**

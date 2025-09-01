@@ -287,13 +287,15 @@ The command performs these transformations:
 - Inserts claiming/releasing instructions with lock protocol
 - Adds stalled work recovery procedures
 
-### 6. Progress Tracking & Plan Compaction
-- Converts tasks to trackable items with clear completion criteria and file lists
-- Adds quantitative progress metrics
-- Inserts validation test references
-- Creates milestone definitions with success criteria
-- **Plan Compaction Instructions**: How to summarize completed work items to save tokens
-- **Completed Work Archive**: Moving finished items to summary sections
+### 6. Progress Tracking & Plan Structure Enhancement
+- **Preserves ALL original work item details for active and future work items**
+- Adds parallel execution metadata to work items (track assignments, file lists, dependencies)
+- Adds quantitative progress metrics alongside original content
+- Inserts validation test references without removing original requirements
+- Creates milestone definitions with success criteria while keeping all original planning details
+- **CRITICAL: Maintains 100% of original conceptual detail for all incomplete work**
+- **Plan Compaction for Completed Work Only**: Summarizes finished items to save tokens while preserving history
+- **Active Work Enhancement**: Adds orchestration structure without removing any original content for incomplete work
 
 ### 7. Coordination Infrastructure
 - Adds comprehensive multi-assistant coordination instructions with plan locking
@@ -556,14 +558,21 @@ The orchestrated plan includes these critical instructions for coding assistants
 4. Wait for user decision before proceeding
 ```
 
-### 📊 Plan Compaction Protocol
-**After completing work items:**
+### 📊 Plan Management Protocol
+**When updating plan status:**
 ```
-1. Move completed detailed work items to "COMPLETED WORK" section
-2. Replace with summary: "✅ [Item]: [Files modified] - [Brief outcome]"
-3. Maintain dependency references but reduce token usage
-4. Archive detailed requirements but keep results visible
+1. Mark work items as complete with ✅ status indicator
+2. **For COMPLETED work items**: Move to "COMPLETED WORK" section with summary format
+3. **For ACTIVE/FUTURE work items**: PRESERVE all original details and conceptual information
+4. **Completed work summary format**: "✅ [Item]: [Files modified] - [Brief outcome summary]"
+5. **Never compress active or planned work items** - maintain all specifications and requirements
+6. Only apply compaction to work that is 100% finished and validated
 ```
+
+🚨 **CRITICAL DISTINCTION**:
+- **Completed work**: Can be summarized for token efficiency while preserving outcome history
+- **Active/Future work**: Must retain 100% of original detail, specifications, and conceptual information
+- This command enhances plans by adding parallel execution capabilities while preserving all planning detail for incomplete work
 
 ## Success Criteria
 
