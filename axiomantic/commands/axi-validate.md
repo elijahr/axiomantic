@@ -50,7 +50,7 @@ Perform comprehensive quality assurance and cleanup on: **$ARGUMENTS**
 - Complex algorithms and business logic explained
 - Comments explain "why" behind decisions, not "what"
 - Clear, concise language avoiding obvious statements
-- **NO development history, phase references, or session comments**
+- **NO development history, phase references, track references, or session comments**
 
 **Project Documentation**
 - README accurately reflects current state
@@ -61,7 +61,7 @@ Perform comprehensive quality assurance and cleanup on: **$ARGUMENTS**
 ```
 ❌ "Clean implementation"
 ❌ "Replaces X lines"
-❌ "Phase 1", "This session"
+❌ "Phase 1", "Track C", "This session"
 ❌ "Updated from", "Changed to"
 ❌ "Function definition", "Class declaration"
 ❌ "No segfaults", "Stability improvement"
