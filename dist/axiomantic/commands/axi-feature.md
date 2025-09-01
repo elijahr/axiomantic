@@ -1,5 +1,6 @@
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 # /axi-feature - End-to-End Feature Development
+
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 Plan & implement a new feature following Axiomantic principles w/ comprehensive codebase integration for: **$ARGUMENTS**
 
@@ -54,7 +55,7 @@ Plan & implement a new feature following Axiomantic principles w/ comprehensive 
 **Context-Informed Planning Process:**
 
 1. **Step Back & Survey**: Read relevant files, understand arch, identify components, note constraints
-2. **Internal Dialogue**: Question the problem, approaches, risks/trade-offs, system interactions  
+2. **Internal Dialogue**: Question the problem, approaches, risks/trade-offs, system interactions
 3. **Context-Informed Planning**: Reflect codebase patterns, infrastructure, team practices, realistic scope, apply Four-Pillar Validation
 4. **Plan Validation**: Review against codebase, check assumptions, ensure actionable/specific, consider alternatives
 
@@ -84,9 +85,9 @@ Plan & implement a new feature following Axiomantic principles w/ comprehensive 
 
 **Planning Hierarchy Integration:**
 
-**Complexity Guidelines**: 
+**Complexity Guidelines**:
 - Simple (<1hr) = inline valid8n
-- Medium (1-4hr) = .tmp plan  
+- Medium (1-4hr) = .tmp plan
 - Complex (>4hr) = ROADMAP.md
 
 **Plan Discovery**: Check for existing plans (ROADMAP.md > PROJECT_PLAN.md > README roadmap > TODO.md). Ask user which to follow if multiple found.
@@ -133,25 +134,25 @@ When creating substantial feature plans, automatically coordinate w/ project pla
 
 Plan valid8n against each Axiomantic pillar:
 
-1. **Coding Standards** 
+1. **Coding Standards**
    - Style guide compliance specific to this codebase
    - Code quality metrics & standards
    - Error handling patterns consistent w/ existing code
    - Performance considerations based on project req
 
-2. **Documentation** 
+2. **Documentation**
    - API docs following project patterns
    - User guides & examples
    - Architecture docs updates
    - Inline comments explaining complex business logic
 
-3. **Project Patterns** 
+3. **Project Patterns**
    - Consistency w/ existing codebase patterns
    - Adherence to established conventions
    - Proper use of existing abstractions & utilities
    - Integration w/ existing config & setup
 
-4. **Testing** 
+4. **Testing**
    - Comprehensive test coverage w/ meaningful assertions
    - Test patterns consistent w/ existing test suite
    - Edge case coverage appropriate for this feature
@@ -198,7 +199,7 @@ Before starting impl, address:
 
 **Push back constructively** if:
 - Requirements are unclear or incomplete
-- The proposed approach seems problematic  
+- The proposed approach seems problematic
 - There are better alternatives to consider
 - The feature introduces unnecessary complexity
 - Testing strategy is insufficient

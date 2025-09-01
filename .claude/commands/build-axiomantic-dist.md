@@ -41,8 +41,8 @@ Please execute the following:
    cp CHANGELOG dist/
    ```
 
-3. **Recursively run axitxt compression on markdown files in dist/ EXCEPT for dist/commands/axitxt.md, LICENSE, and, CHANGELOG.md & README.md:**
-   See axiomantic/commands/axitxt.md for axitxt compression instructions.
+3. **Recursively run axitxt compression on markdown files in dist/ EXCEPT for dist/commands/axi-compress.md, LICENSE, CHANGELOG.md & README.md:**
+   See axiomantic/commands/axi-compress.md for axitxt compression instructions.
 
 4. **Verify the build:**
    ```bash

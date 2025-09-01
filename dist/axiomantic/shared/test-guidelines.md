@@ -1,7 +1,7 @@
 
 # 🧪 Testing Standards
 
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 #### Testing Approach
 - Write tests that verify behavior, not impl

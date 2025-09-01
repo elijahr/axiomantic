@@ -1,5 +1,6 @@
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 # /axi-validate - Comprehensive Quality Assurance & Cleanup
+
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 Perform comprehensive quality assurance & cleanup on: **$ARGUMENTS**
 
@@ -31,7 +32,7 @@ Apply the Four-Pillar Validation systematically w/ complete standards compliance
 
 **Security**: Any security vulnerabilities or exposed sensitive data?
 
-**Language-Specific Patterns**: 
+**Language-Specific Patterns**:
 - Use idiomatic constructs for your language
 - Leverage language features appropriately
 - Follow established conventions

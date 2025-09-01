@@ -8,7 +8,7 @@ Manage flexible customization system with user rules, project rules, and rule pr
 
 **Rule Precedence Order (highest to lowest):**
 1. **User Rules** - Personal preferences stored locally (not committed)
-2. **Project Rules** - Team-wide rules committed to repository  
+2. **Project Rules** - Team-wide rules committed to repository
 3. **Base Rules** - Default Axiomantic framework rules
 
 **Conflict Resolution:**
@@ -75,7 +75,7 @@ Manage flexible customization system with user rules, project rules, and rule pr
 **Categories:**
 - `all` - Show all active rules with precedence indicators
 - `user` - Show only user-specific rules
-- `project` - Show only project-specific rules  
+- `project` - Show only project-specific rules
 - `base` - Show only base Axiomantic rules
 - `conflicts` - Show rules that are overridden by higher precedence
 
@@ -141,7 +141,7 @@ CONFLICT: comment-style
 ├── PROJECT: detailed (OVERRIDDEN)
 └── BASE: contextual (OVERRIDDEN)
 
-CONFLICT: test-coverage  
+CONFLICT: test-coverage
 ├── PROJECT: 95% (ACTIVE - overrides base)
 └── BASE: 90% (OVERRIDDEN)
 
@@ -221,7 +221,7 @@ NO CONFLICTS: 47 rules
 /axi-rules test comment-style "function add(a, b) { return a + b; }"
 # Output: "Rule 'comment-style=minimal' suggests: No comment needed - function is self-explanatory"
 
-/axi-rules test naming-convention "function addTwoNumbers"  
+/axi-rules test naming-convention "function addTwoNumbers"
 # Output: "Rule 'naming-convention=snake_case' violation: Use 'add_two_numbers'"
 ```
 
@@ -235,7 +235,7 @@ All Axiomantic commands automatically apply active rules:
 ```markdown
 Applying active rules for validation:
 - USER: comment-style = minimal
-- PROJECT: test-coverage = 95%  
+- PROJECT: test-coverage = 95%
 - PROJECT: naming-convention = snake_case
 
 Validation Results:
@@ -273,7 +273,7 @@ Temporarily override rules for specific commands:
 ```
 💡 Suggested Rules Based on Project Analysis:
 
-DETECTED PATTERN: 
+DETECTED PATTERN:
 - 95% of functions use snake_case naming
 - SUGGEST: Add project rule 'naming-convention = snake_case'
 
@@ -282,7 +282,7 @@ DETECTED INCONSISTENCY:
 - SUGGEST: Add project rule 'test-framework = pytest' for consistency
 
 PERFORMANCE OPPORTUNITY:
-- Database queries average 2.3s response time  
+- Database queries average 2.3s response time
 - SUGGEST: Add project rule 'db-query-timeout = 1s'
 ```
 
@@ -296,7 +296,7 @@ PERFORMANCE OPPORTUNITY:
 /axi-rules template web-api
 # Generates template with API-specific rules
 
-/axi-rules template data-science  
+/axi-rules template data-science
 # Generates template with DS-specific rules
 
 /axi-rules template mobile-app
@@ -344,7 +344,7 @@ The following rules are automatically checked by /axi-validate:
 
 #### Rule Dependencies
 ```markdown
-### api-documentation  
+### api-documentation
 **Value**: required
 **Depends-on**: public-interface = true
 **Description**: API documentation required only for public interfaces
@@ -361,7 +361,7 @@ Shows rule effectiveness and usage:
 
 MOST TRIGGERED RULES:
 1. naming-convention: 47 violations fixed
-2. test-coverage: 23 violations fixed  
+2. test-coverage: 23 violations fixed
 3. comment-style: 18 applications
 
 RULE EFFECTIVENESS:
@@ -381,7 +381,7 @@ Effective rule management should achieve:
 - ✅ **Conflict Resolution** - Automatic handling of rule conflicts
 - ✅ **Integration** - Rules automatically applied by all commands
 - ✅ **Flexibility** - Easy to add, modify, remove rules
-- ✅ **Team Alignment** - Project rules ensure consistent team standards  
+- ✅ **Team Alignment** - Project rules ensure consistent team standards
 - ✅ **Personal Productivity** - User rules support individual preferences
 - ✅ **Documentation** - Clear rule documentation and rationale
 - ✅ **Validation** - Rule consistency and effectiveness tracking

@@ -1,5 +1,6 @@
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 # /axi-implement - Complete Development Workflow
+
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 Execute complete dev workflow w/ plan integration, TDD approach, & systematic debugging for: **$ARGUMENTS**
 
@@ -17,7 +18,7 @@ Execute complete dev workflow w/ plan integration, TDD approach, & systematic de
 
 **Step 2: Plan Resolution**
 - If **multiple plans found**: Present list & ask user which to follow
-- If **no plans found**: Ask user "No existing plan found. Would you like to create a project plan first?" 
+- If **no plans found**: Ask user "No existing plan found. Would you like to create a project plan first?"
   - If yes → Jump to `/axi-feature` workflow for comprehensive planning
   - If no → Ask user to describe the work item & create a minimal work specification
 
@@ -70,7 +71,7 @@ When dev encounters failures, test errors, or unexpected behavior:
 ### 2. **Gather Evidence & Context**
 - Collect all relevant logs, error messages, & stack traces
 - Document env details (versions, configs, state)
-- Capture exact input data & expected vs. actual outputs  
+- Capture exact input data & expected vs. actual outputs
 - Use debugging tools to inspect runtime state & variable values
 
 ### 3. **Form Scientific Hypotheses**
@@ -104,7 +105,7 @@ When dev encounters failures, test errors, or unexpected behavior:
 - Automatically update plan status as work items complete
 - Handle plan conflicts & coordination when multiple developers working
 
-### Quality Assurance Integration  
+### Quality Assurance Integration
 - Apply `/axi-validate` standards throughout dev
 - Use `/axi-test` systematic approach for test creation & execution
 - Ensure all Four Pillars valid8n before work item completion
@@ -119,7 +120,7 @@ When dev encounters failures, test errors, or unexpected behavior:
 ### Completion Validation
 Before marking work item complete, verify:
 1. **Functionality**: All acceptance criteria met
-2. **Testing**: Tests pass & provide adequate coverage  
+2. **Testing**: Tests pass & provide adequate coverage
 3. **Code Quality**: Follows project coding standards
 4. **Documentation**: Code is properly documented & commented
 5. **Integration**: Works correctly w/ existing codebase
@@ -161,7 +162,7 @@ Before marking work item complete, verify:
 
 Successful impl workflow achieves:
 - ✅ **Completed work item** meeting all acceptance criteria
-- ✅ **Clean, tested code** following project standards  
+- ✅ **Clean, tested code** following project standards
 - ✅ **Updated plan status** w/ accurate progress tracking
 - ✅ **No technical debt** introduced without docs
 - ✅ **Validated integration** w/ existing codebase

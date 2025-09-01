@@ -1,5 +1,6 @@
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 # /axi-plan - Advanced Multi-Assistant Orchestration
+
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 Converts a regular plan document into a parallelizable track-based plan w/ comprehensive coordination instructions for multiple AI assistants working simultaneously on: **$ARGUMENTS**
 

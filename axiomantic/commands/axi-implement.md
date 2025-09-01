@@ -16,7 +16,7 @@ Execute complete development workflow with plan integration, TDD approach, and s
 
 **Step 2: Plan Resolution**
 - If **multiple plans found**: Present list and ask user which to follow
-- If **no plans found**: Ask user "No existing plan found. Would you like to create a project plan first?" 
+- If **no plans found**: Ask user "No existing plan found. Would you like to create a project plan first?"
   - If yes → Jump to `/axi-feature` workflow for comprehensive planning
   - If no → Ask user to describe the work item and create a minimal work specification
 
@@ -69,7 +69,7 @@ When development encounters failures, test errors, or unexpected behavior:
 ### 2. **Gather Evidence & Context**
 - Collect all relevant logs, error messages, and stack traces
 - Document environment details (versions, configurations, state)
-- Capture exact input data and expected vs. actual outputs  
+- Capture exact input data and expected vs. actual outputs
 - Use debugging tools to inspect runtime state and variable values
 
 ### 3. **Form Scientific Hypotheses**
@@ -103,7 +103,7 @@ When development encounters failures, test errors, or unexpected behavior:
 - Automatically update plan status as work items complete
 - Handle plan conflicts and coordination when multiple developers working
 
-### Quality Assurance Integration  
+### Quality Assurance Integration
 - Apply `/axi-validate` standards throughout development
 - Use `/axi-test` systematic approach for test creation and execution
 - Ensure all Four Pillars validation before work item completion
@@ -118,7 +118,7 @@ When development encounters failures, test errors, or unexpected behavior:
 ### Completion Validation
 Before marking work item complete, verify:
 1. **Functionality**: All acceptance criteria met
-2. **Testing**: Tests pass and provide adequate coverage  
+2. **Testing**: Tests pass and provide adequate coverage
 3. **Code Quality**: Follows project coding standards
 4. **Documentation**: Code is properly documented and commented
 5. **Integration**: Works correctly with existing codebase
@@ -160,7 +160,7 @@ Before marking work item complete, verify:
 
 Successful implementation workflow achieves:
 - ✅ **Completed work item** meeting all acceptance criteria
-- ✅ **Clean, tested code** following project standards  
+- ✅ **Clean, tested code** following project standards
 - ✅ **Updated plan status** with accurate progress tracking
 - ✅ **No technical debt** introduced without documentation
 - ✅ **Validated integration** with existing codebase

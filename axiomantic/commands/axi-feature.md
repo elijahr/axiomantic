@@ -53,7 +53,7 @@ Plan and implement a new feature following Axiomantic principles with comprehens
 **Context-Informed Planning Process:**
 
 1. **Step Back & Survey**: Read relevant files, understand architecture, identify components, note constraints
-2. **Internal Dialogue**: Question the problem, approaches, risks/trade-offs, system interactions  
+2. **Internal Dialogue**: Question the problem, approaches, risks/trade-offs, system interactions
 3. **Context-Informed Planning**: Reflect codebase patterns, infrastructure, team practices, realistic scope, apply Four-Pillar Validation
 4. **Plan Validation**: Review against codebase, check assumptions, ensure actionable/specific, consider alternatives
 
@@ -83,9 +83,9 @@ Plan and implement a new feature following Axiomantic principles with comprehens
 
 **Planning Hierarchy Integration:**
 
-**Complexity Guidelines**: 
+**Complexity Guidelines**:
 - Simple (<1hr) = inline validation
-- Medium (1-4hr) = .tmp plan  
+- Medium (1-4hr) = .tmp plan
 - Complex (>4hr) = ROADMAP.md
 
 **Plan Discovery**: Check for existing plans (ROADMAP.md > PROJECT_PLAN.md > README roadmap > TODO.md). Ask user which to follow if multiple found.
@@ -132,25 +132,25 @@ When creating substantial feature plans, automatically coordinate with project p
 
 Plan validation against each Axiomantic pillar:
 
-1. **Coding Standards** 
+1. **Coding Standards**
    - Style guide compliance specific to this codebase
    - Code quality metrics and standards
    - Error handling patterns consistent with existing code
    - Performance considerations based on project requirements
 
-2. **Documentation** 
+2. **Documentation**
    - API documentation following project patterns
    - User guides and examples
    - Architecture documentation updates
    - Inline comments explaining complex business logic
 
-3. **Project Patterns** 
+3. **Project Patterns**
    - Consistency with existing codebase patterns
    - Adherence to established conventions
    - Proper use of existing abstractions and utilities
    - Integration with existing configuration and setup
 
-4. **Testing** 
+4. **Testing**
    - Comprehensive test coverage with meaningful assertions
    - Test patterns consistent with existing test suite
    - Edge case coverage appropriate for this feature
@@ -197,7 +197,7 @@ Before starting implementation, address:
 
 **Push back constructively** if:
 - Requirements are unclear or incomplete
-- The proposed approach seems problematic  
+- The proposed approach seems problematic
 - There are better alternatives to consider
 - The feature introduces unnecessary complexity
 - Testing strategy is insufficient

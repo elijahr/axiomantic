@@ -1,7 +1,8 @@
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 # /axi-rules - Dynamic Rule & Customization Mgmt
 
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
+
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 Manage flexible customization sys w/ user rules, proj rules, & rule precedence 4: **$ARGUMENTS**
 
@@ -11,7 +12,7 @@ Manage flexible customization sys w/ user rules, proj rules, & rule precedence 4
 
 **Rule Precedence Order (highest → lowest):**
 1. **User Rules** - Personal preferences stored locally (not committed)
-2. **📋 Project Rules** - Team-wide rules committed 2 repo  
+2. **📋 Project Rules** - Team-wide rules committed 2 repo
 3. **Base Rules** - Default Axiomantic fwk rules
 
 **Conflict Resolution:**
@@ -78,7 +79,7 @@ Manage flexible customization sys w/ user rules, proj rules, & rule precedence 4
 **Categories:**
 - `all` - Show all active rules w/ precedence indicators
 - `user` - Show only user-specific rules
-- `project` - Show only project-specific rules  
+- `project` - Show only project-specific rules
 - `base` - Show only base Axiomantic rules
 - `conflicts` - Show rules that are overridden by higher precedence
 
@@ -144,7 +145,7 @@ CONFLICT: comment-style
 ├── PROJECT: detailed (OVERRIDDEN)
 └── BASE: contextual (OVERRIDDEN)
 
-CONFLICT: test-coverage  
+CONFLICT: test-coverage
 ├── PROJECT: 95% (ACTIVE - overrides base)
 └── BASE: 90% (OVERRIDDEN)
 
@@ -224,7 +225,7 @@ NO CONFLICTS: 47 rules
 /axi-rules test comment-style "function add(a, b) { return a + b; }"
 # Output: "Rule 'comment-style=minimal' suggests: No comment needed - function is self-explanatory"
 
-/axi-rules test naming-convention "function addTwoNumbers"  
+/axi-rules test naming-convention "function addTwoNumbers"
 # Output: "Rule 'naming-convention=snake_case' violation: Use 'add_two_numbers'"
 ```
 
@@ -238,7 +239,7 @@ All Axiomantic commands automatically apply active rules:
 ```markdown
 Applying active rules for valid8n:
 - USER: comment-style = minimal
-- PROJECT: test-coverage = 95%  
+- PROJECT: test-coverage = 95%
 - PROJECT: naming-convention = snake_case
 
 Validation Results:
@@ -276,7 +277,7 @@ Temporarily override rules for specific commands:
 ```
 💡 Suggested Rules Based on Project Analysis:
 
-DETECTED PATTERN: 
+DETECTED PATTERN:
 - 95% of functions use snake_case naming
 - SUGGEST: Add project rule 'naming-convention = snake_case'
 
@@ -285,7 +286,7 @@ DETECTED INCONSISTENCY:
 - SUGGEST: Add project rule 'test-framework = pytest' for consistency
 
 PERFORMANCE OPPORTUNITY:
-- Database queries average 2.3s response time  
+- Database queries average 2.3s response time
 - SUGGEST: Add project rule 'db-query-timeout = 1s'
 ```
 
@@ -299,7 +300,7 @@ PERFORMANCE OPPORTUNITY:
 /axi-rules template web-api
 # Generates template w/ API-specific rules
 
-/axi-rules template data-science  
+/axi-rules template data-science
 # Generates template w/ DS-specific rules
 
 /axi-rules template mobile-app
@@ -347,7 +348,7 @@ The following rules are automatically checked by /axi-validate:
 
 #### Rule Dependencies
 ```markdown
-### api-docs  
+### api-docs
 **Value**: required
 **Depends-on**: public-interface = true
 **Description**: API docs required only for public interfaces
@@ -364,7 +365,7 @@ Shows rule effectiveness & usage:
 
 MOST TRIGGERED RULES:
 1. naming-convention: 47 violations fixed
-2. test-coverage: 23 violations fixed  
+2. test-coverage: 23 violations fixed
 3. comment-style: 18 apps
 
 RULE EFFECTIVENESS:
@@ -384,7 +385,7 @@ Effective rule mgmt should achieve:
 - ✅ **Conflict Resolution** - Automatic handling of rule conflicts
 - ✅ **Integration** - Rules automatically applied by all commands
 - ✅ **Flexibility** - Easy to add, modify, remove rules
-- ✅ **Team Alignment** - Project rules ensure consistent team standards  
+- ✅ **Team Alignment** - Project rules ensure consistent team standards
 - ✅ **Personal Productivity** - User rules support individual preferences
 - ✅ **Documentation** - Clear rule docs & rationale
 - ✅ **Validation** - Rule consistency & effectiveness tracking

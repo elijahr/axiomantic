@@ -1,7 +1,7 @@
 
 # ⚙️ Config & Build File Standards
 
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
+
 
 ### Config Mgmt
 

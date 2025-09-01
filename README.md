@@ -58,7 +58,7 @@ The installer creates:
 - Shared instruction system with tool-specific symlinks
 - No configuration conflicts or duplication
 
-### Token Efficiency  
+### Token Efficiency
 - Axitxt compression reduces instruction sizes by 35-50%
 - Conditional module loading based on task context
 - Only relevant standards loaded when needed
@@ -150,7 +150,7 @@ The AGENTS.md file provides full compatibility with OpenCode's agent system, inc
 ### Context-Aware Loading
 Instructions automatically adapt based on current task:
 - **Source code tasks** → Load development standards
-- **Documentation tasks** → Load documentation guidelines  
+- **Documentation tasks** → Load documentation guidelines
 - **Testing tasks** → Load testing frameworks
 - **Configuration tasks** → Load configuration standards
 

@@ -12,7 +12,15 @@ Modify the file in-place and ensure the compression algorithm is fully adhered t
 
 ## Preface for LLM Documents
 
-"This document uses axitxt compression: standard abbreviations, txtspeak shortcuts, emoji symbols for concepts, and omitted articles/pronouns where context is clear."
+Place this concise meta-notice **after the main document header** (not at the very beginning):
+
+**Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.**
+
+**Placement:**
+- For `# Main Title` documents → Place preface on line 3 (after title and empty line)
+- For documents with subtitles → Place preface after the subtitle and empty line
+- Never replace or interfere with the primary document header
+- Always use italics to distinguish as meta-information, not document content
 
 ## Compression Rules (Apply in Order)
 

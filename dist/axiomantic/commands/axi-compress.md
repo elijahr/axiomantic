@@ -1,4 +1,3 @@
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
 # /axi-compress - Token-Efficient Text Compression
 
 Apply advanced axitxt compression for maximum token efficiency while preserving semantic meaning to: **$ARGUMENTS**
@@ -9,11 +8,19 @@ Compress English text for LLM consumption while maintaining semantic clarity. Ta
 
 🚨 **COMPRESSION ONLY - NO ADDITIONS**: Only remove or replace text. Never add new words, emojis, or content not present in the original.
 
-Modify the file in-place & ensure the compression algorithm is fully adhered to.
+Modify the file in-place and ensure the compression algorithm is fully adhered to.
 
-## Preface for LLM Documents
+## Preface 4 LLM Documents
 
-"This document uses axitxt compression: standard abbreviations, txtspeak shortcuts, emoji symbols for concepts, & omitted articles/pronouns where context is clear."
+Place concise meta-notice **after main doc header** (not @ very beginning):
+
+*Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
+
+**Placement:**
+- 4 `# Main Title` docs → Place preface on line 3 (after title & empty line)
+- 4 docs w/ subtitles → Place preface after subtitle & empty line
+- Never replace or interfere w/ primary doc header
+- Always use italics 2 distinguish as meta-info, not doc content
 
 ## Compression Rules (Apply in Order)
 
@@ -26,7 +33,7 @@ Modify the file in-place & ensure the compression algorithm is fully adhered to.
 
 **Examples:**
 
-- "the impl of the feature" → "impl feature"
+- "the implementation of the feature" → "implementation feature"
 - "this code is readable" → "code readable"
 - "When you complete it, check the results" → "When complete, check results"
 - "The function returns its value" → "Function returns value"
@@ -79,29 +86,29 @@ Modify the file in-place & ensure the compression algorithm is fully adhered to.
 
 **Technical Terms:**
 
-- impl → impl
-- docs → docs
-- config → config
-- valid8n → valid8n
-- perf → perf
+- implementation → impl
+- documentation → docs
+- configuration → config
+- validation → valid8n
+- performance → perf
 - security → sec
 - project → proj
 - technical → tech
 - instructions → instr
 - guidelines → guidel
-- req → req
-- arch → arch
-- dev → dev
+- requirements → req
+- architecture → arch
+- development → dev
 - function → func
 - variable → var
 - message → msg
 - information → info
 - significant → signif
 - appropriate → appropr8
-- env → env
+- environment → env
 - language → lang
 - programming → prog
-- app → app
+- application → app
 - system → sys
 - service → svc
 - database → db
@@ -162,10 +169,10 @@ Modify the file in-place & ensure the compression algorithm is fully adhered to.
 
 **Common Words:**
 
-- w/ → w/
+- with → w/
 - without → w/o
 - within → w/in
-- & → &
+- and → &
 - you → u (sparingly)
 - your → ur (sparingly)
 - because → bc
@@ -191,7 +198,7 @@ Only when context makes meaning clear:
 - establish → establsh
 - potential → potenti
 - definitely → definit
-- mgmt → mgmt
+- management → mgmt
 - consistent → consistnt
 - between → btwn
 
@@ -199,7 +206,7 @@ Only when context makes meaning clear:
 
 - to/too → 2 (context dependent)
 - for → 4 (context dependent)
-- ate/eight → 8 (valid8n → valid8n)
+- ate/eight → 8 (validation → valid8n)
 
 ### 6. Punctuation Simplification
 
@@ -258,7 +265,7 @@ Only when context makes meaning clear:
 
 - Universal tech terms: OK to compress aggressively (dev, impl, config)
 - Domain-specific terms: Moderate compression (valid8n, perf)
-- Ambiguous terms: Light compression only (mgmt → mgmt)
+- Ambiguous terms: Light compression only (mgmt → management)
 
 ### 10. Emoji Efficiency Rules
 
@@ -291,8 +298,8 @@ Only when context makes meaning clear:
 
 **Never apply multiple compression rules to same word:**
 
-- "impl" → "impl" (stop here, don't vowel-reduce)
-- "valid8n" → "valid8n" (stop here, don't abbreviate further)
+- "implementation" → "impl" (stop here, don't vowel-reduce)
+- "validation" → "valid8n" (stop here, don't abbreviate further)
 - Choose the MOST effective single compression per word
 
 ### 13. Sentence Structure Preservation
@@ -313,7 +320,7 @@ Only when context makes meaning clear:
 
 **For documents >500 words:**
 
-- Establish abbreviation consistency - make abbreviation choices early & stick to them
+- Establish abbreviation consistency - make abbreviation choices early and stick to them
 - Consider a mini-glossary at the top for unusual abbreviations
 - Use section headers as context anchors
 - Repeat full terms occasionally to maintain context
@@ -323,7 +330,7 @@ Only when context makes meaning clear:
 - Provide redundant context cues where critical
 - Use parallel structure to reinforce meaning
 - Include full terms alongside abbreviations in critical sections
-- Test comprehension w/ sample passages
+- Test comprehension with sample passages
 
 ## Advanced Quality Assurance
 
@@ -339,7 +346,7 @@ Only when context makes meaning clear:
 1. **Read aloud test** - does it sound natural when spoken?
 2. **Cold read test** - can someone unfamiliar understand it?
 3. **Context isolation test** - do abbreviated sections make sense alone?
-4. **LLM interpretation test** - feed to different AI & check understanding
+4. **LLM interpretation test** - feed to different AI and check understanding
 
 ### Compression Strategy Selection
 
@@ -374,14 +381,14 @@ The compression process must maintain:
 - Prioritize precision over accessibility
 
 **For Mixed Audiences:**
-- Balance compression w/ clarity
+- Balance compression with clarity
 - Include occasional full terms for context
 - Use universal abbreviations primarily
 
 **For Documentation:**
 - Maintain structural clarity
 - Preserve instructional sequences
-- Keep examples & code unmodified
+- Keep examples and code unmodified
 
 ## Quality Checks
 
@@ -397,8 +404,8 @@ After compression, verify:
 
 1. Compress section by section
 2. Estimate token savings for each section
-3. Review for clarity & comprehension
-4. Test w/ different complexity levels
+3. Review for clarity and comprehension
+4. Test with different complexity levels
 5. Validate semantic preservation
 
 **Success Criteria:**

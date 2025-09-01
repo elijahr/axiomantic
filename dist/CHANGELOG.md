@@ -1,25 +1,23 @@
 # Changelog
 
-This doc uses axitxt compression: std abbreviations, txtspeak shortcuts, emoji symbols 4 concepts, & omitted articles/pronouns where context clear.
+All notable changes to this project will be documented in this file.
 
-All notable changes 2 this proj will be documented in this file.
-
-Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-& this proj adheres 2 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.0] - 2025-09-01
 
-### ✨ Added
-- **🛠️ Major Cmd Refactoring**: Consolidated 5+ cmds into 6 focused, comprehensive cmds w/ `axi-` prefix 4 namespace safety
-- `/axi-validate` - Comprehensive quality assurance combining valid8n, cleanup, & standards enforcement from multiple sources
-- `/axi-plan` - Advanced multi-assistant orchestration w/ complete planning standards integration
-- `/axi-feature` - End-2-end feature dev w/ deep codebase analysis & integration planning
-- `/axi-test` - Comprehensive testing workflow w/ systematic failure analysis & zero-skip policy
+### Added
+- **Major Command Refactoring**: Consolidated 5+ commands into 6 focused, comprehensive commands with `axi-` prefix for namespace safety
+- `/axi-validate` - Comprehensive quality assurance combining validation, cleanup, and standards enforcement from multiple sources
+- `/axi-plan` - Advanced multi-assistant orchestration with complete planning standards integration
+- `/axi-feature` - End-to-end feature development with deep codebase analysis and integration planning
+- `/axi-test` - Comprehensive testing workflow with systematic failure analysis and zero-skip policy
 - `/axi-compress` - Token-efficient text compression using advanced axitxt algorithms
-- `/axi-rules` - Dynamic rule mgmt sys w/ user/proj/base rule hierarchy
-- **Lossless Content Migration**: All existing instr content preserved w/ complete fidelity during consolidation
-- **⚡ Token Efficiency**: 40-50% reduction in base instr tokens thru conditional loading & cmd consolidation
-- **Cmd Integration**: Cross-cmd coordination w/ automatic planning integration via `/axi-plan`
+- `/axi-rules` - Dynamic rule management system with user/project/base rule hierarchy
+- **Lossless Content Migration**: All existing instruction content preserved with complete fidelity during consolidation
+- **Token Efficiency**: 40-50% reduction in base instruction tokens through conditional loading and command consolidation
+- **Command Integration**: Cross-command coordination with automatic planning integration via `/axi-plan`
 
 ### Changed
 - Renamed `parallelize-plan` command to `orchestrate-plan` for better clarity
