@@ -1,20 +1,20 @@
-# /axi-validate - Comprehensive Quality Assurance & Cleanup
+# /axi-valid8 - Comprehensive Quality Assurance & Cleanup
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
 Perform comprehensive quality assurance & cleanup on: **$ARGUMENTS**
 
-> **💡 Best Results**: Apply Four-Pillar Valid8n systematically - be pessimistic & thorough 2 catch issues before they reach production.
+> **💡 Best Results**: Apply Five-Pillar Valid8n systematically - be pessimistic & thorough 2 catch issues before they reach production.
 
-## 🚨 CRITICAL VALID8N PRINCIPLES
+## 🚨 🚨 VALID8N PRINCIPLES
 
-**Four-Pillar Valid8n**: Every significant code change must pass all four pillars - Coding Standards, Docs, Project Patterns, Testing.
+**Five-Pillar Valid8n**: Every significant code change must pass all five pillars - Coding Standards, Docs, Proj Patterns, Testing, & Instr Quality.
 
-**Zero-Tolerance Comment Policy**: Immediately delete any comments referencing dev history, phases, sessions, or obvious code descriptions.
+**Zero-Tolerance Comment Policy**: Immediately delete any cmts referencing dev history, phases, sessions, or obvious code descriptions.
 
-**Production-Ready Standard**: 🎯 is production-ready code meeting Axiomantic standards, not just "working" code.
+**Production-Ready Standard**: Goal is production-ready code meeting Axiomantic standards, not just "working" code.
 
-## Four-Pillar Validation Framework
+## Five-Pillar Validation Framework
 
 ### 1. Coding Standards Validation
 
@@ -52,7 +52,7 @@ Perform comprehensive quality assurance & cleanup on: **$ARGUMENTS**
 - Complex algorithms and business logic explained
 - Comments explain "why" behind decisions, not "what"
 - Clear, concise language avoiding obvious statements
-- **NO development history, phase references, or session comments**
+- **NO development history, phase references, track references, or session comments**
 
 **Project Documentation**
 - README accurately reflects current state
@@ -63,7 +63,7 @@ Perform comprehensive quality assurance & cleanup on: **$ARGUMENTS**
 ```
 ❌ "Clean implementation"
 ❌ "Replaces X lines"
-❌ "Phase 1", "This session"
+❌ "Phase 1", "Track C", "This session"
 ❌ "Updated from", "Changed to"
 ❌ "Function definition", "Class declaration"
 ❌ "No segfaults", "Stability improvement"
@@ -132,7 +132,7 @@ Perform comprehensive quality assurance & cleanup on: **$ARGUMENTS**
 ## Self-Validation Standards
 
 **After Every Major Implementation Step:**
-Apply Four-Pillar Validation after completing significant code changes, implementations, or milestones.
+Apply Five-Pillar Validation after completing significant code changes, implementations, or milestones.
 
 **Self-Validation Process:**
 1. **Review** - Check code against specific criteria for each pillar
@@ -189,7 +189,7 @@ Apply Four-Pillar Validation after completing significant code changes, implemen
 - **Examples**: Are there sufficient usage examples?
 
 ## Success Criteria
-- ✅ **All Four Pillars Validated** - Coding standards, documentation, patterns, testing
+- - ✅ **All Five Pillars Validated** - Coding standards, documentation, patterns, testing, instruction quality
 - ✅ **Production-Ready Code** - Meets professional quality standards
 - ✅ **No Forbidden Comments** - All development history and obvious comments removed
 - ✅ **Comprehensive Assessment** - Thorough analysis identifying real issues

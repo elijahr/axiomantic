@@ -10,60 +10,82 @@ Execute complete dev workflow w/ plan integration, TDD approach, & systematic de
 
 **Plan-First Dev**: Never start implementing w/o identifying plan & work item 2 ensure progress tracking & coordination.
 
-**Systematic Debugging**: When issues arise, use 6-step scientific debugging methodology rather than trial-&-error approaches.
+**Systematic Debugging**: When issues arise, use 6-step scientific debugging methodology rather than trial-&-err approaches.
 
-**Quality Gates**: Apply Four-Pillar Valid8n before marking any work item complete - no exceptions.
+**Quality Gates**: Apply Five-Pillar Valid8n before marking any work item comp - no exceptions.
 
 ## Dev Workflow 🔄
 
 ### Phase 1: Plan Discovery & Work Item Selection
 
-**Step 1: Plan Document Discovery (Priority Order)**
-1. `ROADMAP.md` - Major features & multi-phase projects
-2. `PROJECT_PLAN.md` - Project-specific planning docs
-3. `README.md` (Roadmap section) - Project-level planning
+**Step 1: Plan Doc Discovery (Priority Order)**
+1. `ROADMAP.md` - Major feats & multi-phase projs
+2. `PROJECT_PLAN.md` - Proj-specific planning docs
+3. `README.md` (Roadmap sect) - Proj-level planning
 4. `TODO.md` - Task lists & quick items
-5. `.tmp/*.md` - Temporary planning docs
+5. `.tmp/*.md` - Temp planning docs
 
 **Step 2: Plan Resolution**
 - **Multiple plans found** → Present list, ask user which 2 follow
-- **No plans found** → Ask: "No existing plan found. Would you like 2 create project plan first?"
-  - If yes → Jump 2 `/axi-feature` workflow 4 comprehensive planning
-  - If no → Ask user 2 describe work & create minimal specification
+- **No plans found** → Ask: "No existing plan found. Would you like 2 cr8 proj plan first?"
+  - If yes → Jump 2 `/axi-feat` workflow 4 comprehensive planning
+  - If no → Ask user 2 describe work & cr8 minimal spec
 
 **Step 3: Work Item Selection**
 - Parse selected plan doc 4 all work items
 - Filter 4 unblocked items (no incomplete dependencies)
-- Present available options: "Available work items: [list]. Which would you like 2 work on?"
-- If item claimed by another session → Offer 2 take over or select different item
+- Present avail opts: "Avail work items: [list]. Which would you like 2 work on?"
+- If item claimed by another session → Offer 2 take over or select diff item
 
-### Phase 2: Work Item Analysis & Test Strategy
+### Phase 2: Work Item Analysis & Validation Planning
 
 **Step 4: Work Item Analysis**
-- **Scope**: What exactly needs 2 be implemented?
-- **📁 involved**: Which files will be created/modified?
+- **Scope**: What exactly needs to be implemented?
+- **Files involved**: Which files will be created/modified?
 - **Dependencies**: What existing code does this rely on?
 - **Success criteria**: How will we know it's complete?
 - **Testing approach**: Unit tests, integration tests, or both?
 
-**Step 5: Test-First Dev Decision**
-**Use TDD 4**: New funcs, API endpoints, business logic, data transformations
-**Skip TDD 4**: UI styling, config changes, docs, simple file operations
+**Step 5: Proactive Validation Planning**
+**Five-Pillar Pre-Planning:**
+1. **Coding Standards**: Survey existing code patterns, naming conventions, error handling
+2. **Documentation**: Plan docstrings, comments, README updates during implementation
+3. **Project Patterns**: Identify existing patterns to follow (imports, file structure, etc.)
+4. **Testing**: Design test strategy that achieves meaningful coverage and validation
+5. **Instruction Quality**: If modifying commands/agents, follow process-oriented standards
+
+**Active Rules Integration:**
+- Load and apply user overrides (`.axiomantic/user-overrides.md`)
+- Load and apply project overrides (`.axiomantic/project-overrides.md`)
+- Note any rule conflicts and resolve according to precedence (User > Project > Base)
+- Plan implementation approach that follows active rule set
+
+**Step 6: Test-First Development Decision**
+**Use TDD for**: New functions, API endpoints, business logic, data transformations
+**Skip TDD for**: UI styling, configuration changes, documentation, simple file operations
 
 **If using TDD:**
 1. Write failing tests that would pass when feature is complete
-2. Follow testing standards from `/axi-test`
-3. Run tests 2 confirm they fail (red phase)
-4. Begin impl 2 make tests pass
+2. Follow testing standards from `/axi-test` and active rules
+3. Run tests to confirm they fail (red phase)
+4. Begin implementation to make tests pass
 
-### Phase 3: Implementation with Quality Gates
+### Phase 3: Implementation with Continuous Validation
 
-**Step 6: Implementation Cycle**
-1. **Implement** → Write code to fulfill work item requirements
-2. **Test** → Run tests and observe results
-3. **Debug** → If failures occur, apply 6-step debugging methodology
-4. **Iterate** → Repeat until tests pass and requirements met
-5. **Validate** → Apply Four-Pillar Validation before marking complete
+**Step 7: Implementation Cycle**
+1. **Pre-Implementation**: Review active rules and validation criteria before coding
+2. **Implement**: Write code following identified patterns and active rules
+3. **Continuous Validation**: Apply Five-Pillar checks during development, not after
+4. **Test**: Run tests and observe results with meaningful assertions
+5. **Debug**: If failures occur, apply 6-step debugging methodology
+6. **Iterate**: Repeat until tests pass and requirements met
+7. **Final Validation**: Confirm Five-Pillar compliance before marking complete
+
+**Continuous Five-Pillar Application:**
+- **During Coding**: Follow discovered patterns, apply naming conventions, handle errors consistently
+- **During Documentation**: Write docstrings and comments that match project style
+- **During Testing**: Create tests that validate behavior meaningfully and achieve coverage goals
+- **Before Commits**: Self-validate against all five pillars to catch issues early
 
 ## 6-Step Scientific Debugging Methodology
 
@@ -138,7 +160,7 @@ Before marking work item complete:
 ### Quality Assurance
 - Apply `/axi-validate` standards throughout development
 - Use `/axi-test` systematic approach for test creation
-- Ensure Four-Pillar Validation before completion
+- Ensure Five-Pillar Validation before completion
 
 ### Feature Development
 - If work item requires architectural analysis → Integrate with `/axi-feature`

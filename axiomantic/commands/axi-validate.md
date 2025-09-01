@@ -2,17 +2,17 @@
 
 Perform comprehensive quality assurance and cleanup on: **$ARGUMENTS**
 
-> **💡 Best Results**: Apply Four-Pillar Validation systematically - be pessimistic and thorough to catch issues before they reach production.
+> **💡 Best Results**: Apply Five-Pillar Validation systematically - be pessimistic and thorough to catch issues before they reach production.
 
 ## 🚨 CRITICAL VALIDATION PRINCIPLES
 
-**Four-Pillar Validation**: Every significant code change must pass all four pillars - Coding Standards, Documentation, Project Patterns, Testing.
+**Five-Pillar Validation**: Every significant code change must pass all five pillars - Coding Standards, Documentation, Project Patterns, Testing, and Instruction Quality.
 
 **Zero-Tolerance Comment Policy**: Immediately delete any comments referencing development history, phases, sessions, or obvious code descriptions.
 
 **Production-Ready Standard**: Goal is production-ready code meeting Axiomantic standards, not just "working" code.
 
-## Four-Pillar Validation Framework
+## Five-Pillar Validation Framework
 
 ### 1. Coding Standards Validation
 
@@ -130,7 +130,7 @@ Perform comprehensive quality assurance and cleanup on: **$ARGUMENTS**
 ## Self-Validation Standards
 
 **After Every Major Implementation Step:**
-Apply Four-Pillar Validation after completing significant code changes, implementations, or milestones.
+Apply Five-Pillar Validation after completing significant code changes, implementations, or milestones.
 
 **Self-Validation Process:**
 1. **Review** - Check code against specific criteria for each pillar
@@ -187,7 +187,7 @@ Apply Four-Pillar Validation after completing significant code changes, implemen
 - **Examples**: Are there sufficient usage examples?
 
 ## Success Criteria
-- ✅ **All Four Pillars Validated** - Coding standards, documentation, patterns, testing
+- - ✅ **All Five Pillars Validated** - Coding standards, documentation, patterns, testing, instruction quality
 - ✅ **Production-Ready Code** - Meets professional quality standards
 - ✅ **No Forbidden Comments** - All development history and obvious comments removed
 - ✅ **Comprehensive Assessment** - Thorough analysis identifying real issues

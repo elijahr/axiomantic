@@ -1,26 +1,26 @@
-# /axi-plan - Advanced Multi-Assistant Orchestration
+# /axi-plan - Adv Multi-Assistant Orchestration
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
-Converts regular plan doc into parallelizable track-based plan w/ comprehensive coordination instructions 4 multiple AI assistants working simultaneously on: **$ARGUMENTS**
+Converts regular plan doc into parallelizable track-based plan w/ comprehensive coordination instrs 4 multiple AI assistants working simultaneously on: **$ARGUMENTS**
 
-> **💡 Best Results**: This command works best w/ LLMs that have advanced reasoning capabilities. Analysis requires critical thinking about task dependencies & parallel execution opportunities.
+> **💡 Best Results**: This cmd works best w/ LLMs that have adv reasoning capabilities. The anal requires critical thinking abt task dependencies & parallel execution opportunities.
 
 ## 🚨 PRESERVATION PROTOCOL
 
 **🚨: This enhances plans, never replaces content**
 
 ### Core Rules:
-1. **COMPLETED work** (✅ status) → Can be summarized 4 history
+1. **COMPLETED work** (✅ status) → Can be summarized for history
 2. **ACTIVE/FUTURE work** → Preserve 100% of all details, specs, examples
 3. **When in doubt** → Always preserve original content
-4. **Valid8n checkpoint** → Final output must be ≥80% of original size
+4. **Validation checkpoint** → Final output must be ≥80% of original size
 
-### Step-by-Step 🔄:
+### Step-by-Step Process:
 1. **Analyze**: Classify each work item by status (✅/🔄/📋/⏸️)
 2. **Preserve**: Copy all active work content completely
 3. **Enhance**: Add parallelization metadata alongside original content
-4. **Validate**: Check preservation ratio & content completeness
+4. **Validate**: Check preservation ratio and content completeness
 
 ## What This Command Does
 

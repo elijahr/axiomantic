@@ -85,7 +85,7 @@ Seven specialized commands for professional development workflows:
 
 ### `/axi-validate` - Quality Assurance & Cleanup
 Complete validation and cleanup system:
-- **Four Pillars Validation** - Coding standards, documentation, architecture, testing completeness
+- **Five Pillars Validation** - Coding standards, documentation, architecture, testing, instruction quality
 - **Standards Compliance** - Validates against project standards
 - **Comment Cleanup** - Removes redundant and session-based comments
 - **Test Quality** - Enforces meaningful test coverage
@@ -156,8 +156,8 @@ Instructions automatically adapt based on current task:
 ## Customization
 
 Axiomantic supports project-specific customization:
-- Add `project.instructions.md` for project-specific rules
-- Add `user.instructions.md` for user-specific rules (non git-committed)
+- Add `project-overrides.md` for project-specific rules
+- Add `user-overrides.md` for user-specific rules (non git-committed)
 
 ## Development Impact
 

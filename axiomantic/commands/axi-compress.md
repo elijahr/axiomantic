@@ -8,6 +8,8 @@ Apply advanced axitxt compression for maximum token efficiency while preserving 
 
 **COMPRESSION ONLY - NO ADDITIONS**: Only remove or replace text. Never add new words, emojis, or content not present in the original.
 
+**DIRECT TOOL USAGE**: Use `read_file` and `replace_string_in_file` tools to perform compression. Do NOT create automation scripts or external programs.
+
 **Document Preface Placement**: Place compression notice **after the main document header** (not at the very beginning):
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
@@ -180,15 +182,29 @@ Replace words with specific emojis:
 - **Moderate (35-40%)**: Mixed audiences, technical docs
 - **Conservative (25-30%)**: Public docs, critical content
 
-## Usage
-```
-/axi-compress [input_file] [output_file]
-```
+## Usage & Implementation
 
-**Example:**
+**Direct Tool-Based Compression**: Apply compression by reading files and using `replace_string_in_file` tool to make edits systematically. Do NOT create automation scripts.
+
+**Process:**
+1. Read the target file using `read_file` tool
+2. Apply compression rules section by section using `replace_string_in_file`
+3. Start with adding the compression notice after the main header
+4. Work through the document applying compression rules systematically
+5. Validate the result maintains semantic meaning
+
+**Examples:**
+- `/axi-compress docs/README.md` → Compress README.md in place
+- `/axi-compress dist/axiomantic/AGENT.md` → Compress AGENT.md in place
+- `/axi-compress **$ARGUMENTS**` → Compress specified files
+
+**Tool Usage Pattern:**
 ```
-/axi-compress docs/README.md README_compressed.md
-/axi-compress PLAN.md PLAN.md  # In-place compression
+1. read_file(target_file)
+2. replace_string_in_file(add compression notice)
+3. replace_string_in_file(apply abbreviations)
+4. replace_string_in_file(remove articles)
+5. Continue systematically through document
 ```
 
 ## Success Criteria

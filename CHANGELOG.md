@@ -47,6 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/axitxt` command for text compression and token efficiency
 - Professional coding standards enforcement across all AI interactions
 - Context-aware instruction loading (source/test/docs/config)
-- Project-specific customization support via `project.instructions.md`
+- Project-specific customization support via `project-overrides.md`
 - Comprehensive installation system for Linux/macOS/Windows
 - Shared instruction library with conditional module loading

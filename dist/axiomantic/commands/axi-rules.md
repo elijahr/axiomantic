@@ -1,54 +1,78 @@
-# /axi-rules - Dynamic Rule & Customization Management
+# /axi-rules - Dynamic Rule & Customization Mgmt
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
-Manage flexible customization system w/ user rules, project rules, & rule precedence 4: **$ARGUMENTS**
+Manage flexible customization sys w/ user rules, proj rules, & rule precedence 4: **$ARGUMENTS**
 
-> **💡 Best Results**: Use rule hierarchy (User > Project > Base) 2 customize Axiomantic behavior while maintaining team consistency.
+> **💡 Best Results**: Use rule hierarchy (User > Proj > Base) 2 customize Axiomantic behavior while maintaining team consistency.
 
-## 🚨 CRITICAL RULE PRINCIPLES
+## 🚨 🚨 RULE PRINCIPLES
 
-**Rule Precedence**: User Rules override Project Rules override Base Rules - higher precedence always wins.
+**Rule Precedence**: User Rules override Proj Rules override Base Rules - higher precedence always wins.
 
-**Conflict Resolution**: Most specific rule wins within same precedence level; explicit rules override implicit defaults.
+**Conflict Resolution**: Most specific rule wins w/in same precedence level; explicit rules override implicit defaults.
 
 **Team Consistency**: Project rules ensure team alignment while user rules support individual productivity preferences.
 
 ## Rule Hierarchy & Types
 
 ### Rule Precedence Order (Highest → Lowest)
-1. **User Rules** (`.axiomantic/user-rules.md`) - Personal preferences, never committed
-2. **Project Rules** (`.axiomantic/project-rules.md`) - Team standards, committed to repo
+1. **User Overrides** (`.axiomantic/user-overrides.md`) - Personal preferences, never committed
+2. **Project Overrides** (`.axiomantic/project-overrides.md`) - Team standards, committed to repo
 3. **Base Rules** - Default Axiomantic framework standards
 
-### User Rules (.axiomantic/user-rules.md)
-**Personal preferences stored locally, never committed:**
-- Code style overrides for individual workflow
-- IDE-specific configurations
-- Personal shortcuts and test runners
-- Individual productivity customizations
+### User Overrides (.axiomantic/user-overrides.md)
+**Personal workflow processes stored locally, never committed:**
+- Process overrides for individual workflow optimization
+- IDE-specific integration processes
+- Personal shortcuts and automation workflows
+- Individual productivity process customizations
 
-**Example:**
+**Example Process-Oriented Structure:**
 ```markdown
-# User Rules (Local Only)
-- comment-style: minimal  # Override project verbose comments
-- test-runner: pytest-xvs  # Personal test execution preference
-- git-commit: conventional  # Personal commit format
+# User Overrides (Local Only)
+
+## Code Review Process Override
+**When reviewing code before commit:**
+1. Skip verbose comment checks (minimal-comment-style preference)
+2. Use personal test runner: `pytest -xvs` for immediate feedback
+3. Apply conventional commit format automatically
+
+## Implementation Process Override
+**When implementing new features:**
+1. Start with architecture review (personal preference)
+2. Write tests first, even for simple changes
+3. Use snake_case for all new functions (personal consistency)
 ```
 
-### Project Rules (.axiomantic/project-rules.md)
-**Team-wide standards committed to repository:**
-- Language-specific style guides
-- Framework-specific patterns
-- Performance and security requirements
-- Team conventions and architecture constraints
+### Project Overrides (.axiomantic/project-overrides.md)
+**Team-wide process standards committed to repository:**
+- Language-specific workflow processes
+- Framework-specific implementation processes
+- Performance and security validation processes
+- Team coordination and architecture processes
 
-**Example:**
+**Example Process-Oriented Structure:**
 ```markdown
-# Project Rules (Team-Wide)
-- naming-convention: snake_case  # All functions use snake_case
-- test-coverage: 95%  # Minimum coverage requirement
-- api-doc-required: true  # All public APIs need docs
+# Project Overrides (Team-Wide)
+
+## Implementation Process Requirements
+**When implementing new features:**
+1. All functions must use snake_case naming (team consistency)
+2. Minimum 95% test coverage required before PR approval
+3. All public APIs require docstring documentation with examples
+
+## Code Review Process Standards
+**Before approving any PR:**
+1. Run full test suite: `pytest --cov=src --cov-fail-under=95`
+2. Verify no hardcoded credentials or secrets
+3. Confirm API documentation updated for public interface changes
+
+## Testing Process Requirements
+**When adding tests:**
+1. Use pytest framework exclusively (team standard)
+2. Test files must be in tests/ directory matching src/ structure
+3. Integration tests required for all API endpoints
 ```
 
 ## Rule Management Commands
@@ -74,72 +98,118 @@ Manage flexible customization system w/ user rules, project rules, & rule preced
    (active - no overrides)
 ```
 
-### Add New Rule
+### Add New Override with Cross-Reference Validation
 ```
 /axi-rules add [scope] [rule-name] [rule-value] [description]
 ```
 
-**Examples:**
-```
-/axi-rules add user comment-style minimal "Prefer minimal comments"
-/axi-rules add project test-timeout 30s "All tests must complete in 30s"
-```
+**Enhanced Add Process with Cross-Referencing:**
+1. **Scan existing Axiomantic rules** in axi-validate, axi-test, axi-implement, axi-feature
+2. **Check for duplicates**: If rule already handled by base Axiomantic framework
+3. **Check for conflicts**: If rule contradicts existing framework expectations
+4. **Resolve conflicts within scope**: Remove/amend conflicting rules in same file
+5. **Add process-oriented rule**: Structure as workflow process, not just expectation
 
-### Modify Existing Rule
+**Examples with Conflict Resolution:**
 ```
-/axi-rules modify [scope] [rule-name] [new-value] [reason]
-```
+/axi-rules add user test-coverage 85% "Personal lower threshold for rapid iteration"
+# System response: "WARNING: Base Axiomantic rule requires 90% coverage. This creates USER OVERRIDE. Continue? [y/N]"
 
-### Remove Rule
-```
-/axi-rules remove [scope] [rule-name] [reason]
-```
+/axi-rules add project comment-style verbose "Team requires detailed comments"
+# System response: "Base Axiomantic uses contextual comments. This creates PROJECT OVERRIDE affecting all team members. Continue? [y/N]"
 
-### Analyze Conflicts
-```
-/axi-rules conflicts
-```
-
-Shows all rule conflicts and resolution:
-```
-🔍 Rule Conflict Analysis:
-
-CONFLICT: comment-style
-├── USER: minimal (ACTIVE - highest precedence)
-├── PROJECT: detailed (OVERRIDDEN)
-└── BASE: contextual (OVERRIDDEN)
+/axi-rules add project naming-convention camelCase "Use camelCase for consistency with legacy code"
+# System detects existing project rule: naming-convention snake_case
+# System response: "CONFLICT: Existing project rule specifies snake_case. Replace existing rule? [y/N]"
 ```
 
-## Rule Categories & Standards
+### Same-File Conflict Resolution
+```
+/axi-rules synthesize [scope]
+```
 
-### Code Quality Rules
-- `code-style`: Formatting and style preferences
-- `naming-convention`: Variable, function, class naming
-- `comment-style`: Comment verbosity and style
-- `error-handling`: Error handling patterns
-- `performance-standards`: Performance requirements
+**Automatic Coherence Process:**
+When adding rules that conflict with existing rules in same file:
 
-### Testing Rules
-- `test-coverage`: Minimum code coverage percentage
-- `test-runner`: Preferred test execution tool
-- `test-timeout`: Maximum test execution time
-- `test-patterns`: Test file naming and organization
+1. **Detection**: Identify conflicting rules within same scope (user-overrides.md or project-overrides.md)
+2. **User Prompt**: Show conflicts and suggest synthesis approaches
+3. **Coherent Resolution**: Combine, replace, or create conditional rules for coherent result
+4. **Process Update**: Restructure as workflow processes rather than conflicting declarations
 
-### Documentation Rules
-- `doc-style`: Documentation format and verbosity
-- `api-doc-required`: API documentation requirements
-- `readme-format`: README structure standards
-- `comment-requirements`: When comments are required
+**Example Synthesis:**
+```
+DETECTED CONFLICT in project-overrides.md:
+- Existing: naming-convention = snake_case
+- Adding: naming-convention = camelCase
 
-### Process Rules
-- `commit-format`: Git commit message format
-- `branch-naming`: Git branch naming conventions
-- `review-requirements`: Code review standards
+SYNTHESIS OPTIONS:
+1. Replace: Remove snake_case rule, add camelCase rule
+2. Conditional: snake_case for internal functions, camelCase for public APIs
+3. Cancel: Keep existing snake_case rule
+
+RECOMMENDED PROCESS STRUCTURE:
+## Naming Convention Process
+**When naming functions:**
+1. Use camelCase for public API functions (team decision 2025-09-01)
+2. Use snake_case for internal/private functions
+3. Maintain consistency within each module
+```
+
+### Cross-Reference Analysis & Conflict Prevention
+```
+/axi-rules analyze [proposed-rule-name] [proposed-value]
+```
+
+**Deep Analysis Process:**
+1. **Base Framework Scan**: Check axi-validate standards and other commands for existing handling
+2. **Conflict Detection**: Identify contradictions with base Axiomantic principles
+3. **Duplicate Prevention**: Show if existing rules already handle this requirement
+4. **Structure Validation**: Ensure override follows axi-validate process-oriented standards
+5. **Impact Assessment**: Show which commands would be affected by this override
+
+**Example Analysis Output:**
+```
+🔍 Cross-Reference Analysis: test-coverage = 85%
+
+BASE FRAMEWORK REFERENCE:
+├── axi-validate: Instruction & Command Quality Validation includes coverage validation standards
+├── axi-test: Requires meaningful coverage of critical functionality (typically 90%+)
+├── axi-implement: Continuous validation includes coverage requirements
+└── Base Axiomantic standard: 90%+ coverage for quality gates
+
+CONFLICT ASSESSMENT:
+❌ CONFLICTS with base Axiomantic standard of 90%+ coverage
+❌ May compromise Five-Pillar validation reliability
+
+STRUCTURE VALIDATION:
+⚠️  Must follow process-oriented structure from axi-validate standards
+
+RECOMMENDATION:
+⚠️  Consider project-specific rule: test-coverage-critical = 95%, test-coverage-utility = 75%
+⚠️  This allows nuanced coverage while maintaining quality gates
+```
 
 ## Integration with Other Commands
 
 ### Rule-Aware Command Execution
 All Axiomantic commands automatically apply active rules:
+
+**`/axi-validate` integration:**
+```markdown
+Applying active rules for validation:
+- USER: comment-style = minimal
+- PROJECT: test-coverage = 95%
+- PROJECT: naming-convention = snake_case
+
+Validation Results:
+✅ Comment style: Following minimal preference
+❌ Test coverage: 87% (below project requirement of 95%)
+✅ Naming: All functions use snake_case
+```
+
+**Override Structure Standards**: All override files must follow process-oriented standards defined in `/axi-validate` Override & Rule Definition Standards.
+
+**Rule Categories**: Valid rule categories and validation requirements are defined in `/axi-validate` Override & Rule Definition Standards.
 
 **`/axi-validate` integration:**
 ```markdown
@@ -248,17 +318,18 @@ RULE EFFECTIVENESS:
 - test-coverage=95%: 0 production bugs from untested code
 ```
 
-## Rule Definition Structure
+## Override Structure Standards
 
-```markdown
-### [rule-name]
-**Value**: [rule-value]
-**Scope**: [user|project|base]
-**Priority**: [high|medium|low]
-**Description**: [clear purpose description]
-**Examples**: [concrete usage examples]
-**Exceptions**: [when rule might not apply]
-```
+***Process-Oriented Requirements**: All overrides must follow the process-oriented structure defined in `/axi-validate` Override & Rule Definition Standards.
+
+**Key Requirements from axi-validate:**
+- Structured as actionable workflows with clear trigger conditions
+- Step-by-step processes that coding assistants can follow
+- Clear documentation of what base behavior is overridden
+- Rationale provided for workflow improvements
+- Concrete usage examples demonstrating the process
+
+See `/axi-validate` Override & Rule Definition Standards for complete structural requirements and validation criteria.
 
 ## Success Criteria
 - ✅ **Clear Rule Hierarchy** - User > Project > Base precedence working
@@ -267,7 +338,8 @@ RULE EFFECTIVENESS:
 - ✅ **Easy Management** - Simple add, modify, remove operations
 - ✅ **Team Alignment** - Project rules ensure consistent standards
 - ✅ **Personal Productivity** - User rules support individual preferences
-- ✅ **Clear Documentation** - Rule purpose and rationale documented
+- ✅ **Process-Oriented Structure** - Overrides follow axi-validate standards
+- ✅ **Cross-Reference Validation** - Overrides validated against base framework
 - ✅ **Effectiveness Tracking** - Rule metrics show value and usage
 
 ## Usage

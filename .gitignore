@@ -1,5 +1,5 @@
 # User-specific overrides (keep local)
-.github/instructions/user.instructions.md
+.github/instructions/user-overrides.md
 
 # Temporary files
 .tmp/

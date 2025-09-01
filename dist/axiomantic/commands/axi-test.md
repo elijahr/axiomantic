@@ -2,21 +2,21 @@
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
-Execute comprehensive testing w/ intelligent failure analysis & quality assurance 4: **$ARGUMENTS**
+Execute comprehensive testing w/ intelligent failure anal & quality assurance 4: **$ARGUMENTS**
 
-> **💡 Best Results**: Focus on systematic root cause resolution rather than skipping tests. Every test should validate meaningful behavior.
+> **💡 Best Results**: Focus on systematic root cause resolution rather than skipping tests. Every test should valid8 meaningful behavior.
 
-## 🚨 CRITICAL TESTING PRINCIPLES
+## 🚨 🚨 TESTING PRINCIPLES
 
 **ZERO TOLERANCE 4 Test Skipping**: Fix env/dependencies/code - never use `pytest.skip()`, `@pytest.mark.skip`, or `@pytest.mark.xfail`.
 
-**Success Criteria**: `pytest -v` showing 100% pass rate, 0 skips/xfails/errors. Tests pass individually w/ meaningful assertions & edge case coverage.
+**Success Criteria**: `pytest -v` showing 100% pass rate, 0 skips/xfails/errs. Tests pass individually w/ meaningful assertions & edge case coverage.
 
-**Systematic Root Cause Resolution**: Use 8-phase systematic approach 2 fix all test issues comprehensively.
+**Systematic Root Cause Resolution**: Use the 8-phase systematic approach to fix all test issues comprehensively.
 
 ## Systematic Test Execution Process
 
-### Phase 1: Discovery & Assessment
+### Phase 1: Discovery, Assessment & Rule Integration
 **Initial Test Landscape Analysis:**
 ```bash
 pytest --collect-only  # Discover all tests
@@ -24,11 +24,18 @@ pytest -v             # Run with verbose output
 pytest --tb=short -v  # Check for skipped/failed tests
 ```
 
+**Active Rules Integration:**
+- Load user overrides (`.axiomantic/user-overrides.md`) for testing preferences
+- Load project overrides (`.axiomantic/project-overrides.md`) for team testing standards
+- Apply rule precedence (User > Project > Base) for testing approach
+- Note coverage requirements, test patterns, and framework preferences from active rules
+
 **Assessment Questions:**
 - How many tests exist and where are they located?
 - What testing frameworks and patterns are being used?
 - Are there skipped or expected failure tests that need fixing?
 - What types of failures are occurring (import, assertion, environment)?
+- **Do current tests meet active rule requirements?** (coverage, patterns, etc.)
 
 ### Phase 2: Infrastructure & Environment Setup
 **Environment Validation:**
@@ -71,20 +78,27 @@ pytest --tb=short -v  # Check for skipped/failed tests
 - Handle test framework version conflicts
 - Resolve test execution and collection edge cases
 
-### Phase 7: Quality & Completeness Enhancement
-**Test Quality Improvements:**
-- Enhance test coverage for edge cases
-- Improve assertions to be more meaningful
-- Add missing test scenarios
+### Phase 7: Quality & Validation-Aligned Enhancement
+**Test Quality Improvements Aligned with Active Rules:**
+- Enhance test coverage to meet active rule requirements (project overrides may specify minimums)
+- Improve assertions to be more meaningful following active patterns
+- Add missing test scenarios based on project-specific needs
 - Ensure tests validate actual behavior, not just execution
+- **Apply validation criteria**: Tests should follow Five-Pillar standards during creation
 
-### Phase 8: Final Validation & Performance
-**Comprehensive Validation:**
+### Phase 8: Final Validation & Rule Compliance
+**Comprehensive Validation with Active Rules:**
 ```bash
 pytest -v --tb=short                    # 100% pass rate verification
-pytest --cov=src --cov-report=term-missing --cov-fail-under=90  # Coverage check
+pytest --cov=src --cov-report=term-missing --cov-fail-under=90  # Coverage check (adjust based on active rules)
 pytest --durations=10                   # Performance validation
 ```
+
+**Active Rule Compliance Check:**
+- Verify coverage meets project override requirements (if specified)
+- Confirm test patterns follow user/project preferences
+- Validate test organization matches project standards
+- Check test execution approach aligns with active rules
 
 ## Test Quality Standards
 

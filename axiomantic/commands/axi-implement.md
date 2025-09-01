@@ -10,7 +10,7 @@ Execute complete development workflow with plan integration, TDD approach, and s
 
 **Systematic Debugging**: When issues arise, use the 6-step scientific debugging methodology rather than trial-and-error approaches.
 
-**Quality Gates**: Apply Four-Pillar Validation before marking any work item complete - no exceptions.
+**Quality Gates**: Apply Five-Pillar Validation before marking any work item complete - no exceptions.
 
 ## Development Workflow Process
 
@@ -35,7 +35,7 @@ Execute complete development workflow with plan integration, TDD approach, and s
 - Present available options: "Available work items: [list]. Which would you like to work on?"
 - If item claimed by another session → Offer to take over or select different item
 
-### Phase 2: Work Item Analysis & Test Strategy
+### Phase 2: Work Item Analysis & Validation Planning
 
 **Step 4: Work Item Analysis**
 - **Scope**: What exactly needs to be implemented?
@@ -44,24 +44,46 @@ Execute complete development workflow with plan integration, TDD approach, and s
 - **Success criteria**: How will we know it's complete?
 - **Testing approach**: Unit tests, integration tests, or both?
 
-**Step 5: Test-First Development Decision**
+**Step 5: Proactive Validation Planning**
+**Five-Pillar Pre-Planning:**
+1. **Coding Standards**: Survey existing code patterns, naming conventions, error handling
+2. **Documentation**: Plan docstrings, comments, README updates during implementation
+3. **Project Patterns**: Identify existing patterns to follow (imports, file structure, etc.)
+4. **Testing**: Design test strategy that achieves meaningful coverage and validation
+5. **Instruction Quality**: If modifying commands/agents, follow process-oriented standards
+
+**Active Rules Integration:**
+- Load and apply user overrides (`.axiomantic/user-overrides.md`)
+- Load and apply project overrides (`.axiomantic/project-overrides.md`)
+- Note any rule conflicts and resolve according to precedence (User > Project > Base)
+- Plan implementation approach that follows active rule set
+
+**Step 6: Test-First Development Decision**
 **Use TDD for**: New functions, API endpoints, business logic, data transformations
 **Skip TDD for**: UI styling, configuration changes, documentation, simple file operations
 
 **If using TDD:**
 1. Write failing tests that would pass when feature is complete
-2. Follow testing standards from `/axi-test`
+2. Follow testing standards from `/axi-test` and active rules
 3. Run tests to confirm they fail (red phase)
 4. Begin implementation to make tests pass
 
-### Phase 3: Implementation with Quality Gates
+### Phase 3: Implementation with Continuous Validation
 
-**Step 6: Implementation Cycle**
-1. **Implement** → Write code to fulfill work item requirements
-2. **Test** → Run tests and observe results
-3. **Debug** → If failures occur, apply 6-step debugging methodology
-4. **Iterate** → Repeat until tests pass and requirements met
-5. **Validate** → Apply Four-Pillar Validation before marking complete
+**Step 7: Implementation Cycle**
+1. **Pre-Implementation**: Review active rules and validation criteria before coding
+2. **Implement**: Write code following identified patterns and active rules
+3. **Continuous Validation**: Apply Five-Pillar checks during development, not after
+4. **Test**: Run tests and observe results with meaningful assertions
+5. **Debug**: If failures occur, apply 6-step debugging methodology
+6. **Iterate**: Repeat until tests pass and requirements met
+7. **Final Validation**: Confirm Five-Pillar compliance before marking complete
+
+**Continuous Five-Pillar Application:**
+- **During Coding**: Follow discovered patterns, apply naming conventions, handle errors consistently
+- **During Documentation**: Write docstrings and comments that match project style
+- **During Testing**: Create tests that validate behavior meaningfully and achieve coverage goals
+- **Before Commits**: Self-validate against all five pillars to catch issues early
 
 ## 6-Step Scientific Debugging Methodology
 
@@ -136,7 +158,7 @@ Before marking work item complete:
 ### Quality Assurance
 - Apply `/axi-validate` standards throughout development
 - Use `/axi-test` systematic approach for test creation
-- Ensure Four-Pillar Validation before completion
+- Ensure Five-Pillar Validation before completion
 
 ### Feature Development
 - If work item requires architectural analysis → Integrate with `/axi-feature`
