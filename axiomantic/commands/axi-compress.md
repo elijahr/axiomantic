@@ -55,7 +55,7 @@ Replace words with specific emojis:
 
 - about → abt | access → acc | account → acct | activate → activ
 - additional → addl | address → addr | administration → admin | advanced → adv
-- algorithm → algo | analysis → anal | and → & | annotation → annot
+- algorithm → algo | analysis → analysis | and → & | annotation → annot
 - application → app | approximately → ~ | architecture → arch | argument → arg
 - assignment → assign | attribute → attr | authentication → auth | automatic → auto
 - available → avail | average → avg | background → bg | backup → bkp
@@ -68,7 +68,7 @@ Replace words with specific emojis:
 - complete → comp | component → comp | computer → comp | condition → cond
 - configuration → config | connection → conn | construction → constr | container → cont
 - content → cont | context → ctx | control → ctrl | convert → conv
-- coordinate → coord | corporation → corp | create → cr8 | current → curr
+- coordinate → coord | coordination → coord | corporation → corp | create → cr8 | current → curr
 - customer → cust | data → dat | database → db | deactivate → deactiv
 - debug → dbg | decimal → dec | default → def | definition → def
 - delete → del | department → dept | description → desc | destination → dest
@@ -149,6 +149,15 @@ Replace words with specific emojis:
 - Maintain word boundaries - don't compress across word breaks
 - Preserve critical negatives (never, not, don't) exactly
 
+### Technical Term Recognition
+**Identify and preserve:**
+- Command names with hyphens (axi-validate, git-commit, npm-install)
+- CamelCase identifiers (MyClass, JavaScript, GitHub)
+- Slash commands (/axi-validate, /help, /status)
+- File extensions (.md, .py, .json)
+- Version numbers (v1.0.0, Python3.9)
+- Technical abbreviations that are industry standard (API, HTTP, JSON)
+
 ### Context Assessment Criteria
 - Is the full concept mentioned earlier in paragraph?
 - Are there contextual clues within same sentence?
@@ -161,12 +170,16 @@ Replace words with specific emojis:
 - Choose the MOST effective single compression per word
 
 ## Preservation Rules (DON'T Compress)
-- Code examples (maintain exactly)
+- Code examples & code blocks (maintain exactly)
+- Pre-formatted text blocks (```text```, `inline code`)
 - File paths & URLs
-- Proper nouns
+- Command names (axi-validate, axi-plan, git, npm, etc.)
+- Proper nouns & brand names (GitHub, Docker, Python, etc.)
+- Technical identifiers & function names
 - Domain-specific jargon that might be ambiguous
 - Numbers & dates
 - Critical distinctions (e.g., "never" vs "always")
+- Quoted strings and literals
 
 ## Validation Process
 

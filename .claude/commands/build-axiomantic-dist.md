@@ -49,6 +49,12 @@ Please execute the following:
 3. **Recursively run axitxt compression on markdown files in dist/ EXCEPT for dist/commands/axi-compress.md, LICENSE, CHANGELOG.md & README.md:**
    See axiomantic/commands/axi-compress.md for axitxt compression instructions.
 
+   **CRITICAL**: When compressing Axiomantic files, DO NOT compress:
+   - Axiomantic command names (axi-validate, axi-plan, axi-feature, etc.)
+   - File names and paths
+   - Code blocks and pre-formatted text
+   - Proper nouns and brand names
+
 4. **Verify the build:**
    ```bash
    # Verify main files and structure

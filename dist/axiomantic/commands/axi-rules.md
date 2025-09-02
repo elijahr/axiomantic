@@ -50,7 +50,7 @@ Manage flexible customization sys w/ user rules, proj rules, & rule precedence 4
 - Language-specific workflow processes
 - Framework-specific implementation processes
 - Performance and security validation processes
-- Team coordination and architecture processes
+- Team coord and architecture processes
 
 **Example Process-Oriented Structure:**
 ```markdown

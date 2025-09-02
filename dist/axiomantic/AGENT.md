@@ -85,9 +85,9 @@ After completing significant code changes, valid8:
 
 Use these specialized cmds based on task ctx:
 
-- `/axi-valid8` - Quality assurance & cleanup
+- `/axi-validate` - Quality assurance & cleanup
 - `/axi-plan` - Multi-assistant orchestration & planning
-- `/axi-feat` - End-2-end feat dev
+- `/axi-feature` - End-2-end feat dev
 - `/axi-test` - Comprehensive testing w/ intelligent failure anal
 - `/axi-compress` - Token-efficient txt compression
 - `/axi-rules` - Rule & customization mgmt

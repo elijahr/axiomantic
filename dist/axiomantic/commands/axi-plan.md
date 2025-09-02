@@ -1,176 +1,199 @@
-# /axi-plan - Adv Multi-Assistant Orchestration
+# /axi-plan - Advanced Multi-Assistant Orchestration
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
-Converts regular plan doc into parallelizable track-based plan w/ comprehensive coordination instrs 4 multiple AI assistants working simultaneously on: **$ARGUMENTS**
+Converts reg plan doc into parallelizable track-based plan w/ comp coord instr 4 mult AI assistants wrking simultaneously on: **$ARGUMENTS**
 
-> **💡 Best Results**: This cmd works best w/ LLMs that have adv reasoning capabilities. The anal requires critical thinking abt task dependencies & parallel execution opportunities.
+> **💡 Best Results**: This cmd wrks best w/ LLMs that have adv reasoning capabilities. Analysis req critical thinking abt tsk dependencies & parallel exec opportunities.
 
-## 🚨 PRESERVATION PROTOCOL
+## 🚨 PRESERVATION PROTO
 
-**🚨: This enhances plans, never replaces content**
+**🚨: This enhances plans, never replaces cont**
 
 ### Core Rules:
-1. **COMPLETED work** (✅ status) → Can be summarized for history
-2. **ACTIVE/FUTURE work** → Preserve 100% of all details, specs, examples
-3. **When in doubt** → Always preserve original content
-4. **Validation checkpoint** → Final output must be ≥80% of original size
+1. **COMP wrk** (✅ stat) → Can be summarized 4 hist
+2. **ACTIVE/FUTURE wrk** → Preserve 100% of all details, specs, ex
+3. **When in doubt** → Always preserve orig cont
+4. **valid8n checkpoint** → Final out must be ≥80% of orig size
 
-### Step-by-Step Process:
-1. **Analyze**: Classify each work item by status (✅/🔄/📋/⏸️)
-2. **Preserve**: Copy all active work content completely
-3. **Enhance**: Add parallelization metadata alongside original content
-4. **Validate**: Check preservation ratio and content completeness
+### Step-by-Step 🔄:
+1. **Analyze**: Classify each wrk item by stat (✅/🔄/📋/⏸️)
+2. **Preserve**: Copy all active wrk cont comp
+3. **Enhance**: Add parallelization metadata alongside orig cont
+4. **valid8**: Check preservation ratio & cont completeness
 
-## What This Command Does
+## What This Cmd Does
 
-**Input**: Sequential plan with work items
-**Output**: Refactoring-first parallel execution plan + all original content preserved
+**Inp**: Sequential plan w/ wrk items
+**Out**: Refactoring-1st parallel exec plan + all orig cont preserved
 
 ### Key Transformations:
-1. **Bottleneck Analysis** - Identifies shared files/modules blocking parallelization
-2. **Refactoring Strategy** - Creates focused module extraction plans as Tier 0 work
-3. **File Impact Analysis** - Maps each work item to specific files it will create/modify/delete
-4. **Post-Refactor Dependencies** - Identifies dependencies based on the refactored architecture
-5. **Maximum Parallelization** - Achieves optimal parallel execution through strategic refactoring
-6. **Coordination System** - Adds locking, claiming, and progress tracking
-7. **Content Preservation** - Maintains all original planning detail for active work
+1. **Bottleneck Analysis** - Identifies shared fls/modules blocking parallelization
+2. **Refactoring Strategy** - Cr8s focused module extraction plans as Tier 0 wrk
+3. **📁 Impact Analysis** - Maps each wrk item 2 spec fls it will cr8/modify/del
+4. **Post-Refactor Dependencies** - Identifies dependencies based on refactored arch
+5. **Max Parallelization** - Achieves optimal parallel exec thru strategic refactoring
+6. **Coord Sys** - Adds locking, claiming, & progress tracking
+7. **Cont Preservation** - Maintains all orig planning detail 4 active wrk
 
-### 🚀 Refactoring-First Philosophy:
-**Instead of working around bottlenecks → Eliminate them through strategic refactoring**
-- Shared file touched by 5 tasks? → Extract into 5 focused modules
-- Monolithic component blocking progress? → Split into logical sub-components
-- Configuration scattered across files? → Centralize then distribute properly
+### 🚀 Refactoring-1st Philosophy:
+**Instead of wrking around bottlenecks → Eliminate them thru strategic refactoring**
+- Shared fl touched by 5 tsks? → Extract into 5 focused modules
+- Monolithic comp blocking progress? → Split into logical sub-comp
+- Config scattered across fls? → Centralize then distribute properly
 
-## Execution Algorithm
+## Exec Algo
 
 ### Phase 1: Analysis
 ```
-For each work item:
-1. Determine status: ✅ completed | 🔄🔄📋⏸️ active
-2. Map file impacts: CREATE [files] | MODIFY [files] | DELETE [files]
-3. Identify dependencies: File conflicts | Functional requirements
+4 each wrk item:
+1. Determine stat: ✅ comp | 🔄🔄📋⏸️ active
+2. Map fl impacts: CREATE [fls] | MODIFY [fls] | DELETE [fls]
+3. Identify dependencies: 📁 conflicts | Functional req
 ```
 
-### Phase 2: Refactoring-First Parallelization
+### Phase 2: Refactoring-1st Parallelization
 ```
-🔥 PRIORITY: Identify & Execute Refactoring Opportunities
-1. Scan for shared file bottlenecks → Extract into focused modules
-2. Detect monolithic files → Split into logical components
-3. Map refactoring tasks → Create "R-Track" (Refactoring Track)
-4. Position refactoring as Tier 0 (foundation for all parallel work)
+🔥 PRIORITY: Identify & Exec Refactoring Opportunities
+1. Scan 4 shared fl bottlenecks → Extract into focused modules
+2. Detect monolithic fls → Split into logical comp
+3. Map refactoring tsks → Cr8 "R-Track" (Refactoring Track)
+4. Position refactoring as Tier 0 (foundation 4 all parallel wrk)
 
 THEN: Traditional Parallelization
-5. Group refactored items with no file conflicts → Parallel tracks
-6. Create execution tiers: Tier 0 (refactor) → Tier 1 → Tier 2 → etc
+5. Group refactored items w/ no fl conflicts → Parallel tracks
+6. Cr8 exec tiers: Tier 0 (refactor) → Tier 1 → Tier 2 → etc
 7. Calculate max parallelization post-refactoring
 ```
 
 ### Phase 3: Enhancement
 ```
-1. Add coordination sections at document top
-2. Enhance each work item with:
-   - Track assignment (A1, B2, etc.)
-   - File ownership list
-   - Dependencies and prerequisites
+1. Add coord sects @ doc top
+2. Enhance each wrk item w/:
+   - Track assign (A1, B2, etc.)
+   - 📁 ownership list
+   - Dependencies & prereq
    - Effort estimation
-3. Preserve ALL original content for active items
+3. Preserve ALL orig cont 4 active items
 ```
 
-### Phase 4: Validation
+### Phase 4: valid8n
 ```
-1. Content check: All specs, examples, details preserved? ✅
-2. Size check: Output ≥80% of input size? ✅
-3. Function check: Can 3+ devs work in parallel? ✅
+1. Cont chk: All specs, ex, details preserved? ✅
+2. Size chk: Out ≥80% of inp size? ✅
+3. Func chk: Can 3+ devs wrk in parallel? ✅
 ```
 
-## Generated Output Structure
+## Generated Out Structure
 
 ```markdown
-# [Original Plan Title] - Multi-Assistant Orchestration
+# [Orig Plan Ttl] - Multi-Assistant Orchestration
 
 ## 🎯 Parallelization Overview
-- **Refactoring-first approach**: Break bottlenecks before parallelizing
-- Tier 0 refactoring tasks: [N] (foundation work)
-- Max parallel developers post-refactoring: [N]
-- Execution tiers: R-Track (Tier 0) → [visual diagram of parallel tiers]
+- **Refactoring-1st approach**: Break bottlenecks before parallelizing
+- Tier 0 refactoring tsks: [N] (foundation wrk)
+- Max parallel devs post-refactoring: [N]
+- Exec tiers: R-Track (Tier 0) → [visual diagram of parallel tiers]
 - Critical path: Refactoring completion → Massive parallelization
 
-## 🔒 Coordination System
-- Global plan lock protocol
+## 🔒 Coord Sys
+- Global plan lock proto
 - Track claiming procedures
-- File ownership rules
+- 📁 ownership rules
 
-## 📊 Execution Tracks
+### Doc Locking Proto
+Each assistant must establish exclusive locks before modifying shared docs:
 
-### 🔥 Track R: Refactoring Foundation (Tier 0 - Execute First)
-- R1: [Refactoring Task] - Extract: [modules] - Enables: [tracks] - Effort: [hours]
-- R2: [Refactoring Task] - Split: [monolith] - Enables: [tracks] - Effort: [hours]
+1. **Lock Acquisition**: Add `<!-- LOCKED: [Assistant-ID]_[Ts] -->` @ doc start
+2. **Exclusive Acc**: Only lock holder may modify doc cont
+3. **Lock Release**: Rem lock marker when wrk comp or paused
+4. **Conflict Resolution**: Later ts override earlier ones after 30min timeout
+5. **Emergency Override**: Use `<!-- EMERGENCY_UNLOCK: [Reason] -->` 4 critical fixes
 
-### Track A: [Description] (Tier 1 - After R-Track)
-- A1: [Work Item] - Files: [focused modules] - Effort: [hours]
-- A2: [Work Item] - Files: [focused modules] - Effort: [hours]
+### Track Claiming Sys
+- Assistants claim wrk tracks using uniq identifiers: `PLAN_[YYYYMMDD]_[HHMM]_[4-char-hash]`
+- Track assign rec in plan hdr w/ claiming assistant details
+- Active tracks marked w/ `🔄 CLAIMED: [Assistant-ID]` in track hdrs
+- Track handoff req explicit release by curr owner & acceptance by new owner
+- Progress upd maintained in dedicated coord log sect
 
-### Track B: [Description] (Tier 1 - Parallel with Track A)
-- B1: [Work Item] - Files: [focused modules] - Effort: [hours]
+### 📁 Ownership Rules
+- Each fl can have only ONE pri owner during active dev
+- Owner responsible 4 all modifications, integ, & conflict resolution
+- Ownership changes req coord thru plan doc upd
+- Emergency modifications allowed w/ immediate owner notif & justification
+- Shared fls req pre-coord or refactoring into owner-spec modules
 
-[ORIGINAL PLAN CONTENT - ALL PRESERVED]
-Enhanced with metadata but content intact
+## 📊 Exec Tracks
+
+### 🔥 Track R: Refactoring Foundation (Tier 0 - Exec 1st)
+- R1: [Refactoring Tsk] - Extract: [modules] - Enables: [tracks] - Effort: [hrs]
+- R2: [Refactoring Tsk] - Split: [monolith] - Enables: [tracks] - Effort: [hrs]
+
+### Track A: [Desc] (Tier 1 - After R-Track)
+- A1: [Wrk Item] - 📁: [focused modules] - Effort: [hrs]
+- A2: [Wrk Item] - 📁: [focused modules] - Effort: [hrs]
+
+### Track B: [Desc] (Tier 1 - Parallel w/ Track A)
+- B1: [Wrk Item] - 📁: [focused modules] - Effort: [hrs]
+
+[ORIG PLAN CONT - ALL PRESERVED]
+Enhanced w/ metadata but cont intact
 ```
 
-## Critical Thinking Framework
+## Critical Thinking Fwk
 
-When analyzing dependencies and bottlenecks, ask:
-- **🔥 "What files are shared by multiple tasks?"** → Prime refactoring candidates
-- **🔥 "Can this monolithic file be split into focused modules?"** → Usually YES
-- **🔥 "What's the refactoring effort vs parallelization gain?"** → Often heavily favors refactoring
-- **"Does B2 REALLY need B1 first?"** → Check file conflicts, not organizational order
-- **"What breaks if these run in parallel?"** → Look for actual technical blockers after refactoring
+When analyzing dependencies & bottlenecks, ask:
+- **🔥 "What fls are shared by mult tsks?"** → Prime refactoring candidates
+- **🔥 "Can this monolithic fl be split into focused modules?"** → Usually YES
+- **🔥 "What's refactoring effort vs parallelization gain?"** → Often heavily favors refactoring
+- **"Does B2 REALLY need B1 1st?"** → Chk fl conflicts, not organizational order
+- **"What breaks if these run in parallel?"** → Look 4 actual tech blockers after refactoring
 
 ### 🎯 Refactoring Decision Matrix:
 - **High shared usage + Low refactoring cost = ALWAYS refactor**
-- **Medium shared usage + Medium refactoring cost = USUALLY refactor**
+- **Med shared usage + Med refactoring cost = USUALLY refactor**
 - **Low shared usage + High refactoring cost = Consider alternatives**
 
 ### 💡 Refactoring Patterns:
-1. **Extract Module**: Pull shared logic into focused, single-responsibility files
-2. **Split Component**: Break monoliths into logical sub-components
-3. **Interface Separation**: Create clear boundaries between concerns
-4. **Configuration Centralization**: Gather scattered config into manageable chunks
+1. **Extract Module**: Pull shared logic into focused, single-responsibility fls
+2. **Split Comp**: Break monoliths into logical sub-comp
+3. **Interface Separation**: Cr8 clear boundaries btwn concerns
+4. **Config Centralization**: Gather scattered config into manageable chunks
 
 ## Common Bottleneck Patterns & Refactoring Solutions
 
-### 🚫 Bottleneck: Shared Configuration File
-- **Problem**: 5 tasks all need to modify `config.js`
-- **Solution**: Extract to `config/database.js`, `config/auth.js`, `config/api.js` etc.
-- **Result**: 5 tasks can run in parallel on focused config modules
+### 🚫 Bottleneck: Shared Config 📁
+- **Problem**: 5 tsks all need 2 modify `config.js`
+- **Solution**: Extract 2 `config/database.js`, `config/auth.js`, `config/api.js` etc.
+- **Result**: 5 tsks can run in parallel on focused config modules
 
-### 🚫 Bottleneck: Monolithic Component
-- **Problem**: Multiple features touching `UserComponent.js`
+### 🚫 Bottleneck: Monolithic Comp
+- **Problem**: Mult feat touching `UserComponent.js`
 - **Solution**: Split into `UserProfile.js`, `UserAuth.js`, `UserPreferences.js`
-- **Result**: Feature teams work on isolated, focused components
+- **Result**: Feat teams wrk on isolated, focused comp
 
-### 🚫 Bottleneck: Utility File Sprawl
-- **Problem**: Every task modifying the same `utils.js`
-- **Solution**: Create `utils/validation.js`, `utils/formatting.js`, `utils/api.js`
-- **Result**: Tasks operate on distinct utility domains
+### 🚫 Bottleneck: Utility 📁 Sprawl
+- **Problem**: Every tsk modifying same `utils.js`
+- **Solution**: Cr8 `utils/validation.js`, `utils/formatting.js`, `utils/api.js`
+- **Result**: Tsks operate on distinct utility domains
 
-### ✅ Success Pattern: Refactoring-First Workflow
-1. **Identify** shared file bottlenecks (usually 2-3 major ones)
-2. **Plan** extraction/splitting strategy (R-Track tasks)
-3. **Execute** refactoring as Tier 0 (1-2 developers, 4-8 hours typically)
-4. **Unleash** massive parallelization on focused modules (3-8+ developers)
-5. **Celebrate** 3-5x faster execution vs working around bottlenecks
+### ✅ Success Pattern: Refactoring-1st Workflow
+1. **Identify** shared fl bottlenecks (usually 2-3 major ones)
+2. **Plan** extraction/splitting strategy (R-Track tsks)
+3. **Exec** refactoring as Tier 0 (1-2 devs, 4-8 hrs typically)
+4. **Unleash** massive parallelization on focused modules (3-8+ devs)
+5. **Celebrate** 3-5x faster exec vs wrking around bottlenecks
 
-## Success Criteria
-- ✅ **Refactoring opportunities identified and planned as Tier 0 work**
-- ✅ **Post-refactoring: 4+ assistants can work simultaneously without conflicts**
-- ✅ **Focused, single-responsibility modules enable clean parallel work**
-- ✅ All original planning detail preserved for active work
-- ✅ Clear file ownership preventing conflicts
-- ✅ Realistic refactoring estimates (typically 4-8 hours upfront investment)
-- ✅ Comprehensive coordination instructions
-- ✅ **3-5x parallelization improvement through strategic refactoring**
+## 🎯 Criteria
+- ✅ **Refactoring opportunities identified & planned as Tier 0 wrk**
+- ✅ **Post-refactoring: 4+ assistants can wrk simultaneously w/o conflicts**
+- ✅ **Focused, single-responsibility modules enable clean parallel wrk**
+- ✅ All orig planning detail preserved 4 active wrk
+- ✅ Clear fl ownership preventing conflicts
+- ✅ Realistic refactoring estimates (typically 4-8 hrs upfront investment)
+- ✅ Comp coord instr
+- ✅ **3-5x parallelization improvement thru strategic refactoring**
 
 ## Usage
 
@@ -178,74 +201,74 @@ When analyzing dependencies and bottlenecks, ask:
 /axi-plan [input_file] [output_file]
 ```
 
-**Parameters:**
-- `input_file`: Path to existing plan file (default: PLAN.md)
-- `output_file`: Path for parallelized output (default: PLAN_PARALLEL.md)
+**Param:**
+- `input_file`: Path 2 existing plan fl (def: PLAN.md)
+- `output_file`: Path 4 parallelized out (def: PLAN_PARALLEL.md)
 
-**Example:**
+**Ex:**
 ```
 /axi-plan PLAN.md PLAN.md
 /axi-plan docs/project-plan.md PLAN.md
 ```
 
-## Example Enhancement
+## Ex Enhancement
 
-**Original Work Items with Bottleneck:**
+**Orig Wrk Items w/ Bottleneck:**
 ```
-Task A: Add user authentication to UserComponent.js
-Task B: Add user preferences to UserComponent.js
-Task C: Add user profile editing to UserComponent.js
+Tsk A: Add usr auth 2 UserComponent.js
+Tsk B: Add usr preferences 2 UserComponent.js
+Tsk C: Add usr profile editing 2 UserComponent.js
 ```
 
-**Enhanced with Refactoring-First Approach:**
+**Enhanced w/ Refactoring-1st Approach:**
 ```
 🔥 TIER 0 - Refactoring Foundation:
 ## R1: Split UserComponent into Focused Modules
 
-**Refactoring Task:**
+**Refactoring Tsk:**
 Extract UserComponent.js into:
-- UserAuth.js (authentication logic)
-- UserProfile.js (profile management)
+- UserAuth.js (auth logic)
+- UserProfile.js (profile mgmt)
 - UserPreferences.js (settings/preferences)
 - UserCore.js (shared base functionality)
 
-**Parallel Execution Metadata:**
-- Track: R1 (Foundation - MUST complete first)
-- Files: CREATE [4 new focused modules], MODIFY [UserComponent.js → UserCore.js]
+**Parallel Exec Metadata:**
+- Track: R1 (Foundation - MUST comp 1st)
+- 📁: CREATE [4 new focused modules], MODIFY [UserComponent.js → UserCore.js]
 - Dependencies: None (start immediately)
-- Effort: 3-4 hours
-- Enables: Tracks A, B, C to run in parallel
+- Effort: 3-4 hrs
+- Enables: Tracks A, B, C 2 run in parallel
 
-TIER 1 - Parallel Execution (After R1):
-## A1: Implement User Authentication
-[ALL ORIGINAL CONTENT PRESERVED]
-Add user authentication features...
+TIER 1 - Parallel Exec (After R1):
+## A1: Impl Usr Auth
+[ALL ORIG CONT PRESERVED]
+Add usr auth feat...
 
-**Parallel Execution Metadata:**
-- Track: A1 (can run parallel with B1, C1)
-- Files: UserAuth.js (focused, no conflicts)
+**Parallel Exec Metadata:**
+- Track: A1 (can run parallel w/ B1, C1)
+- 📁: UserAuth.js (focused, no conflicts)
 - Dependencies: R1 completion
-- Effort: 2-3 hours
+- Effort: 2-3 hrs
 
-## B1: Implement User Preferences
-[ALL ORIGINAL CONTENT PRESERVED]
-Add user preferences features...
+## B1: Impl Usr Preferences
+[ALL ORIG CONT PRESERVED]
+Add usr preferences feat...
 
-**Parallel Execution Metadata:**
-- Track: B1 (can run parallel with A1, C1)
-- Files: UserPreferences.js (focused, no conflicts)
+**Parallel Exec Metadata:**
+- Track: B1 (can run parallel w/ A1, C1)
+- 📁: UserPreferences.js (focused, no conflicts)
 - Dependencies: R1 completion
-- Effort: 2-3 hours
+- Effort: 2-3 hrs
 
-## C1: Implement Profile Editing
-[ALL ORIGINAL CONTENT PRESERVED]
-Add user profile editing...
+## C1: Impl Profile Editing
+[ALL ORIG CONT PRESERVED]
+Add usr profile editing...
 
-**Parallel Execution Metadata:**
-- Track: C1 (can run parallel with A1, B1)
-- Files: UserProfile.js (focused, no conflicts)
+**Parallel Exec Metadata:**
+- Track: C1 (can run parallel w/ A1, B1)
+- 📁: UserProfile.js (focused, no conflicts)
 - Dependencies: R1 completion
-- Effort: 2-3 hours
+- Effort: 2-3 hrs
 
-🎯 Result: 4 hours refactoring → 3 parallel tracks → 6-7 hours total vs 9+ hours sequential
+🎯 Res: 4 hrs refactoring → 3 parallel tracks → 6-7 hrs tot vs 9+ hrs sequential
 ```

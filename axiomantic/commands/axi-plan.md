@@ -99,6 +99,29 @@ THEN: Traditional Parallelization
 - Track claiming procedures
 - File ownership rules
 
+### Document Locking Protocol
+Each assistant must establish exclusive locks before modifying shared documents:
+
+1. **Lock Acquisition**: Add `<!-- LOCKED: [Assistant-ID]_[Timestamp] -->` at document start
+2. **Exclusive Access**: Only lock holder may modify document content
+3. **Lock Release**: Remove lock marker when work complete or paused
+4. **Conflict Resolution**: Later timestamps override earlier ones after 30min timeout
+5. **Emergency Override**: Use `<!-- EMERGENCY_UNLOCK: [Reason] -->` for critical fixes
+
+### Track Claiming System
+- Assistants claim work tracks using unique identifiers: `PLAN_[YYYYMMDD]_[HHMM]_[4-char-hash]`
+- Track assignments recorded in plan header with claiming assistant details
+- Active tracks marked with `🔄 CLAIMED: [Assistant-ID]` in track headers
+- Track handoff requires explicit release by current owner and acceptance by new owner
+- Progress updates maintained in dedicated coordination log section
+
+### File Ownership Rules
+- Each file can have only ONE primary owner during active development
+- Owner responsible for all modifications, integration, and conflict resolution
+- Ownership changes require coordination through plan document updates
+- Emergency modifications allowed with immediate owner notification and justification
+- Shared files require pre-coordination or refactoring into owner-specific modules
+
 ## 📊 Execution Tracks
 
 ### 🔥 Track R: Refactoring Foundation (Tier 0 - Execute First)

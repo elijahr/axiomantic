@@ -35,6 +35,18 @@ Execute complete development workflow with plan integration, TDD approach, and s
 - Present available options: "Available work items: [list]. Which would you like to work on?"
 - If item claimed by another session → Offer to take over or select different item
 
+**Step 3.5: Document Locking & Ownership Claiming**
+- **CRITICAL**: Follow document locking procedures from `/axi-plan` before proceeding
+- **Lock Acquisition**: Check if plan document is locked by another session
+  - If locked → Wait 30 seconds and retry up to 3 times
+  - Create `.lock` file with session ID + timestamp + operation
+- **Refresh & Verify**: Re-read plan to ensure you have latest version
+- **Ownership Check**: Verify work item is still unowned in refreshed document
+  - If unowned → Add ownership info: `**Owner**: [session_id] 🚀 **CLAIMED**`
+  - If already claimed → Select different work item & confirm with user
+- **MANDATORY**: Update plan document with ownership info BEFORE starting any implementation work
+- **Lock Release**: Delete lock file immediately after ownership update
+
 ### Phase 2: Work Item Analysis & Validation Planning
 
 **Step 4: Work Item Analysis**
@@ -136,11 +148,26 @@ Before marking work item complete:
 5. **Integration** → Works correctly with existing codebase? ✅
 6. **No Regressions** → Existing functionality still works? ✅
 
-### Plan Status Updates
-- Update plan document with work item completion
+### Work Item Completion Protocol
+**Document Locking & Updates:**
+- **CRITICAL**: Follow document locking procedures from `/axi-plan` before modifying plan document
+- **Lock Acquisition**: Check if plan document is locked by another session
+  - If locked → Wait 30 seconds and retry up to 3 times
+  - Create `.lock` file with session ID + timestamp + operation
+- **Refresh Document**: Re-read plan to ensure no conflicts with other sessions
+
+**Completion Status Update:**
+- Move work item from active section to completed section
+- Create short summary of changes made (1-2 sentences)
+- Remove ownership info (session ID, timestamps) - no longer relevant
+- **PRESERVE**: Phase/track number info for dependency references
 - Mark dependencies as satisfied for dependent items
 - Update progress indicators and milestone tracking
-- If using orchestrated plan → Release file locks, update coordination status
+
+**File Lock Release:**
+- Delete lock file immediately after completion updates
+- Update coordination status if using orchestrated plan
+- Ensure clean handoff for dependent work items
 
 ### Commit & Documentation
 - Create meaningful commit with conventional format
@@ -178,6 +205,12 @@ Before marking work item complete:
 - Update global plan status appropriately
 - Handle conflicts and blocking situations
 - Communicate progress through plan document updates
+
+#### Session Management
+- Generate unique session ID for implementation work: `IMPL_[YYYYMMDD]_[HHMM]_[4-char-hash]`
+- Include session ID in all file modifications and commit messages
+- Track active sessions to prevent conflicts with concurrent implementations
+- Maintain session logs for coordination and debugging purposes
 
 ### Continuous Quality Assurance
 - Apply validation standards continuously, not just at completion

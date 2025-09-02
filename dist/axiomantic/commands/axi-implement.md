@@ -1,211 +1,244 @@
-# /axi-implement - Complete Dev Workflow
+# /axi-implement - Complete Development Workflow
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
-Execute complete dev workflow w/ plan integration, TDD approach, & systematic debugging 4: **$ARGUMENTS**
+Execute comp dev workflow w/ plan integ, TDD approach, & systematic debugging 4: **$ARGUMENTS**
 
-> **💡 Best Results**: Always discover & analyze existing plans before starting impl 2 ensure coordinated dev.
+> **💡 Best Results**: Always discover & analyze existing plans before starting impl 2 ensure coordd dev.
 
-## 🚨 CRITICAL WORKFLOW PRINCIPLES
+## 🚨 🚨 WORKFLOW PRINCIPLES
 
-**Plan-First Dev**: Never start implementing w/o identifying plan & work item 2 ensure progress tracking & coordination.
+**Plan-First Dev**: Never start implementing w/o identifying plan & work item 2 ensure progress tracking & coord.
 
-**Systematic Debugging**: When issues arise, use 6-step scientific debugging methodology rather than trial-&-err approaches.
+**Systematic Debugging**: When issues arise, use 6-step scientific debugging methodology rather than trial-&-error approaches.
 
-**Quality Gates**: Apply Five-Pillar Valid8n before marking any work item comp - no exceptions.
+**🎯 Gates**: Apply Five-Pillar valid8n before marking any work item comp - no exceptions.
 
 ## Dev Workflow 🔄
 
 ### Phase 1: Plan Discovery & Work Item Selection
 
 **Step 1: Plan Doc Discovery (Priority Order)**
-1. `ROADMAP.md` - Major feats & multi-phase projs
-2. `PROJECT_PLAN.md` - Proj-specific planning docs
+1. `ROADMAP.md` - Major feat & multi-phase proj
+2. `PROJECT_PLAN.md` - Proj-spec planning docs
 3. `README.md` (Roadmap sect) - Proj-level planning
 4. `TODO.md` - Task lists & quick items
 5. `.tmp/*.md` - Temp planning docs
 
 **Step 2: Plan Resolution**
-- **Multiple plans found** → Present list, ask user which 2 follow
+- **Mult plans found** → Present list, ask usr which 2 follow
 - **No plans found** → Ask: "No existing plan found. Would you like 2 cr8 proj plan first?"
-  - If yes → Jump 2 `/axi-feat` workflow 4 comprehensive planning
-  - If no → Ask user 2 describe work & cr8 minimal spec
+  - If yes → Jump 2 `/axi-feature` workflow 4 comp planning
+  - If no → Ask usr 2 describe wrk & cr8 minimal spec
 
 **Step 3: Work Item Selection**
-- Parse selected plan doc 4 all work items
+- Parse selected plan doc 4 all wrk items
 - Filter 4 unblocked items (no incomplete dependencies)
-- Present avail opts: "Avail work items: [list]. Which would you like 2 work on?"
+- Present avail opts: "Avail wrk items: [list]. Which would you like 2 wrk on?"
 - If item claimed by another session → Offer 2 take over or select diff item
 
-### Phase 2: Work Item Analysis & Validation Planning
+**Step 3.5: Doc Locking & Ownership Claiming**
+- **🚨**: Follow doc locking procedures from `/axi-plan` before proceeding
+- **Lock Acquisition**: Check if plan doc is locked by another session
+  - If locked → Wait 30 sec & retry up 2 3 times
+  - Cr8 `.lock` fl w/ session ID + ts + op
+- **Refresh & Verify**: Re-read plan 2 ensure you have latest ver
+- **Ownership Check**: Verify wrk item is still unowned in refreshed doc
+  - If unowned → Add ownership info: `**Owner**: [session_id] 🚀 **CLAIMED**`
+  - If already claimed → Select diff wrk item & confirm w/ usr
+- **🚨**: Upd plan doc w/ ownership info BEFORE starting any impl wrk
+- **Lock Release**: Delete lock fl immediately after ownership upd
+
+### Phase 2: Work Item Analysis & valid8n Planning
 
 **Step 4: Work Item Analysis**
-- **Scope**: What exactly needs to be implemented?
-- **Files involved**: Which files will be created/modified?
+- **Scope**: What exactly needs 2 be impl?
+- **📁 involved**: Which fls will be cr8d/modified?
 - **Dependencies**: What existing code does this rely on?
-- **Success criteria**: How will we know it's complete?
-- **Testing approach**: Unit tests, integration tests, or both?
+- **🎯 criteria**: How will we know it's comp?
+- **Testing approach**: Unit tests, integ tests, or both?
 
-**Step 5: Proactive Validation Planning**
+**Step 5: Proactive valid8n Planning**
 **Five-Pillar Pre-Planning:**
-1. **Coding Standards**: Survey existing code patterns, naming conventions, error handling
-2. **Documentation**: Plan docstrings, comments, README updates during implementation
-3. **Project Patterns**: Identify existing patterns to follow (imports, file structure, etc.)
-4. **Testing**: Design test strategy that achieves meaningful coverage and validation
-5. **Instruction Quality**: If modifying commands/agents, follow process-oriented standards
+1. **Coding Standards**: Survey existing code patterns, naming conventions, err handling
+2. **📋**: Plan docstrings, cmts, README upd during impl
+3. **Proj Patterns**: Identify existing patterns 2 follow (imports, fl structure, etc.)
+4. **Testing**: Design test strategy that achieves meaningful coverage & valid8n
+5. **Instruction ⭐**: If modifying cmds/agents, follow proc-oriented stds
 
-**Active Rules Integration:**
-- Load and apply user overrides (`.axiomantic/user-overrides.md`)
-- Load and apply project overrides (`.axiomantic/project-overrides.md`)
-- Note any rule conflicts and resolve according to precedence (User > Project > Base)
-- Plan implementation approach that follows active rule set
+**Active Rules Integ:**
+- Load & apply usr overrides (`.axiomantic/user-overrides.md`)
+- Load & apply proj overrides (`.axiomantic/project-overrides.md`)
+- Note any rule conflicts & resolve according 2 precedence (Usr > Proj > Base)
+- Plan impl approach that follows active rule set
 
-**Step 6: Test-First Development Decision**
-**Use TDD for**: New functions, API endpoints, business logic, data transformations
-**Skip TDD for**: UI styling, configuration changes, documentation, simple file operations
+**Step 6: Test-First Dev Decision**
+**Use TDD 4**: New func, API endpoints, biz logic, dat transformations
+**Skip TDD 4**: UI styling, config changes, docs, simple fl ops
 
 **If using TDD:**
-1. Write failing tests that would pass when feature is complete
-2. Follow testing standards from `/axi-test` and active rules
-3. Run tests to confirm they fail (red phase)
-4. Begin implementation to make tests pass
+1. Write failing tests that would pass when feat is comp
+2. Follow testing stds from `/axi-test` & active rules
+3. Run tests 2 confirm they fail (red phase)
+4. Begin impl 2 make tests pass
 
-### Phase 3: Implementation with Continuous Validation
+### Phase 3: Impl w/ Continuous valid8n
 
-**Step 7: Implementation Cycle**
-1. **Pre-Implementation**: Review active rules and validation criteria before coding
-2. **Implement**: Write code following identified patterns and active rules
-3. **Continuous Validation**: Apply Five-Pillar checks during development, not after
-4. **Test**: Run tests and observe results with meaningful assertions
+**Step 7: Impl Cycle**
+1. **Pre-Impl**: Review active rules & valid8n criteria before coding
+2. **Impl**: Write code following identified patterns & active rules
+3. **Continuous valid8n**: Apply Five-Pillar chks during dev, not after
+4. **Test**: Run tests & observe res w/ meaningful assertions
 5. **Debug**: If failures occur, apply 6-step debugging methodology
-6. **Iterate**: Repeat until tests pass and requirements met
-7. **Final Validation**: Confirm Five-Pillar compliance before marking complete
+6. **Iterate**: Repeat until tests pass & req met
+7. **Final valid8n**: Confirm Five-Pillar compliance before marking comp
 
-**Continuous Five-Pillar Application:**
-- **During Coding**: Follow discovered patterns, apply naming conventions, handle errors consistently
-- **During Documentation**: Write docstrings and comments that match project style
-- **During Testing**: Create tests that validate behavior meaningfully and achieve coverage goals
-- **Before Commits**: Self-validate against all five pillars to catch issues early
+**Continuous Five-Pillar App:**
+- **During Coding**: Follow discovered patterns, apply naming conventions, handle err consistently
+- **During 📋**: Write docstrings & cmts that match proj style
+- **During Testing**: Cr8 tests that valid8 behavior meaningfully & achieve coverage 🎯
+- **Before Commits**: Self-valid8 vs all five pillars 2 catch issues early
 
 ## 6-Step Scientific Debugging Methodology
 
-When encountering failures, test errors, or unexpected behavior:
+When encountering failures, test err, or unexpected behavior:
 
 ### 1. Reproduce Systematically
-- Create minimal, consistent reproduction case
-- Document exact steps, inputs, and environment conditions
+- Cr8 minimal, consistent reproduction case
+- Doc exact steps, inputs, & env conditions
 - Verify issue occurs repeatedly under same conditions
-- Isolate variables - change one thing at a time
+- Isolate vars - change one thing @ time
 
 ### 2. Gather Evidence & Context
-- Collect all relevant logs, error messages, and stack traces
-- Document environment details (versions, configurations, state)
-- Capture exact input data and expected vs. actual outputs
-- Use debugging tools to inspect runtime state
+- Collect all relevant logs, err msgs, & stack traces
+- Doc env details (ver, configs, state)
+- Capture exact inp dat & expected vs actual outputs
+- Use debugging 🛠️ 2 inspect runtime state
 
 ### 3. Form Scientific Hypotheses
-- Generate 2-3 specific hypotheses about root cause based on evidence
-- Make hypotheses testable and falsifiable
-- Consider multiple potential causes, don't fixate on first guess
-- Question assumptions - "What am I assuming that might be wrong?"
+- Generate 2-3 spec hypotheses abt root cause based on evidence
+- Make hypotheses testable & falsifiable
+- Consider mult potential causes, don't fixate on 1st guess
+- Q assumptions - "What am I assuming that might be wrong?"
 
 ### 4. Test Hypotheses Methodically
-- Design specific tests for each hypothesis
-- Test one hypothesis at a time with controlled changes
-- Document what you test and results (even negative results)
-- Use scientific method - isolate variables and observe
+- Design spec tests 4 each hypothesis
+- Test one hypothesis @ time w/ controlled changes
+- Doc what you test & res (even negative res)
+- Use scientific meth - isolate vars & observe
 
 ### 5. Identify Root Cause, Not Symptoms
-- Look beyond immediate symptoms to underlying system causes
-- Ask "Why?" iteratively - each answer leads to deeper "why?"
-- Consider component interactions, timing issues, state dependencies
-- Distinguish between triggers and root causes
+- Look beyond immediate symptoms 2 underlying sys causes
+- Ask "Why?" iteratively - each answer leads 2 deeper "why?"
+- Consider comp interactions, timing issues, state dependencies
+- Distinguish btwn triggers & root causes
 
-### 6. Fix Comprehensively & Validate
-- Address root cause, not just surface symptoms
-- Test fix thoroughly - solves problem without breaking other parts?
-- Consider broader impact on other system components
-- Update tests, documentation, error handling to prevent recurrence
+### 6. Fix Comprehensively & valid8
+- Addr root cause, not just surface symptoms
+- Test fix thoroughly - solves problem w/o breaking other parts?
+- Consider broader impact on other sys comp
+- Upd tests, docs, err handling 2 prevent recurrence
 
-## Work Item Completion Process
+## Work Item Completion 🔄
 
-### Completion Validation Checklist
-Before marking work item complete:
+### Completion valid8n Checklist
+Before marking wrk item comp:
 1. **Functionality** → All acceptance criteria met? ✅
-2. **Testing** → Tests pass with adequate coverage? ✅
-3. **Code Quality** → Follows project coding standards? ✅
-4. **Documentation** → Code properly documented? ✅
-5. **Integration** → Works correctly with existing codebase? ✅
-6. **No Regressions** → Existing functionality still works? ✅
+2. **Testing** → Tests pass w/ adequate coverage? ✅
+3. **Code ⭐** → Follows proj coding stds? ✅
+4. **📋** → Code properly documented? ✅
+5. **Integ** → Works correctly w/ existing codebase? ✅
+6. **No Regressions** → Existing functionality still wrks? ✅
 
-### Plan Status Updates
-- Update plan document with work item completion
-- Mark dependencies as satisfied for dependent items
-- Update progress indicators and milestone tracking
-- If using orchestrated plan → Release file locks, update coordination status
+### Work Item Completion Proto
+**Doc Locking & Upd:**
+- **🚨**: Follow doc locking procedures from `/axi-plan` before modifying plan doc
+- **Lock Acquisition**: Check if plan doc is locked by another session
+  - If locked → Wait 30 sec & retry up 2 3 times
+  - Cr8 `.lock` fl w/ session ID + ts + op
+- **Refresh Doc**: Re-read plan 2 ensure no conflicts w/ other sessions
 
-### Commit & Documentation
-- Create meaningful commit with conventional format
-- Include work item reference in commit message
-- Update relevant documentation
-- Note discovered issues or technical debt for future consideration
+**Completion Status Upd:**
+- Move wrk item from active sect 2 comp sect
+- Cr8 short summary of changes made (1-2 sentences)
+- Rem ownership info (session ID, ts) - no longer relevant
+- **PRESERVE**: Phase/track num info 4 dependency refs
+- Mark dependencies as satisfied 4 dependent items
+- Upd progress indicators & milestone tracking
 
-## Integration with Other Commands
+**📁 Lock Release:**
+- Delete lock fl immediately after completion upd
+- Upd coord stat if using orchestrated plan
+- Ensure clean handoff 4 dependent wrk items
 
-### Plan Management
-- Use `/axi-plan` for orchestrated multi-assistant plans
-- Handle plan conflicts and coordination automatically
-- Update plan status as work items complete
+### Commit & 📋
+- Cr8 meaningful commit w/ conventional fmt
+- Include wrk item ref in commit msg
+- Upd relevant docs
+- Note discovered issues or tech debt 4 future consideration
 
-### Quality Assurance
-- Apply `/axi-validate` standards throughout development
-- Use `/axi-test` systematic approach for test creation
-- Ensure Five-Pillar Validation before completion
+## Integ w/ Other Cmds
 
-### Feature Development
-- If work item requires architectural analysis → Integrate with `/axi-feature`
-- Apply integration planning for complex features
+### Plan Mgmt
+- Use `/axi-plan` 4 orchestrated multi-assistant plans
+- Handle plan conflicts & coord automatically
+- Upd plan stat as wrk items comp
+
+### ⭐ Assurance
+- Apply `/axi-validate` stds throughout dev
+- Use `/axi-test` systematic approach 4 test cr8tion
+- Ensure Five-Pillar valid8n before completion
+
+### Feat Dev
+- If wrk item req architectural analysis → Integ w/ `/axi-feature`
+- Apply integ planning 4 complex feat
 - Use codebase analysis capabilities when needed
 
-## Advanced Features
+## Advanced Feat
 
-### Context-Aware Development
-- Adapt implementation approach based on project type and technologies
-- Use project-specific patterns discovered through codebase analysis
-- Apply appropriate testing strategies for technology stack
+### Context-Aware Dev
+- Adapt impl approach based on proj type & tech
+- Use proj-spec patterns discovered thru codebase analysis
+- Apply appropriate testing strategies 4 tech stack
 - Follow established architectural patterns
 
-### Multi-Assistant Coordination
-- Respect file ownership and coordination protocols when working on orchestrated plans
-- Update global plan status appropriately
-- Handle conflicts and blocking situations
-- Communicate progress through plan document updates
+### Multi-Assistant Coord
+- Respect fl ownership & coord proto when wrking on orchestrated plans
+- Upd global plan stat appropriately
+- Handle conflicts & blocking situations
+- Communicate progress thru plan doc upd
 
-### Continuous Quality Assurance
-- Apply validation standards continuously, not just at completion
-- Use systematic debugging for any issues encountered
-- Maintain clean, readable code throughout process
-- Document decisions and trade-offs made during implementation
+#### Session Mgmt
+- Generate uniq session ID 4 impl wrk: `IMPL_[YYYYMMDD]_[HHMM]_[4-char-hash]`
+- Include session ID in all fl modifications & commit msgs
+- Track active sessions 2 prevent conflicts w/ concurrent impl
+- Maintain session logs 4 coord & debugging purposes
 
-## Success Criteria
-- ✅ **Plan-driven development** with clear work item selection and tracking
+### Continuous ⭐ Assurance
+- Apply valid8n stds continuously, not just @ completion
+- Use systematic debugging 4 any issues encountered
+- Maintain clean, readable code throughout proc
+- Doc decisions & trade-offs made during impl
+
+## 🎯 Criteria
+- ✅ **Plan-driven dev** w/ clear wrk item selection & tracking
 - ✅ **Systematic debugging approach** when issues arise
-- ✅ **Quality gates enforced** throughout development process
-- ✅ **Completed work item** meeting all acceptance criteria
-- ✅ **Clean, tested code** following project standards
-- ✅ **Updated plan status** with accurate progress tracking
-- ✅ **No technical debt** introduced without documentation
-- ✅ **Professional implementation** integrating seamlessly with existing codebase
+- ✅ **⭐ gates enforced** throughout dev proc
+- ✅ **Comp wrk item** meeting all acceptance criteria
+- ✅ **Clean, tested code** following proj stds
+- ✅ **Upd plan stat** w/ accurate progress tracking
+- ✅ **No tech debt** introduced w/o docs
+- ✅ **Professional impl** integrating seamlessly w/ existing codebase
 
 ## Usage
 ```
 /axi-implement [work_item_description]
 ```
 
-**Example:**
+**Ex:**
 ```
-/axi-implement "Add user authentication endpoints"
-/axi-implement  # Will prompt for plan selection
+/axi-implement "Add usr auth endpoints"
+/axi-implement  # Will prompt 4 plan selection
 ```
 
-Remember: The goal is professional-quality implementation that integrates seamlessly with existing projects and maintains long-term maintainability through systematic development practices.
+Remember: 🎯 is professional-⭐ impl that integrates seamlessly w/ existing proj & maintains long-term maintainability thru systematic dev practices.

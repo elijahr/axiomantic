@@ -1,4 +1,4 @@
-# /axi-feat - End-2-End Feat Dev
+# /axi-feature - End-2-End Feat Dev
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
@@ -12,7 +12,7 @@ Plan & implement new feat following Axiomantic principles w/ comprehensive codeb
 
 **Five-Pillar Valid8n**: Every feat must pass all valid8n pillars before comp - no exceptions.
 
-**Plan Integration**: Substantial feats automatically integrate w/ `/axi-plan` 4 multi-assistant coordination.
+**Plan Integration**: Substantial feats automatically integrate w/ `/axi-plan` 4 multi-assistant coord.
 
 ## Feat Dev 🔄
 
@@ -71,7 +71,7 @@ Plan & implement new feat following Axiomantic principles w/ comprehensive codeb
 **Integration Strategy:**
 - Map to existing shared services and utilities
 - Plan data model compatibility and migrations
-- Design coordination with existing systems
+- Design coord with existing systems
 
 ### Phase 4: Technical Design & Validation-Aware Architecture
 

@@ -1,4 +1,4 @@
-# /axi-valid8 - Comprehensive Quality Assurance & Cleanup
+# /axi-validate - Comprehensive Quality Assurance & Cleanup
 
 *Doc is compressed: std abbrev, txtspeak shortcuts, emoji 4 concepts, & omitted articles/pronouns where context clear.*
 
