@@ -4,7 +4,7 @@
 
 Execute comp dev workflow w/ plan integ, TDD approach, & systematic debugging 4: **$ARGUMENTS**
 
-> **💡 Best Results**: Always discover & analyze existing plans before starting impl 2 ensure coordd dev.
+> **💡 Best Results**: Always discover & analyze existing plans before starting impl 2 ensure coord dev.
 
 ## 🚨 🚨 WORKFLOW PRINCIPLES
 
@@ -13,6 +13,28 @@ Execute comp dev workflow w/ plan integ, TDD approach, & systematic debugging 4:
 **Systematic Debugging**: When issues arise, use 6-step scientific debugging methodology rather than trial-&-error approaches.
 
 **🎯 Gates**: Apply Five-Pillar valid8n before marking any work item comp - no exceptions.
+
+**Plan Detail Req**: Only wrk w/ plans that contain extensive impl details, code ex, & spec 🎯 criteria. If plan is generic or lacks detail, enhance it before proceeding w/ impl.
+
+## Plan ⭐ Standards
+
+### Req Detail Level 4 Impl:
+1. **Spec Impl Details**: Every wrk item must include concrete impl approaches, not generic desc
+2. **Code Ex**: Relevant code snippets, config ex, API usage patterns 4 each wrk item
+3. **Tech Specs**: Detailed fl structures, module interfaces, dat flow docs
+4. **Measurable 🎯 Criteria**: Spec acceptance criteria w/ valid8n procedures & test req
+5. **Testing Req**: Exact test cases, coverage expectations, valid8n approaches
+6. **Arch Docs**: Clear tech specs 4 impl approach
+
+### Impl Readiness Checklist:
+- ✅ Work item has spec, actionable impl details (not generic desc)
+- ✅ Code ex provided 4 key impl aspects
+- ✅ 🎯 criteria are measurable w/ clear valid8n procedures
+- ✅ Tech specs include fl structures & integ points
+- ✅ Testing req spec w/ coverage expectations
+- ✅ Dependencies & prereq clearly documented w/ tech details
+
+**If Plan Does Not Meet Standards**: Stop impl & enhance plan using axi-plan detail enhancement 🔄.
 
 ## Dev Workflow 🔄
 
@@ -25,25 +47,54 @@ Execute comp dev workflow w/ plan integ, TDD approach, & systematic debugging 4:
 4. `TODO.md` - Task lists & quick items
 5. `.tmp/*.md` - Temp planning docs
 
-**Step 2: Plan Resolution**
+**Step 2: Plan Resolution & ⭐ Assessment**
 - **Mult plans found** → Present list, ask usr which 2 follow
-- **No plans found** → Ask: "No existing plan found. Would you like 2 cr8 proj plan first?"
+- **No plans found** → Ask: "No existing plan found. Would you like 2 cr8 proj plan 1st?"
   - If yes → Jump 2 `/axi-feature` workflow 4 comp planning
   - If no → Ask usr 2 describe wrk & cr8 minimal spec
+- **Plan found but lacks detail** → 🚨: Assess plan ⭐ before proceeding:
 
-**Step 3: Work Item Selection**
-- Parse selected plan doc 4 all wrk items
+**Plan ⭐ Assessment:**
+1. **Detail Level Chk**: Does plan contain spec impl details & code ex?
+2. **🎯 Criteria Chk**: Are there measurable acceptance criteria w/ valid8n procedures?
+3. **Tech Specificity Chk**: Are arch details, fl structures, API specs present?
+4. **Generic Cont Detection**: Are desc vague or actionable & spec?
+
+**If Plan is Inadequate (Generic/Lacks Detail):**
+- **🚨**: Jump 2 enhanced planning mode before impl
+- Use `/axi-plan` enhancement 🔄 2 transform generic plan into detailed impl guide
+- Add extensive tech details, code ex, spec 🎯 criteria
+- Research codebase patterns & add spec impl guidance
+- Define measurable acceptance criteria w/ valid8n procedures
+- **Only proceed w/ impl after plan meets detail req**
+
+**Plan Enhancement Req:**
+- Every wrk item must have spec impl details w/ code ex
+- Clear 🎯 criteria w/ measurable acceptance tests
+- Tech specs including fl structures, API usage, config details
+- Testing req w/ spec test cases & coverage expectations
+- No generic desc - everything must be actionable & spec
+
+**Step 3: Work Item Selection (From Detailed Plan)**
+- **PREREQ**: Plan must contain detailed impl specs (verified in Step 2)
+- Parse detailed plan doc 4 all wrk items w/ impl details
 - Filter 4 unblocked items (no incomplete dependencies)
-- Present avail opts: "Avail wrk items: [list]. Which would you like 2 wrk on?"
+- Verify wrk items contain:
+  - Spec impl details & code ex
+  - Clear 🎯 criteria w/ valid8n procedures
+  - Tech specs (fl structures, API details, configs)
+  - Testing req w/ spec test cases
+- Present avail detailed opts: "Avail detailed wrk items: [list]. Which would you like 2 wrk on?"
 - If item claimed by another session → Offer 2 take over or select diff item
+- **If selected wrk item lacks detail** → Enhance wrk item detail before claiming (research impl specs, add code ex, define 🎯 criteria)
 
 **Step 3.5: Doc Locking & Ownership Claiming**
 - **🚨**: Follow doc locking procedures from `/axi-plan` before proceeding
-- **Lock Acquisition**: Check if plan doc is locked by another session
+- **Lock Acquisition**: Chk if plan doc is locked by another session
   - If locked → Wait 30 sec & retry up 2 3 times
   - Cr8 `.lock` fl w/ session ID + ts + op
 - **Refresh & Verify**: Re-read plan 2 ensure you have latest ver
-- **Ownership Check**: Verify wrk item is still unowned in refreshed doc
+- **Ownership Chk**: Verify wrk item is still unowned in refreshed doc
   - If unowned → Add ownership info: `**Owner**: [session_id] 🚀 **CLAIMED**`
   - If already claimed → Select diff wrk item & confirm w/ usr
 - **🚨**: Upd plan doc w/ ownership info BEFORE starting any impl wrk
@@ -51,12 +102,21 @@ Execute comp dev workflow w/ plan integ, TDD approach, & systematic debugging 4:
 
 ### Phase 2: Work Item Analysis & valid8n Planning
 
-**Step 4: Work Item Analysis**
-- **Scope**: What exactly needs 2 be impl?
-- **📁 involved**: Which fls will be cr8d/modified?
-- **Dependencies**: What existing code does this rely on?
-- **🎯 criteria**: How will we know it's comp?
-- **Testing approach**: Unit tests, integ tests, or both?
+**Step 4: Work Item Analysis (Enhanced Detail Verification)**
+- **Scope**: What exactly needs 2 be impl? (Must be spec, not generic)
+- **Impl Details**: Are there spec code ex, API calls, config req?
+- **📁 involved**: Which spec fls will be cr8d/modified w/ detailed modification plans?
+- **Dependencies**: What existing code does this rely on w/ spec integ points?
+- **🎯 criteria**: Are there measurable acceptance criteria w/ valid8n procedures?
+- **Testing approach**: Spec test cases, coverage req, valid8n methods?
+- **Arch Details**: Fl structures, module interactions, dat flows documented?
+
+**If Work Item Lacks Sufficient Detail:**
+1. **Research Phase**: Analyze codebase 4 existing patterns & impl approaches
+2. **Detail Enhancement**: Add spec impl guidance w/ code ex
+3. **🎯 Criteria Definition**: Establish measurable acceptance criteria w/ valid8n steps
+4. **Testing Spec**: Define spec test cases & coverage req
+5. **Upd Plan**: Doc enhanced details in plan 4 future ref
 
 **Step 5: Proactive valid8n Planning**
 **Five-Pillar Pre-Planning:**
@@ -72,7 +132,7 @@ Execute comp dev workflow w/ plan integ, TDD approach, & systematic debugging 4:
 - Note any rule conflicts & resolve according 2 precedence (Usr > Proj > Base)
 - Plan impl approach that follows active rule set
 
-**Step 6: Test-First Dev Decision**
+**Step 6: Test-1st Dev Decision**
 **Use TDD 4**: New func, API endpoints, biz logic, dat transformations
 **Skip TDD 4**: UI styling, config changes, docs, simple fl ops
 
@@ -153,7 +213,7 @@ Before marking wrk item comp:
 ### Work Item Completion Proto
 **Doc Locking & Upd:**
 - **🚨**: Follow doc locking procedures from `/axi-plan` before modifying plan doc
-- **Lock Acquisition**: Check if plan doc is locked by another session
+- **Lock Acquisition**: Chk if plan doc is locked by another session
   - If locked → Wait 30 sec & retry up 2 3 times
   - Cr8 `.lock` fl w/ session ID + ts + op
 - **Refresh Doc**: Re-read plan 2 ensure no conflicts w/ other sessions
@@ -200,9 +260,9 @@ Before marking wrk item comp:
 - Adapt impl approach based on proj type & tech
 - Use proj-spec patterns discovered thru codebase analysis
 - Apply appropriate testing strategies 4 tech stack
-- Follow established architectural patterns
+- Follow established arch patterns
 
-### Multi-Assistant Coord
+### Multi-Assistant coord
 - Respect fl ownership & coord proto when wrking on orchestrated plans
 - Upd global plan stat appropriately
 - Handle conflicts & blocking situations

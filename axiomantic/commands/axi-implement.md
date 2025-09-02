@@ -12,6 +12,28 @@ Execute complete development workflow with plan integration, TDD approach, and s
 
 **Quality Gates**: Apply Five-Pillar Validation before marking any work item complete - no exceptions.
 
+**Plan Detail Requirements**: Only work with plans that contain extensive implementation details, code examples, and specific success criteria. If plan is generic or lacks detail, enhance it before proceeding with implementation.
+
+## Plan Quality Standards
+
+### Required Detail Level for Implementation:
+1. **Specific Implementation Details**: Every work item must include concrete implementation approaches, not generic descriptions
+2. **Code Examples**: Relevant code snippets, configuration examples, API usage patterns for each work item
+3. **Technical Specifications**: Detailed file structures, module interfaces, data flow documentation
+4. **Measurable Success Criteria**: Specific acceptance criteria with validation procedures and test requirements
+5. **Testing Requirements**: Exact test cases, coverage expectations, validation approaches
+6. **Architecture Documentation**: Clear technical specifications for implementation approach
+
+### Implementation Readiness Checklist:
+- ✅ Work item has specific, actionable implementation details (not generic descriptions)
+- ✅ Code examples provided for key implementation aspects
+- ✅ Success criteria are measurable with clear validation procedures
+- ✅ Technical specifications include file structures and integration points
+- ✅ Testing requirements specified with coverage expectations
+- ✅ Dependencies and prerequisites clearly documented with technical details
+
+**If Plan Does Not Meet Standards**: Stop implementation and enhance plan using axi-plan detail enhancement process.
+
 ## Development Workflow Process
 
 ### Phase 1: Plan Discovery & Work Item Selection
@@ -23,17 +45,46 @@ Execute complete development workflow with plan integration, TDD approach, and s
 4. `TODO.md` - Task lists and quick items
 5. `.tmp/*.md` - Temporary planning documents
 
-**Step 2: Plan Resolution**
+**Step 2: Plan Resolution & Quality Assessment**
 - **Multiple plans found** → Present list, ask user which to follow
 - **No plans found** → Ask: "No existing plan found. Would you like to create a project plan first?"
   - If yes → Jump to `/axi-feature` workflow for comprehensive planning
   - If no → Ask user to describe work and create minimal specification
+- **Plan found but lacks detail** → CRITICAL: Assess plan quality before proceeding:
 
-**Step 3: Work Item Selection**
-- Parse selected plan document for all work items
+**Plan Quality Assessment:**
+1. **Detail Level Check**: Does plan contain specific implementation details and code examples?
+2. **Success Criteria Check**: Are there measurable acceptance criteria with validation procedures?
+3. **Technical Specificity Check**: Are architectural details, file structures, API specifications present?
+4. **Generic Content Detection**: Are descriptions vague or actionable and specific?
+
+**If Plan is Inadequate (Generic/Lacks Detail):**
+- **MANDATORY**: Jump to enhanced planning mode before implementation
+- Use `/axi-plan` enhancement process to transform generic plan into detailed implementation guide
+- Add extensive technical details, code examples, specific success criteria
+- Research codebase patterns and add specific implementation guidance
+- Define measurable acceptance criteria with validation procedures
+- **Only proceed with implementation after plan meets detail requirements**
+
+**Plan Enhancement Requirements:**
+- Every work item must have specific implementation details with code examples
+- Clear success criteria with measurable acceptance tests
+- Technical specifications including file structures, API usage, configuration details
+- Testing requirements with specific test cases and coverage expectations
+- No generic descriptions - everything must be actionable and specific
+
+**Step 3: Work Item Selection (From Detailed Plan)**
+- **PREREQUISITE**: Plan must contain detailed implementation specifics (verified in Step 2)
+- Parse detailed plan document for all work items with implementation details
 - Filter for unblocked items (no incomplete dependencies)
-- Present available options: "Available work items: [list]. Which would you like to work on?"
+- Verify work items contain:
+  - Specific implementation details and code examples
+  - Clear success criteria with validation procedures
+  - Technical specifications (file structures, API details, configurations)
+  - Testing requirements with specific test cases
+- Present available detailed options: "Available detailed work items: [list]. Which would you like to work on?"
 - If item claimed by another session → Offer to take over or select different item
+- **If selected work item lacks detail** → Enhance work item detail before claiming (research implementation specifics, add code examples, define success criteria)
 
 **Step 3.5: Document Locking & Ownership Claiming**
 - **CRITICAL**: Follow document locking procedures from `/axi-plan` before proceeding
@@ -49,12 +100,21 @@ Execute complete development workflow with plan integration, TDD approach, and s
 
 ### Phase 2: Work Item Analysis & Validation Planning
 
-**Step 4: Work Item Analysis**
-- **Scope**: What exactly needs to be implemented?
-- **Files involved**: Which files will be created/modified?
-- **Dependencies**: What existing code does this rely on?
-- **Success criteria**: How will we know it's complete?
-- **Testing approach**: Unit tests, integration tests, or both?
+**Step 4: Work Item Analysis (Enhanced Detail Verification)**
+- **Scope**: What exactly needs to be implemented? (Must be specific, not generic)
+- **Implementation Details**: Are there specific code examples, API calls, configuration requirements?
+- **Files involved**: Which specific files will be created/modified with detailed modification plans?
+- **Dependencies**: What existing code does this rely on with specific integration points?
+- **Success criteria**: Are there measurable acceptance criteria with validation procedures?
+- **Testing approach**: Specific test cases, coverage requirements, validation methods?
+- **Architecture Details**: File structures, module interactions, data flows documented?
+
+**If Work Item Lacks Sufficient Detail:**
+1. **Research Phase**: Analyze codebase for existing patterns and implementation approaches
+2. **Detail Enhancement**: Add specific implementation guidance with code examples
+3. **Success Criteria Definition**: Establish measurable acceptance criteria with validation steps
+4. **Testing Specification**: Define specific test cases and coverage requirements
+5. **Update Plan**: Document enhanced details in plan for future reference
 
 **Step 5: Proactive Validation Planning**
 **Five-Pillar Pre-Planning:**

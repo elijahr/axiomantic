@@ -6,33 +6,60 @@ Converts a regular plan document into a parallelizable track-based plan with com
 
 ## 🚨 PRESERVATION PROTOCOL
 
-**CRITICAL: This enhances plans, never replaces content**
+**CRITICAL: This enhances plans with 100% content preservation + detail enhancement**
 
-### Core Rules:
+### Absolute Content Preservation Rules:
 1. **COMPLETED work** (✅ status) → Can be summarized for history
-2. **ACTIVE/FUTURE work** → Preserve 100% of all details, specs, examples
-3. **When in doubt** → Always preserve original content
-4. **Validation checkpoint** → Final output must be ≥80% of original size
+2. **ACTIVE/FUTURE work** → Preserve 100% of ALL details, specs, code examples, implementation notes
+3. **Code Examples**: Every single code block, snippet, configuration example preserved exactly
+4. **Implementation Details**: All technical specifications, architecture notes, API details preserved
+5. **Success Criteria**: All acceptance criteria, validation steps, testing requirements preserved
+6. **When in doubt** → Always preserve original content with zero loss
+7. **Validation checkpoint** → Final output must be ≥100% of original size (enhanced, not reduced)
+
+### Detail Enhancement Requirements:
+- **No Generic Content**: Replace vague descriptions with specific, actionable implementation details
+- **Code Examples Required**: Every work item must include relevant code examples, file structures, configurations
+- **Clear Success Criteria**: Specific, measurable acceptance criteria with validation steps
+- **Implementation Paths**: Detailed step-by-step implementation approaches with technical specifics
+- **Architecture Details**: Specific file structures, module interactions, data flows
+- **Testing Specifications**: Exact test cases, coverage requirements, validation approaches
 
 ### Step-by-Step Process:
-1. **Analyze**: Classify each work item by status (✅/🔄/📋/⏸️)
-2. **Preserve**: Copy all active work content completely
-3. **Enhance**: Add parallelization metadata alongside original content
-4. **Validate**: Check preservation ratio and content completeness
+1. **Analyze**: Classify each work item by status AND detail level (✅/🔄/📋/⏸️ + detailed/generic)
+2. **Preserve**: Copy ALL active work content with absolute fidelity
+3. **Enhance**: Add detailed implementation specifics, code examples, architecture details
+4. **Organize**: Restructure for parallelization while maintaining all original detail
+5. **Validate**: Confirm 100% content preservation + significant detail enhancement
 
 ## What This Command Does
 
-**Input**: Sequential plan with work items
-**Output**: Refactoring-first parallel execution plan + all original content preserved
+**Input**: Sequential plan with work items (detailed or generic)
+**Output**: Refactoring-first parallel execution plan + all original content preserved + enhanced detail
 
-### Key Transformations:
-1. **Bottleneck Analysis** - Identifies shared files/modules blocking parallelization
-2. **Refactoring Strategy** - Creates focused module extraction plans as Tier 0 work
-3. **File Impact Analysis** - Maps each work item to specific files it will create/modify/delete
-4. **Post-Refactor Dependencies** - Identifies dependencies based on the refactored architecture
-5. **Maximum Parallelization** - Achieves optimal parallel execution through strategic refactoring
-6. **Coordination System** - Adds locking, claiming, and progress tracking
-7. **Content Preservation** - Maintains all original planning detail for active work
+### Primary Functions:
+1. **Lossless Content Preservation** - Every detail, code example, specification preserved exactly
+2. **Detail Enhancement** - Transform generic descriptions into specific implementation details with code examples
+3. **Bottleneck Analysis** - Identifies shared files/modules blocking parallelization with specific refactoring solutions
+4. **Refactoring Strategy** - Creates detailed module extraction plans with code examples and file structures
+5. **File Impact Analysis** - Maps each work item to specific files with detailed modification plans
+6. **Implementation Specifications** - Provides detailed implementation paths with code examples, API calls, configurations
+7. **Coordination System** - Adds comprehensive locking, claiming, and progress tracking
+8. **Success Criteria Definition** - Establishes specific, measurable acceptance criteria with validation steps
+
+### Content Enhancement Requirements:
+**For Existing Plans:**
+- If plan lacks detail → Enhance with extensive implementation specifics, code examples, clear success criteria
+- If plan is generic → Replace generic descriptions with specific technical implementations
+- If plan lacks code examples → Add relevant code snippets, configuration examples, API usage patterns
+- If plan lacks success criteria → Define specific, measurable acceptance criteria with validation steps
+
+**For New Plans (No Existing Document):**
+- Research-driven detailed planning with extensive implementation specifics
+- Multiple code examples for each work item showing exact implementation approaches
+- Detailed file structures, module interactions, data flow specifications
+- Specific API documentation, configuration requirements, dependency specifications
+- Clear success criteria with testing approaches and validation procedures
 
 ### 🚀 Refactoring-First Philosophy:
 **Instead of working around bottlenecks → Eliminate them through strategic refactoring**
@@ -40,46 +67,91 @@ Converts a regular plan document into a parallelizable track-based plan with com
 - Monolithic component blocking progress? → Split into logical sub-components
 - Configuration scattered across files? → Centralize then distribute properly
 
+## Plan Document Assessment & Enhancement
+
+### Scenario 1: No Existing Plan Document
+**Process**: Research-Driven Detailed Planning
+1. **Requirements Gathering**: Work with user to understand project scope, technical requirements, constraints
+2. **Research Phase**: Analyze codebase, existing patterns, technology stack, architectural decisions
+3. **Detailed Planning**: Create comprehensive plan with:
+   - Extensive implementation details with specific code examples
+   - Detailed file structures and module interactions
+   - Specific API usage patterns, configuration requirements
+   - Clear success criteria with measurable acceptance tests
+   - Testing strategies with specific test cases and coverage requirements
+   - Architecture diagrams and data flow specifications
+
+### Scenario 2: Existing Detailed Plan Document
+**Process**: Lossless Preservation + Parallelization Enhancement
+1. **Content Audit**: Verify plan contains detailed implementations, code examples, specific success criteria
+2. **100% Preservation**: Maintain every detail, code example, specification exactly as written
+3. **Parallelization Analysis**: Identify bottlenecks and refactoring opportunities with detailed solutions
+4. **Reorganization**: Structure content for parallel execution while preserving all original detail
+5. **Coordination Addition**: Add detailed multi-assistant coordination procedures
+
+### Scenario 3: Existing Generic/Incomplete Plan Document
+**Process**: Content Preservation + Massive Detail Enhancement
+1. **Content Preservation**: Preserve all existing content as foundation
+2. **Gap Analysis**: Identify missing details, generic descriptions, absent success criteria
+3. **Research Enhancement**: Add extensive technical details through codebase analysis and research
+4. **Code Example Addition**: Provide specific implementation examples for every work item
+5. **Success Criteria Definition**: Establish measurable acceptance criteria with validation procedures
+6. **Implementation Path Documentation**: Detail step-by-step implementation approaches with specifics
+
+### Quality Standards for All Scenarios:
+- **No Generic Descriptions**: Every work item must have specific, actionable implementation details
+- **Code Examples Required**: Relevant code snippets, configuration examples, API usage patterns
+- **Measurable Success Criteria**: Specific acceptance criteria with validation procedures
+- **Technical Specifications**: Detailed file structures, module interfaces, data flow documentation
+- **Testing Requirements**: Specific test cases, coverage expectations, validation approaches
+
 ## Execution Algorithm
 
-### Phase 1: Analysis
+### Phase 1: Analysis & Detail Assessment
 ```
 For each work item:
 1. Determine status: ✅ completed | 🔄🔄📋⏸️ active
-2. Map file impacts: CREATE [files] | MODIFY [files] | DELETE [files]
-3. Identify dependencies: File conflicts | Functional requirements
+2. Assess detail level: DETAILED (has code examples, specifics) | GENERIC (vague descriptions)
+3. Map file impacts: CREATE [specific files] | MODIFY [specific files] | DELETE [specific files]
+4. Identify dependencies: File conflicts | Functional requirements | Technical prerequisites
+5. Evaluate enhancement needs: Missing code examples | Vague success criteria | Generic descriptions
 ```
 
-### Phase 2: Refactoring-First Parallelization
+### Phase 2: Content Preservation & Enhancement
 ```
-🔥 PRIORITY: Identify & Execute Refactoring Opportunities
-1. Scan for shared file bottlenecks → Extract into focused modules
-2. Detect monolithic files → Split into logical components
-3. Map refactoring tasks → Create "R-Track" (Refactoring Track)
-4. Position refactoring as Tier 0 (foundation for all parallel work)
-
-THEN: Traditional Parallelization
-5. Group refactored items with no file conflicts → Parallel tracks
-6. Create execution tiers: Tier 0 (refactor) → Tier 1 → Tier 2 → etc
-7. Calculate max parallelization post-refactoring
+CRITICAL: 100% Content Preservation + Detail Enhancement
+1. Preserve ALL existing detailed content with absolute fidelity
+2. Identify generic/vague content requiring enhancement
+3. Research and add extensive implementation details for generic items
+4. Add code examples, file structures, API specifications for all work items
+5. Define specific, measurable success criteria with validation procedures
+6. Document detailed implementation paths with technical specifics
 ```
 
-### Phase 3: Enhancement
+### Phase 3: Refactoring-First Parallelization
 ```
-1. Add coordination sections at document top
-2. Enhance each work item with:
-   - Track assignment (A1, B2, etc.)
-   - File ownership list
-   - Dependencies and prerequisites
-   - Effort estimation
-3. Preserve ALL original content for active items
+🔥 PRIORITY: Detailed Refactoring Opportunities with Code Examples
+1. Scan for shared file bottlenecks → Design detailed extraction with code examples
+2. Detect monolithic files → Plan detailed splitting with file structures and interfaces
+3. Map detailed refactoring tasks → Create "R-Track" with implementation specifics
+4. Position refactoring as Tier 0 with detailed implementation guides
+
+THEN: Enhanced Parallelization
+5. Group enhanced items with no file conflicts → Create detailed parallel tracks
+6. Create execution tiers with detailed implementation guides: Tier 0 → Tier 1 → Tier 2 → etc
+7. Calculate max parallelization with detailed coordination procedures
 ```
 
-### Phase 4: Validation
+### Phase 4: Organization & Validation
 ```
-1. Content check: All specs, examples, details preserved? ✅
-2. Size check: Output ≥80% of input size? ✅
-3. Function check: Can 3+ devs work in parallel? ✅
+1. Organize enhanced content for parallel execution while preserving all details
+2. Add detailed coordination sections with specific procedures
+3. Enhance each work item with:
+   - Track assignment with detailed responsibilities
+   - Specific file ownership with modification procedures
+   - Detailed dependencies and prerequisites with validation steps
+   - Precise effort estimation with implementation breakdown
+4. Validate: 100% content preservation + significant detail enhancement confirmed
 ```
 
 ## Generated Output Structure
@@ -135,8 +207,14 @@ Each assistant must establish exclusive locks before modifying shared documents:
 ### Track B: [Description] (Tier 1 - Parallel with Track A)
 - B1: [Work Item] - Files: [focused modules] - Effort: [hours]
 
-[ORIGINAL PLAN CONTENT - ALL PRESERVED]
-Enhanced with metadata but content intact
+[ORIGINAL PLAN CONTENT - ALL PRESERVED WITH 100% FIDELITY]
+[PLUS: EXTENSIVE DETAIL ENHANCEMENTS]
+- All original code examples, specifications, technical details preserved exactly
+- Generic descriptions enhanced with specific implementation details and code examples
+- Vague success criteria replaced with measurable acceptance criteria and validation procedures
+- Implementation paths detailed with step-by-step technical guidance and code samples
+- Architecture specifications enhanced with detailed file structures and module interfaces
+Enhanced with parallelization metadata alongside comprehensive implementation details
 ```
 
 ## Critical Thinking Framework
@@ -184,14 +262,19 @@ When analyzing dependencies and bottlenecks, ask:
 5. **Celebrate** 3-5x faster execution vs working around bottlenecks
 
 ## Success Criteria
-- ✅ **Refactoring opportunities identified and planned as Tier 0 work**
-- ✅ **Post-refactoring: 4+ assistants can work simultaneously without conflicts**
-- ✅ **Focused, single-responsibility modules enable clean parallel work**
-- ✅ All original planning detail preserved for active work
-- ✅ Clear file ownership preventing conflicts
-- ✅ Realistic refactoring estimates (typically 4-8 hours upfront investment)
-- ✅ Comprehensive coordination instructions
-- ✅ **3-5x parallelization improvement through strategic refactoring**
+- ✅ **100% Content Preservation**: Every detail, code example, specification from original plan preserved exactly
+- ✅ **Extensive Detail Enhancement**: Generic descriptions replaced with specific implementation details and code examples
+- ✅ **Clear Success Criteria**: Every work item has measurable acceptance criteria with validation procedures
+- ✅ **Implementation Specifics**: Detailed technical guidance with code examples, file structures, API specifications
+- ✅ **Refactoring opportunities identified and planned as detailed Tier 0 work with implementation examples**
+- ✅ **Post-refactoring: 4+ assistants can work simultaneously without conflicts using detailed coordination procedures**
+- ✅ **Focused, single-responsibility modules enable clean parallel work with specific implementation guides**
+- ✅ **Research-driven enhancement** for inadequate plans with extensive technical detail addition
+- ✅ **Clear file ownership preventing conflicts with detailed modification procedures**
+- ✅ **Realistic refactoring estimates with detailed implementation breakdown (typically 4-8 hours upfront investment)**
+- ✅ **Comprehensive coordination instructions with specific procedures and protocols**
+- ✅ **No generic content**: Every description actionable and specific with implementation details
+- ✅ **3-5x parallelization improvement through strategic refactoring with detailed implementation guidance**
 
 ## Usage
 
@@ -211,62 +294,405 @@ When analyzing dependencies and bottlenecks, ask:
 
 ## Example Enhancement
 
-**Original Work Items with Bottleneck:**
+**Original Work Items with Bottleneck (Generic Content):**
 ```
 Task A: Add user authentication to UserComponent.js
 Task B: Add user preferences to UserComponent.js
 Task C: Add user profile editing to UserComponent.js
 ```
 
-**Enhanced with Refactoring-First Approach:**
-```
+**Enhanced with Refactoring-First Approach + Detailed Implementation:**
+````
 🔥 TIER 0 - Refactoring Foundation:
 ## R1: Split UserComponent into Focused Modules
 
-**Refactoring Task:**
-Extract UserComponent.js into:
-- UserAuth.js (authentication logic)
-- UserProfile.js (profile management)
-- UserPreferences.js (settings/preferences)
-- UserCore.js (shared base functionality)
+**Detailed Refactoring Implementation:**
+Extract UserComponent.js into focused, single-responsibility modules:
 
-**Parallel Execution Metadata:**
+**UserAuth.js** - Authentication Logic:
+```javascript
+import { useState, useEffect } from 'react';
+import { authAPI } from '../api/auth';
+
+export const useAuthentication = () => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const login = async (credentials) => {
+    const response = await authAPI.login(credentials);
+    setUser(response.user);
+    localStorage.setItem('authToken', response.token);
+    return response;
+  };
+
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem('authToken');
+  };
+
+  return { user, login, logout, loading };
+};
+```
+
+**UserProfile.js** - Profile Management:
+```javascript
+import { useState } from 'react';
+import { profileAPI } from '../api/profile';
+
+export const UserProfile = ({ userId }) => {
+  const [profile, setProfile] = useState(null);
+  const [editing, setEditing] = useState(false);
+
+  const updateProfile = async (profileData) => {
+    const updatedProfile = await profileAPI.update(userId, profileData);
+    setProfile(updatedProfile);
+    setEditing(false);
+  };
+
+  return (
+    <div className="user-profile">
+      {editing ? (
+        <ProfileEditForm
+          profile={profile}
+          onSave={updateProfile}
+          onCancel={() => setEditing(false)}
+        />
+      ) : (
+        <ProfileDisplay
+          profile={profile}
+          onEdit={() => setEditing(true)}
+        />
+      )}
+    </div>
+  );
+};
+```
+
+**UserPreferences.js** - Settings/Preferences:
+```javascript
+import { useReducer, useEffect } from 'react';
+import { preferencesAPI } from '../api/preferences';
+
+const preferencesReducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_THEME':
+      return { ...state, theme: action.payload };
+    case 'SET_NOTIFICATIONS':
+      return { ...state, notifications: action.payload };
+    case 'SET_LANGUAGE':
+      return { ...state, language: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const UserPreferences = ({ userId }) => {
+  const [preferences, dispatch] = useReducer(preferencesReducer, {
+    theme: 'light',
+    notifications: true,
+    language: 'en'
+  });
+
+  const savePreferences = async () => {
+    await preferencesAPI.update(userId, preferences);
+  };
+
+  return (
+    <PreferencesPanel
+      preferences={preferences}
+      dispatch={dispatch}
+      onSave={savePreferences}
+    />
+  );
+};
+```
+
+**UserCore.js** - Shared Base Functionality:
+```javascript
+export const UserContext = createContext();
+
+export const UserProvider = ({ children }) => {
+  const auth = useAuthentication();
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    if (auth.user) {
+      profileAPI.get(auth.user.id).then(setProfile);
+    }
+  }, [auth.user]);
+
+  return (
+    <UserContext.Provider value={{ auth, profile, setProfile }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+```
+
+**File Structure:**
+```
+src/
+  components/
+    user/
+      UserAuth.js          (authentication logic)
+      UserProfile.js       (profile management)
+      UserPreferences.js   (settings/preferences)
+      UserCore.js         (shared context/provider)
+      index.js            (clean exports)
+  api/
+    auth.js               (authentication API calls)
+    profile.js            (profile API calls)
+    preferences.js        (preferences API calls)
+```
+
+**Detailed Parallel Execution Metadata:**
 - Track: R1 (Foundation - MUST complete first)
-- Files: CREATE [4 new focused modules], MODIFY [UserComponent.js → UserCore.js]
+- Files: CREATE [UserAuth.js, UserProfile.js, UserPreferences.js, UserCore.js, api/auth.js, api/profile.js, api/preferences.js], MODIFY [UserComponent.js → remove and replace with index.js]
 - Dependencies: None (start immediately)
 - Effort: 3-4 hours
+- Success Criteria: All tests pass, TypeScript compilation successful, no breaking changes to existing components
+- Testing Requirements: Unit tests for each module, integration tests for context provider
 - Enables: Tracks A, B, C to run in parallel
 
-TIER 1 - Parallel Execution (After R1):
-## A1: Implement User Authentication
-[ALL ORIGINAL CONTENT PRESERVED]
-Add user authentication features...
+TIER 1 - Parallel Execution (After R1 Completion):
+## A1: Implement User Authentication Features
+[ALL ORIGINAL CONTENT PRESERVED - Enhanced with Implementation Details]
 
-**Parallel Execution Metadata:**
-- Track: A1 (can run parallel with B1, C1)
-- Files: UserAuth.js (focused, no conflicts)
-- Dependencies: R1 completion
-- Effort: 2-3 hours
+**Detailed Implementation Specification:**
+Add comprehensive user authentication features with secure token management:
 
-## B1: Implement User Preferences
-[ALL ORIGINAL CONTENT PRESERVED]
-Add user preferences features...
+**Features to Implement:**
+- Multi-factor authentication support
+- Password reset flow with email verification
+- Remember me functionality with secure token refresh
+- Social login integration (Google, GitHub)
 
-**Parallel Execution Metadata:**
-- Track: B1 (can run parallel with A1, C1)
-- Files: UserPreferences.js (focused, no conflicts)
-- Dependencies: R1 completion
-- Effort: 2-3 hours
+**API Integration:**
+```javascript
+// src/api/auth.js enhancements
+export const authAPI = {
+  login: async (credentials) => {
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(credentials)
+    });
+    return response.json();
+  },
 
-## C1: Implement Profile Editing
-[ALL ORIGINAL CONTENT PRESERVED]
-Add user profile editing...
+  setupMFA: async (userId) => {
+    return await fetch(`/api/auth/mfa/setup/${userId}`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${getToken()}` }
+    });
+  },
 
-**Parallel Execution Metadata:**
-- Track: C1 (can run parallel with A1, B1)
-- Files: UserProfile.js (focused, no conflicts)
-- Dependencies: R1 completion
-- Effort: 2-3 hours
-
-🎯 Result: 4 hours refactoring → 3 parallel tracks → 6-7 hours total vs 9+ hours sequential
+  resetPassword: async (email) => {
+    return await fetch('/api/auth/reset', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+  }
+};
 ```
+
+**Success Criteria:**
+- Authentication flow handles all error states gracefully
+- Token refresh works seamlessly without user interruption
+- MFA setup completes successfully with QR code generation
+- Password reset emails delivered and processed correctly
+- Social login redirects work without CSRF vulnerabilities
+- All authentication tests pass with >90% coverage
+
+**Detailed Parallel Execution Metadata:**
+- Track: A1 (can run parallel with B1, C1)
+- Files: UserAuth.js (focused implementation, no conflicts with other tracks)
+- Dependencies: R1 completion (refactored modules available)
+- Effort: 2-3 hours
+- Testing: Authentication integration tests, security validation, error handling tests
+
+## B1: Implement User Preferences Management
+[ALL ORIGINAL CONTENT PRESERVED - Enhanced with Implementation Details]
+
+**Detailed Implementation Specification:**
+Build comprehensive user preferences system with real-time updates:
+
+**Preferences Categories:**
+- Theme customization (light/dark/auto, color schemes)
+- Notification settings (email, push, in-app preferences)
+- Language and localization preferences
+- Privacy settings and data sharing controls
+
+**Implementation Details:**
+```javascript
+// Enhanced preferences with validation and persistence
+const preferencesSchema = {
+  theme: {
+    mode: ['light', 'dark', 'auto'],
+    colorScheme: ['default', 'blue', 'green', 'purple'],
+    customColors: { primary: '#color', secondary: '#color' }
+  },
+  notifications: {
+    email: boolean,
+    push: boolean,
+    inApp: boolean,
+    frequency: ['immediate', 'daily', 'weekly']
+  },
+  privacy: {
+    profileVisibility: ['public', 'private', 'friends'],
+    dataSharing: boolean,
+    analyticsOptOut: boolean
+  }
+};
+
+// Real-time synchronization
+export const usePreferencesSync = (userId) => {
+  const [preferences, setPreferences] = useState(null);
+
+  useEffect(() => {
+    const websocket = new WebSocket(`/ws/preferences/${userId}`);
+    websocket.onmessage = (event) => {
+      const updatedPreferences = JSON.parse(event.data);
+      setPreferences(updatedPreferences);
+    };
+    return () => websocket.close();
+  }, [userId]);
+
+  return preferences;
+};
+```
+
+**Success Criteria:**
+- Preferences save and sync across devices in real-time
+- Theme changes apply immediately without page refresh
+- Notification preferences integrate with backend notification service
+- Privacy settings enforce data access controls
+- Preferences export/import functionality works correctly
+- All preference validation rules enforced
+
+**Detailed Parallel Execution Metadata:**
+- Track: B1 (can run parallel with A1, C1)
+- Files: UserPreferences.js (isolated implementation, no file conflicts)
+- Dependencies: R1 completion (refactored modules available)
+- Effort: 2-3 hours
+- Testing: Preferences persistence tests, real-time sync validation, UI interaction tests
+
+## C1: Implement Profile Editing System
+[ALL ORIGINAL CONTENT PRESERVED - Enhanced with Implementation Details]
+
+**Detailed Implementation Specification:**
+Create comprehensive profile management with validation and media upload:
+
+**Profile Features:**
+- Personal information editing with validation
+- Profile photo upload with image processing
+- Social links management
+- Professional information sections
+- Privacy controls for profile visibility
+
+**Implementation with Validation:**
+```javascript
+// Profile editing with comprehensive validation
+const profileValidationRules = {
+  displayName: { required: true, minLength: 2, maxLength: 50 },
+  email: { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+  phone: { pattern: /^\+?[\d\s-()]+$/, optional: true },
+  bio: { maxLength: 500 },
+  website: { pattern: /^https?:\/\/.+/, optional: true }
+};
+
+export const ProfileEditor = ({ userId, initialProfile }) => {
+  const [profile, setProfile] = useState(initialProfile);
+  const [errors, setErrors] = useState({});
+  const [saving, setSaving] = useState(false);
+
+  const validateField = (field, value) => {
+    const rule = profileValidationRules[field];
+    if (!rule) return null;
+
+    if (rule.required && !value) return `${field} is required`;
+    if (rule.minLength && value.length < rule.minLength)
+      return `${field} must be at least ${rule.minLength} characters`;
+    if (rule.maxLength && value.length > rule.maxLength)
+      return `${field} must be no more than ${rule.maxLength} characters`;
+    if (rule.pattern && !rule.pattern.test(value))
+      return `${field} format is invalid`;
+
+    return null;
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      const validatedProfile = await profileAPI.update(userId, profile);
+      setProfile(validatedProfile);
+      showSuccessMessage('Profile updated successfully');
+    } catch (error) {
+      setErrors(error.fieldErrors || {});
+      showErrorMessage('Failed to update profile');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <ProfileForm
+      profile={profile}
+      errors={errors}
+      saving={saving}
+      onFieldChange={handleFieldChange}
+      onSave={handleSave}
+    />
+  );
+};
+```
+
+**Media Upload Implementation:**
+```javascript
+// Profile photo upload with processing
+export const ProfilePhotoUpload = ({ userId, onUploadComplete }) => {
+  const handleFileUpload = async (file) => {
+    const formData = new FormData();
+    formData.append('photo', file);
+    formData.append('userId', userId);
+
+    const response = await fetch('/api/profile/photo', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Authorization': `Bearer ${getToken()}` }
+    });
+
+    const result = await response.json();
+    onUploadComplete(result.photoUrl);
+  };
+
+  return (
+    <ImageUpload
+      onUpload={handleFileUpload}
+      acceptedTypes={['image/jpeg', 'image/png', 'image/webp']}
+      maxSize={5 * 1024 * 1024} // 5MB limit
+      cropAspectRatio={1} // Square crop
+    />
+  );
+};
+```
+
+**Success Criteria:**
+- Profile validation prevents invalid data submission
+- Photo upload processes images correctly (resize, crop, format conversion)
+- All form fields save and display correctly
+- Profile changes reflect immediately in other components
+- Privacy settings control profile visibility appropriately
+- Profile data exports correctly in multiple formats
+- All profile editing tests pass with full coverage
+
+**Detailed Parallel Execution Metadata:**
+- Track: C1 (can run parallel with A1, B1)
+- Files: UserProfile.js (isolated implementation, no conflicts with authentication or preferences)
+- Dependencies: R1 completion (refactored modules available)
+- Effort: 2-3 hours
+- Testing: Form validation tests, file upload tests, profile display tests
+
+🎯 Result: 4 hours detailed refactoring → 3 parallel tracks with comprehensive implementation guides → 6-7 hours total vs 9+ hours sequential, with extensive technical detail and clear success criteria for each track
+````
