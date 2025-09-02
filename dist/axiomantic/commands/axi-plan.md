@@ -4,9 +4,11 @@ Converts regular plan document → parallelizable track-based plan w/ comprehens
 
 > **💡 Best Results**: Works best w/ LLMs having adv reasoning capabilities. Analysis requires critical thinking about task dependencies + parallel execution opportunities.
 
-## 🚨 PRESERVATION PROTOCOL
+## 🚨 PRESERVATION PROTOCOL - MANDATORY EXECUTION
 
-**🎯 CRITICAL: Enhances plans w/ 100% content preservation + detail enhancement**
+**🔥 CRITICAL: Enhances plans w/ 100% content preservation + detail enhancement**
+
+**⚠️ FAILURE 2 FOLLOW THESE PROTOCOLS RESULTS IN COMMAND FAILURE**
 
 ### Absolute Content Preservation Rules:
 1. **COMPLETED work** (✅ status) → Can be summarized 4 history
@@ -25,12 +27,95 @@ Converts regular plan document → parallelizable track-based plan w/ comprehens
 - **Architecture Details**: Specific file structures, module interactions, data flows
 - **Testing Specs**: Exact test cases, coverage requirements, validation approaches
 
+### **Forbidden Actions** (COMMAND FAILURE IF DETECTED):
+❌ **NEVER**: "Let me summarize this section..." → **COMMAND FAILS**
+❌ **NEVER**: "The key points are..." → **COMMAND FAILS**
+❌ **NEVER**: "This can be simplified 2..." → **COMMAND FAILS**
+❌ **NEVER**: Remove code examples 4 "brevity" → **COMMAND FAILS**
+❌ **NEVER**: Replace detailed specs w/ high-level descriptions → **COMMAND FAILS**
+❌ **NEVER**: Condense or abbreviate original tech content → **COMMAND FAILS**
+
+### **Required Actions** (MANDATORY 4 SUCCESS):
+✅ **ALWAYS**: "I am preserving this complete impl..."
+✅ **ALWAYS**: "Adding enhancement while maintaining all original details..."
+✅ **ALWAYS**: "Here is original code block plus my additions..."
+✅ **ALWAYS**: Copy original content verbatim before adding enhancements
+✅ **ALWAYS**: Treat every code block as sacred + untouchable
+✅ **ALWAYS**: Execute all mandatory checkpoints w/ required outputs
+
 ### Step-by-Step Process:
 1. **Analyze**: Classify each work item by status AND detail level (✅/🔄/📋/⏸️ + detailed/generic)
 2. **Preserve**: Copy ALL active work content w/ absolute fidelity
 3. **Enhance**: Add detailed impl specifics, code examples, architecture details
 4. **Organize**: Restructure 4 parallelization while maintaining all original detail
 5. **Validate**: Confirm 100% content preservation + significant detail enhancement
+
+## 🚨 MANDATORY PRESERVATION CHECKPOINTS
+
+**These checkpoints MUST be executed during command execution. Failure 2 follow results in incomplete output.**
+
+### **Pre-Execution Validation** (REQUIRED)
+1. **Content Audit**: Count lines, code blocks, + impl details in source
+   ```
+   REQUIRED OUTPUT: "Original document: [X] lines, [Y] code blocks, [Z] impl sections"
+   ```
+2. **Preservation Commitment**: Explicitly acknowledge preservation requirement
+   ```
+   REQUIRED OUTPUT: "I commit 2 preserving 100% of existing content while adding enhancements"
+   ```
+3. **Enhancement Strategy**: Define what will be ADDED (never replaced)
+   ```
+   REQUIRED OUTPUT: "Enhancement strategy: Adding [specific items] w/o removing original content"
+   ```
+
+### **Mid-Execution Checkpoints** (REQUIRED EVERY 200 LINES)
+1. **Line Count Monitoring**: Track current output size vs original
+   ```
+   REQUIRED OUTPUT: "Progress: [current_lines]/[target_lines] ([percentage]% of minimum target)"
+   ```
+2. **Content Verification**: Ensure each original code block appears in output
+   ```
+   REQUIRED OUTPUT: "Code blocks preserved: [count]/[total] ✅"
+   ```
+3. **Detail Level Check**: Verify impl specifics are maintained
+   ```
+   REQUIRED OUTPUT: "Impl details preserved: [validated sections]"
+   ```
+
+### **Post-Execution Validation** (REQUIRED)
+1. **Size Requirement**: Final output MUST be ≥110% of original size
+   ```
+   REQUIRED OUTPUT: "Final validation: [final_lines] lines ([percentage]% of original)"
+   PASS CRITERIA: percentage ≥ 110%
+   ```
+2. **Content Diff**: Verify no original technical content was removed
+   ```
+   REQUIRED OUTPUT: "Content preservation check: [status] - All original content verified"
+   ```
+3. **Enhancement Verification**: Confirm additions provide implementation value
+   ```
+   REQUIRED OUTPUT: "Enhancement validation: Added [specific improvements]"
+   ```
+
+## 🛡️ FAIL-SAFE MECHANISMS
+
+### **Auto-Abort Triggers**:
+- Output size drops below 90% of original → **IMMEDIATE STOP** + restart w/ preservation focus
+- Generic descriptions appear w/o code examples → **IMMEDIATE STOP** + add specifics
+- Any original code block missing → **IMMEDIATE STOP** + recover content
+- Mid-execution checkpoint fails → **IMMEDIATE STOP** + validate preservation
+
+### **Recovery Protocols**:
+- If content loss detected → **MANDATORY**: Acknowledge error + restart w/ preservation focus
+- If enhancement lacks specificity → **MANDATORY**: Add detailed code examples + test cases
+- If size target missed → **MANDATORY**: Identify missing content + restore completely
+- If checkpoint validation fails → **MANDATORY**: Return 2 last successful checkpoint
+
+### **Quality Gates** (MUST PASS):
+- ✅ **Gate 1**: Pre-execution audit completed w/ commitment statement
+- ✅ **Gate 2**: All mid-execution checkpoints passed w/ content verification
+- ✅ **Gate 3**: Final output ≥110% original size w/ all content preserved
+- ✅ **Gate 4**: Enhancement adds impl value w/o generic content
 
 ## What This Command Does
 
@@ -119,39 +204,58 @@ Converts regular plan document → parallelizable track-based plan w/ comprehens
 
 ### Phase 2: Content Preservation & Enhancement
 ```
-🎯 CRITICAL: 100% Content Preservation + Detail Enhancement
-1. Preserve ALL existing detailed content w/ absolute fidelity
-2. Identify generic/vague content requiring enhancement
-3. Research + add extensive impl details 4 generic items
-4. Add code examples, file structures, API specs 4 all work items
-5. Define specific, measurable success criteria w/ validation procedures
-6. Document detailed impl paths w/ tech specifics
+🔥 CRITICAL: 100% Content Preservation + Detail Enhancement
+
+**CHECKPOINT EXECUTION REQUIRED**:
+1. Execute Pre-Execution Validation checkpoint
+2. Preserve ALL existing detailed content with absolute fidelity
+3. Execute Mid-Execution Checkpoint every 200 lines
+4. Identify generic/vague content requiring enhancement
+5. Research and add extensive implementation details for generic items
+6. Add code examples, file structures, API specifications for all work items
+7. Define specific, measurable success criteria with validation procedures
+8. Document detailed implementation paths with technical specifics
+9. Execute Post-Execution Validation checkpoint
+
+**MANDATORY OUTPUTS AT EACH STEP**:
+- Line count tracking with percentage validation
+- Content preservation verification statements
+- Enhancement documentation with specific additions
+- Checkpoint passage confirmation before proceeding
 ```
 
 ### Phase 3: Refactoring-First Parallelization
 ```
-🔥 PRIORITY: Detailed Refactoring Opportunities w/ Code Examples
-1. Scan 4 shared file bottlenecks → Design detailed extraction w/ code examples
-2. Detect monolithic files → Plan detailed splitting w/ file structures + interfaces
-3. Map detailed refactoring tasks → Create "R-Track" w/ impl specifics
-4. Position refactoring as Tier 0 w/ detailed impl guides
+🔥 PRIORITY: Detailed Refactoring Opportunities with Code Examples
+1. Scan for shared file bottlenecks → Design detailed extraction with code examples
+2. Detect monolithic files → Plan detailed splitting with file structures and interfaces
+3. Map detailed refactoring tasks → Create "R-Track" with implementation specifics
+4. Position refactoring as Tier 0 with detailed implementation guides
 
 THEN: Enhanced Parallelization
-5. Group enhanced items w/ no file conflicts → Create detailed parallel tracks
-6. Create execution tiers w/ detailed impl guides: Tier 0 → Tier 1 → Tier 2 → etc
-7. Calculate max parallelization w/ detailed coordination procedures
+5. Group enhanced items with no file conflicts → Create detailed parallel tracks
+6. Create execution tiers with detailed implementation guides: Tier 0 → Tier 1 → Tier 2 → etc
+7. Calculate max parallelization with detailed coordination procedures
 ```
 
 ### Phase 4: Organization & Validation
 ```
-1. Organize enhanced content 4 parallel execution while preserving all details
-2. Add detailed coordination sections w/ specific procedures
-3. Enhance each work item w/:
-   - Track assignment w/ detailed responsibilities
-   - Specific file ownership w/ modification procedures
-   - Detailed dependencies + prerequisites w/ validation steps
-   - Precise effort estimation w/ impl breakdown
-4. Validate: 100% content preservation + significant detail enhancement confirmed
+1. Organize enhanced content for parallel execution while preserving all details
+2. Add detailed coordination sections with specific procedures
+3. Enhance each work item with:
+   - Track assignment with detailed responsibilities
+   - Specific file ownership with modification procedures
+   - Detailed dependencies and prerequisites with validation steps
+   - Precise effort estimation with implementation breakdown
+4. **EXECUTE POST-EXECUTION VALIDATION CHECKPOINT** (MANDATORY)
+5. Validate: 100% content preservation + significant detail enhancement confirmed
+6. **FINAL QUALITY GATE**: Confirm all checkpoints passed before completion
+
+**REQUIRED FINAL OUTPUTS**:
+- "Final validation: [X] lines ([Y]% of original)" where Y ≥ 110%
+- "Content preservation check: PASSED - All original content verified"
+- "Enhancement validation: Added [specific technical improvements]"
+- "All quality gates: PASSED ✅"
 ```
 
 ## Generated Output Structure
@@ -162,7 +266,7 @@ THEN: Enhanced Parallelization
 ## 🎯 Parallelization Overview
 - **Refactoring-first approach**: Break bottlenecks before parallelizing
 - Tier 0 refactoring tasks: [N] (foundation work)
-- Max parallel devs post-refactoring: [N]
+- Max parallel developers post-refactoring: [N]
 - Execution tiers: R-Track (Tier 0) → [visual diagram of parallel tiers]
 - Critical path: Refactoring completion → Massive parallelization
 
@@ -178,21 +282,21 @@ Each assistant must establish exclusive locks before modifying shared documents:
 2. **Exclusive Access**: Only lock holder may modify document content
 3. **Lock Release**: Remove lock marker when work complete or paused
 4. **Conflict Resolution**: Later timestamps override earlier ones after 30min timeout
-5. **Emergency Override**: Use `<!-- EMERGENCY_UNLOCK: [Reason] -->` 4 critical fixes
+5. **Emergency Override**: Use `<!-- EMERGENCY_UNLOCK: [Reason] -->` for critical fixes
 
 ### Track Claiming System
 - Assistants claim work tracks using unique identifiers: `PLAN_[YYYYMMDD]_[HHMM]_[4-char-hash]`
-- Track assignments recorded in plan header w/ claiming assistant details
-- Active tracks marked w/ `🔄 CLAIMED: [Assistant-ID]` in track headers
-- Track handoff requires explicit release by current owner + acceptance by new owner
+- Track assignments recorded in plan header with claiming assistant details
+- Active tracks marked with `🔄 CLAIMED: [Assistant-ID]` in track headers
+- Track handoff requires explicit release by current owner and acceptance by new owner
 - Progress updates maintained in dedicated coordination log section
 
 ### File Ownership Rules
-- Each file can have only ONE primary owner during active dev
-- Owner responsible 4 all modifications, integration, + conflict resolution
+- Each file can have only ONE primary owner during active development
+- Owner responsible for all modifications, integration, and conflict resolution
 - Ownership changes require coordination through plan document updates
-- Emergency modifications allowed w/ immediate owner notification + justification
-- Shared files require pre-coordination or refactoring → owner-specific modules
+- Emergency modifications allowed with immediate owner notification and justification
+- Shared files require pre-coordination or refactoring into owner-specific modules
 
 ## 📊 Execution Tracks
 
@@ -204,27 +308,27 @@ Each assistant must establish exclusive locks before modifying shared documents:
 - A1: [Work Item] - Files: [focused modules] - Effort: [hours]
 - A2: [Work Item] - Files: [focused modules] - Effort: [hours]
 
-### Track B: [Description] (Tier 1 - Parallel w/ Track A)
+### Track B: [Description] (Tier 1 - Parallel with Track A)
 - B1: [Work Item] - Files: [focused modules] - Effort: [hours]
 
-[ORIGINAL PLAN CONTENT - ALL PRESERVED W/ 100% FIDELITY]
+[ORIGINAL PLAN CONTENT - ALL PRESERVED WITH 100% FIDELITY]
 [PLUS: EXTENSIVE DETAIL ENHANCEMENTS]
-- All original code examples, specs, tech details preserved exactly
-- Generic descriptions enhanced w/ specific impl details + code examples
-- Vague success criteria replaced w/ measurable acceptance criteria + validation procedures
-- Impl paths detailed w/ step-by-step tech guidance + code samples
-- Architecture specs enhanced w/ detailed file structures + module interfaces
-Enhanced w/ parallelization metadata alongside comprehensive impl details
+- All original code examples, specifications, technical details preserved exactly
+- Generic descriptions enhanced with specific implementation details and code examples
+- Vague success criteria replaced with measurable acceptance criteria and validation procedures
+- Implementation paths detailed with step-by-step technical guidance and code samples
+- Architecture specifications enhanced with detailed file structures and module interfaces
+Enhanced with parallelization metadata alongside comprehensive implementation details
 ```
 
 ## Critical Thinking Framework
 
-When analyzing dependencies + bottlenecks, ask:
+When analyzing dependencies and bottlenecks, ask:
 - **🔥 "What files are shared by multiple tasks?"** → Prime refactoring candidates
-- **🔥 "Can this monolithic file be split → focused modules?"** → Usually YES
-- **🔥 "What's refactoring effort vs parallelization gain?"** → Often heavily favors refactoring
+- **🔥 "Can this monolithic file be split into focused modules?"** → Usually YES
+- **🔥 "What's the refactoring effort vs parallelization gain?"** → Often heavily favors refactoring
 - **"Does B2 REALLY need B1 first?"** → Check file conflicts, not organizational order
-- **"What breaks if these run in parallel?"** → Look 4 actual tech blockers after refactoring
+- **"What breaks if these run in parallel?"** → Look for actual technical blockers after refactoring
 
 ### 🎯 Refactoring Decision Matrix:
 - **High shared usage + Low refactoring cost = ALWAYS refactor**
@@ -232,49 +336,66 @@ When analyzing dependencies + bottlenecks, ask:
 - **Low shared usage + High refactoring cost = Consider alternatives**
 
 ### 💡 Refactoring Patterns:
-1. **Extract Module**: Pull shared logic → focused, single-responsibility files
-2. **Split Component**: Break monoliths → logical sub-components
+1. **Extract Module**: Pull shared logic into focused, single-responsibility files
+2. **Split Component**: Break monoliths into logical sub-components
 3. **Interface Separation**: Create clear boundaries between concerns
-4. **Config Centralization**: Gather scattered config → manageable chunks
+4. **Configuration Centralization**: Gather scattered config into manageable chunks
 
 ## Common Bottleneck Patterns & Refactoring Solutions
 
-### 🚫 Bottleneck: Shared Config File
-- **Problem**: 5 tasks all need 2 modify `config.js`
-- **Solution**: Extract 2 `config/database.js`, `config/auth.js`, `config/api.js` etc.
+### 🚫 Bottleneck: Shared Configuration File
+- **Problem**: 5 tasks all need to modify `config.js`
+- **Solution**: Extract to `config/database.js`, `config/auth.js`, `config/api.js` etc.
 - **Result**: 5 tasks can run in parallel on focused config modules
 
 ### 🚫 Bottleneck: Monolithic Component
 - **Problem**: Multiple features touching `UserComponent.js`
-- **Solution**: Split → `UserProfile.js`, `UserAuth.js`, `UserPreferences.js`
+- **Solution**: Split into `UserProfile.js`, `UserAuth.js`, `UserPreferences.js`
 - **Result**: Feature teams work on isolated, focused components
 
 ### 🚫 Bottleneck: Utility File Sprawl
-- **Problem**: Every task modifying same `utils.js`
+- **Problem**: Every task modifying the same `utils.js`
 - **Solution**: Create `utils/validation.js`, `utils/formatting.js`, `utils/api.js`
 - **Result**: Tasks operate on distinct utility domains
 
 ### ✅ Success Pattern: Refactoring-First Workflow
 1. **Identify** shared file bottlenecks (usually 2-3 major ones)
 2. **Plan** extraction/splitting strategy (R-Track tasks)
-3. **Execute** refactoring as Tier 0 (1-2 devs, 4-8 hours typically)
-4. **Unleash** massive parallelization on focused modules (3-8+ devs)
+3. **Execute** refactoring as Tier 0 (1-2 developers, 4-8 hours typically)
+4. **Unleash** massive parallelization on focused modules (3-8+ developers)
 5. **Celebrate** 3-5x faster execution vs working around bottlenecks
 
-## Success Criteria
-- ✅ **100% Content Preservation**: Every detail, code example, spec from original plan preserved exactly
-- ✅ **Extensive Detail Enhancement**: Generic descriptions replaced w/ specific impl details + code examples
-- ✅ **Clear Success Criteria**: Every work item has measurable acceptance criteria w/ validation procedures
-- ✅ **Impl Specifics**: Detailed tech guidance w/ code examples, file structures, API specs
-- ✅ **Refactoring opportunities identified + planned as detailed Tier 0 work w/ impl examples**
-- ✅ **Post-refactoring: 4+ assistants can work simultaneously w/o conflicts using detailed coordination procedures**
-- ✅ **Focused, single-responsibility modules enable clean parallel work w/ specific impl guides**
-- ✅ **Research-driven enhancement** 4 inadequate plans w/ extensive tech detail addition
-- ✅ **Clear file ownership preventing conflicts w/ detailed modification procedures**
-- ✅ **Realistic refactoring estimates w/ detailed impl breakdown (typically 4-8 hours upfront investment)**
-- ✅ **Comprehensive coordination instructions w/ specific procedures + protocols**
-- ✅ **No generic content**: Every description actionable + specific w/ impl details
-- ✅ **3-5x parallelization improvement through strategic refactoring w/ detailed impl guidance**
+## Success Criteria - MANDATORY ACHIEVEMENTS
+
+### **Core Success Requirements** (MUST ACHIEVE ALL):
+- ✅ **100% Content Preservation**: Every detail, code example, specification from original plan preserved exactly
+- ✅ **Size Requirement**: Final output ≥110% of original size through meaningful enhancement
+- ✅ **All Checkpoints Passed**: Pre-execution, mid-execution, and post-execution validations completed
+- ✅ **Zero Content Loss**: No original technical content removed or condensed
+- ✅ **Extensive Detail Enhancement**: Generic descriptions replaced with specific implementation details and code examples
+- ✅ **Clear Success Criteria**: Every work item has measurable acceptance criteria with validation procedures
+- ✅ **Implementation Specifics**: Detailed technical guidance with code examples, file structures, API specifications
+
+### **Enhancement Quality Requirements**:
+- ✅ **Refactoring opportunities identified and planned as detailed Tier 0 work with implementation examples**
+- ✅ **Post-refactoring: 4+ assistants can work simultaneously without conflicts using detailed coordination procedures**
+- ✅ **Focused, single-responsibility modules enable clean parallel work with specific implementation guides**
+- ✅ **Research-driven enhancement** for inadequate plans with extensive technical detail addition
+- ✅ **Clear file ownership preventing conflicts with detailed modification procedures**
+- ✅ **Realistic refactoring estimates with detailed implementation breakdown (typically 4-8 hours upfront investment)**
+- ✅ **Comprehensive coordination instructions with specific procedures and protocols**
+- ✅ **No generic content**: Every description actionable and specific with implementation details
+- ✅ **3-5x parallelization improvement through strategic refactoring with detailed implementation guidance**
+
+### **Quality Gate Validation** (FINAL CHECKPOINT):
+- ✅ **Gate 1**: Pre-execution audit completed with commitment statement
+- ✅ **Gate 2**: All mid-execution checkpoints passed with content verification
+- ✅ **Gate 3**: Final output ≥110% original size with all content preserved
+- ✅ **Gate 4**: Enhancement adds implementation value without generic content
+- ✅ **Gate 5**: All forbidden actions avoided, all required actions executed
+
+**COMMAND SUCCESS**: All success criteria achieved + All quality gates passed
+**COMMAND FAILURE**: Any success criteria failed OR any quality gate failed
 
 ## Usage
 
@@ -301,13 +422,24 @@ Task B: Add user preferences to UserComponent.js
 Task C: Add user profile editing to UserComponent.js
 ```
 
-**Example Enhancement with Refactoring-First Approach + Detailed Impl:**
+**Enhanced with Refactoring-First Approach + Detailed Implementation:**
+
+**PRESERVATION CHECKPOINT**: Original 3 generic work items preserved below, then enhanced with detailed implementation:
+
+**ORIGINAL CONTENT (PRESERVED)**:
+```
+Task A: Add user authentication to UserComponent.js
+Task B: Add user preferences to UserComponent.js
+Task C: Add user profile editing to UserComponent.js
+```
+
+**ENHANCED VERSION** (Original content + comprehensive implementation details):
 ````
 🔥 TIER 0 - Refactoring Foundation:
 ## R1: Split UserComponent into Focused Modules
 
-**Detailed Refactoring Impl:**
-Extract UserComponent.js → focused, single-responsibility modules:
+**Detailed Refactoring Implementation:**
+Extract UserComponent.js into focused, single-responsibility modules:
 
 **UserAuth.js** - Authentication Logic:
 ```javascript
@@ -499,34 +631,34 @@ export const authAPI = {
 
 **Success Criteria:**
 - Authentication flow handles all error states gracefully
-- Token refresh works seamlessly w/o user interruption
-- MFA setup completes successfully w/ QR code generation
-- Password reset emails delivered + processed correctly
-- Social login redirects work w/o CSRF vulnerabilities
-- All authentication tests pass w/ >90% coverage
+- Token refresh works seamlessly without user interruption
+- MFA setup completes successfully with QR code generation
+- Password reset emails delivered and processed correctly
+- Social login redirects work without CSRF vulnerabilities
+- All authentication tests pass with >90% coverage
 
 **Detailed Parallel Execution Metadata:**
-- Track: A1 (can run parallel w/ B1, C1)
-- Files: UserAuth.js (focused impl, no conflicts w/ other tracks)
+- Track: A1 (can run parallel with B1, C1)
+- Files: UserAuth.js (focused implementation, no conflicts with other tracks)
 - Dependencies: R1 completion (refactored modules available)
 - Effort: 2-3 hours
 - Testing: Authentication integration tests, security validation, error handling tests
 
 ## B1: Implement User Preferences Management
-[ALL ORIGINAL CONTENT PRESERVED - Enhanced w/ Impl Details]
+[ALL ORIGINAL CONTENT PRESERVED - Enhanced with Implementation Details]
 
-**Detailed Impl Spec:**
-Build comprehensive user preferences system w/ real-time updates:
+**Detailed Implementation Specification:**
+Build comprehensive user preferences system with real-time updates:
 
 **Preferences Categories:**
 - Theme customization (light/dark/auto, color schemes)
 - Notification settings (email, push, in-app preferences)
-- Language + localization preferences
-- Privacy settings + data sharing controls
+- Language and localization preferences
+- Privacy settings and data sharing controls
 
-**Impl Details:**
+**Implementation Details:**
 ```javascript
-// Enhanced preferences w/ validation + persistence
+// Enhanced preferences with validation and persistence
 const preferencesSchema = {
   theme: {
     mode: ['light', 'dark', 'auto'],
@@ -564,7 +696,7 @@ export const usePreferencesSync = (userId) => {
 ```
 
 **Success Criteria:**
-- Preferences save + sync across devices in real-time
+- Preferences save and sync across devices in real-time
 - Theme changes apply immediately w/o page refresh
 - Notification preferences integrate w/ backend notification service
 - Privacy settings enforce data access controls
